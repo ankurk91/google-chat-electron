@@ -7,4 +7,4 @@ for Linux even if the official one is just an Electron app.
 
 Logging in spans multiple windows and eventually opens up the chat to the default browser. After that
 this app works fine.
-
+Should be fixed in 0.0.2 but not fully tested yet.
