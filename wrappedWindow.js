@@ -31,6 +31,7 @@ module.exports = function createWrappedWindow(opts) {
   windowOpts['icon'] = iconPath;
   var window = new BrowserWindow(windowOpts);
   window.setMenu(null);
+  window.webContents.openDevTools();
 
   if (data && data[hash] && data[hash].shouldBeMaximized) {
     window.maximize();
@@ -76,9 +77,10 @@ module.exports = function createWrappedWindow(opts) {
     return domain;
   }
   var handleRedirect = function(e, url) {
-    e.preventDefault();
-    if (!opts.openLocally && extractDomain(url) !== extractDomain(window.webContents.getURL())) {
+    if (!opts.openLocally && extractDomain(url) !== extractDomain(window.webContents.getURL()) && extractDomain(url) !== "accounts.google.com" && extractDomain(url) !== "accounts.youtube.com" && extractDomain(url) !== "support.google.com" && extractDomain(url) !== "chat.google.com") {
       require('electron').shell.openExternal(url);
+      e.preventDefault();
+/*
     } else {
       var nested = createWrappedWindow({
         name: opts.name,
@@ -88,6 +90,7 @@ module.exports = function createWrappedWindow(opts) {
       nested.on('closed', function() {
         nested = null;
       });
+*/
     }
   };
 
