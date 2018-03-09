@@ -1,0 +1,9 @@
+{
+  "src": "dist/google-chat-linux-linux-x64",
+  "dest": "dist/installers/",
+  "options": {
+    "icon": "assets/icon/icon.png",
+    "categories": [ "Network" ],
+    "productName": "Google Chat"
+  }
+}
