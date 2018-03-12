@@ -31,7 +31,7 @@ module.exports = function createWrappedWindow(opts) {
   windowOpts['icon'] = iconPath;
   var window = new BrowserWindow(windowOpts);
   window.setMenu(null);
-  window.webContents.openDevTools();
+  //window.webContents.openDevTools();
 
   if (data && data[hash] && data[hash].shouldBeMaximized) {
     window.maximize();
