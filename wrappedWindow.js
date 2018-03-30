@@ -6,6 +6,8 @@ var crypto = require('crypto');
 const electron = require('electron');
 var app = electron.app; // Module to control application life.
 var BrowserWindow = electron.BrowserWindow;  // Module to create native browser window.
+var ipc = electron.ipcMain;
+var shell = electron.shell;
 var localShortcut = require('electron-localshortcut'); // Module to register keyboard shortcuts
 
 const contextMenu = require('electron-context-menu');
@@ -112,5 +114,14 @@ module.exports = function createWrappedWindow(opts) {
     fs.writeFileSync(initPath, JSON.stringify(newData));
   });
 
+  window.webContents.on('dom-ready', () => {
+    const scriptPath = path.join('file://', __dirname, 'node_modules/jquery/dist/jquery.min.js');
+    window.webContents.executeJavaScript('var ipc = require(\'electron\').ipcRenderer; document.addEventListener("click", (evt) => { if (evt.target && evt.target.localName == "a" && evt.target.target == "_blank" && evt.target.href.startsWith("http")) { ipc.send("open-link", evt.target.href); evt.preventDefault(); } }, true);');
+  });
+
   return window;
 };
+
+ipc.on('open-link', (evt, href) => {
+  shell.openExternal(href);
+});
