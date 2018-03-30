@@ -1,18 +1,18 @@
 {
   "name": "google-chat-linux",
-  "version": "0.0.3-1",
+  "version": "0.0.4",
   "description": "Google Hangouts Chat unofficial linux app",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . --icon=assets/icon/icon.png --platform=linux --arch=x64 --electron-version=1.8.3 --overwrite --out dist/",
+    "build": "electron-packager . --icon=assets/icon/icon.png --platform=linux --arch=x64 --electron-version=1.8.4 --overwrite --out dist/",
     "deb64": "electron-installer-debian --config deb-config.json --arch amd64"
   },
   "repository": "TODO",
   "author": "Roberto Fasciolo <rob@robyf.net> (https://www.robyf.net/)",
   "license": "WTFPL",
   "devDependencies": {
-    "electron": "~1.8.3",
+    "electron": "~1.8.4",
     "electron-installer-debian": "^0.8.1",
     "electron-packager": "^11.1.0"
   },
