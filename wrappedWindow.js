@@ -8,7 +8,10 @@ var app = electron.app; // Module to control application life.
 var BrowserWindow = electron.BrowserWindow;  // Module to create native browser window.
 var ipc = electron.ipcMain;
 var shell = electron.shell;
+var Tray = electron.Tray;
 var localShortcut = require('electron-localshortcut'); // Module to register keyboard shortcuts
+
+var appIcon = undefined;
 
 const contextMenu = require('electron-context-menu');
 
@@ -117,6 +120,7 @@ module.exports = function createWrappedWindow(opts) {
   window.webContents.on('dom-ready', () => {
     const scriptPath = path.join('file://', __dirname, 'node_modules/jquery/dist/jquery.min.js');
     window.webContents.executeJavaScript('var ipc = require(\'electron\').ipcRenderer; document.addEventListener("click", (evt) => { if (evt.target && evt.target.localName == "a" && evt.target.target == "_blank" && evt.target.href.startsWith("http")) { ipc.send("open-link", evt.target.href); evt.preventDefault(); } }, true);');
+    window.webContents.executeJavaScript('var fi = document.querySelector("link#favicon256"); ipc.send("favicon-changed", fi.href); var callback = function(mutationList) { ipc.send("favicon-changed", fi.href); }; var observer = new MutationObserver(callback); observer.observe(fi, { attributes: true });');
   });
 
   return window;
@@ -124,4 +128,47 @@ module.exports = function createWrappedWindow(opts) {
 
 ipc.on('open-link', (evt, href) => {
   shell.openExternal(href);
+});
+
+function iconForType(itype) {
+  if (itype == "NORMAL") {
+    return path.join(__dirname, 'assets/icon/chat-favicon-no-new-256dp.png');
+  }
+  if (itype == "UNREAD") {
+    return path.join(__dirname, 'assets/icon/chat-favicon-new-non-notif-256dp.png');
+  }
+  if (itype == "ATTENTION") {
+    return path.join(__dirname, 'assets/icon/chat-favicon-new-notif-256dp.png');
+  }
+  if (itype == "OFFLINE") {
+    return path.join(__dirname, 'assets/icon/chat-favicon-offline-256dp.png');
+  }
+  return null;
+}
+
+ipc.on('favicon-changed', (evt, href) => {
+  console.log("Favicon changed: ", href);
+
+  var itype = "";
+  if (href.match(/chat-favicon-no-new/)) {
+    itype = "NORMAL";
+  }
+  if (href.match(/chat-favicon-new-non-notif/)) {
+    itype = "UNREAD";
+  }
+  if (href.match(/chat-favicon-new-notif/)) {
+    itype = "ATTENTION";
+  }
+  if (href.match(/^data:image\/png;base64,iVBOR.+/)) {
+    itype = "OFFLINE";
+  }
+
+  var icon = iconForType(itype);
+  if (icon != null) {
+    if (appIcon === undefined) {
+      appIcon = new Tray(icon);
+    } else {
+      appIcon.setImage(icon);
+    }
+  }
 });
