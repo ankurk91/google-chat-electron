@@ -2,3 +2,4 @@ node_modules
 .project
 dist
 *.log
+package-lock.json
