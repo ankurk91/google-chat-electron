@@ -8,6 +8,10 @@ var app = electron.app; // Module to control application life.
 var BrowserWindow = electron.BrowserWindow;  // Module to create native browser window.
 var localShortcut = require('electron-localshortcut'); // Module to register keyboard shortcuts
 
+const contextMenu = require('electron-context-menu');
+
+contextMenu({ showInspectElement: false });
+
 module.exports = function createWrappedWindow(opts) {
   // Thanks imskull! (https://github.com/atom/electron/issues/526#issuecomment-132942967)
   // Try to load saved window bounds
