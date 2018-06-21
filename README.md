@@ -11,6 +11,14 @@ Should be fixed in 0.0.2 but not fully tested yet.
 
 ### Installation
 
+#### Debian-based distributions
 You should download the latest .deb file from the [releases](https://github.com/robyf/google-chat-linux/releases) section and install it following the instructions here, for example: https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt
 
 Note that this works only on Debian Linux or derivatives (Ubuntu, Mint, etc).
+
+
+#### Arch Linux
+
+There's an AUR package called google-chat-linux-git. 
+
+ 
