@@ -9,6 +9,7 @@ var BrowserWindow = electron.BrowserWindow;  // Module to create native browser 
 var ipc = electron.ipcMain;
 var shell = electron.shell;
 var Tray = electron.Tray;
+var Menu = electron.Menu;
 var localShortcut = require('electron-localshortcut'); // Module to register keyboard shortcuts
 
 var appIcon = undefined;
@@ -16,6 +17,11 @@ var appIcon = undefined;
 const contextMenu = require('electron-context-menu');
 
 contextMenu({ showInspectElement: false });
+
+const ICON_NO_NEW_MSG = path.join(__dirname, 'assets/icon/chat-favicon-no-new-256dp.png');
+const ICON_NEW_NON_NOTIF_MSG = path.join(__dirname, 'assets/icon/chat-favicon-new-non-notif-256dp.png');
+const ICON_NEW_NOTIF_MSG = path.join(__dirname, 'assets/icon/chat-favicon-new-notif-256dp.png');
+const ICON_OFFLINE_MSG = path.join(__dirname, 'assets/icon/chat-favicon-offline-256dp.png');
 
 module.exports = function createWrappedWindow(opts) {
   // Thanks imskull! (https://github.com/atom/electron/issues/526#issuecomment-132942967)
@@ -123,8 +129,37 @@ module.exports = function createWrappedWindow(opts) {
     window.webContents.executeJavaScript('var fi = document.querySelector("link#favicon256"); ipc.send("favicon-changed", fi.href); var callback = function(mutationList) { ipc.send("favicon-changed", fi.href); }; var observer = new MutationObserver(callback); observer.observe(fi, { attributes: true });');
   });
 
+  appIcon = new Tray(ICON_OFFLINE_MSG);
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: 'Show', click: function () {
+	window.show()
+      }
+    },{
+      label: 'Hide', click: function () {
+	window.minimize()
+      }
+    },{
+      label: 'Quit', click: function () {
+	app.isQuiting = true
+	app.quit()
+      }
+    }
+  ]);
+  appIcon.setContextMenu(contextMenu);
+
+  appIcon.on('click', function(e){
+    if (window.isMinimized()){
+      window.show();
+    }else{
+      window.focus();
+    }
+  });
+
   return window;
 };
+
+
 
 ipc.on('open-link', (evt, href) => {
   shell.openExternal(href);
@@ -132,43 +167,29 @@ ipc.on('open-link', (evt, href) => {
 
 function iconForType(itype) {
   if (itype == "NORMAL") {
-    return path.join(__dirname, 'assets/icon/chat-favicon-no-new-256dp.png');
+    return ICON_NO_NEW_MSG;
+  }else if (itype == "UNREAD") {
+    return ICON_NEW_NON_NOTIF_MSG;
+  }else if (itype == "ATTENTION") {
+    return ICON_NEW_NOTIF_MSG;
   }
-  if (itype == "UNREAD") {
-    return path.join(__dirname, 'assets/icon/chat-favicon-new-non-notif-256dp.png');
-  }
-  if (itype == "ATTENTION") {
-    return path.join(__dirname, 'assets/icon/chat-favicon-new-notif-256dp.png');
-  }
-  if (itype == "OFFLINE") {
-    return path.join(__dirname, 'assets/icon/chat-favicon-offline-256dp.png');
-  }
-  return null;
+  return ICON_OFFLINE_MSG;
 }
 
 ipc.on('favicon-changed', (evt, href) => {
-  console.log("Favicon changed: ", href);
+  /* console.log("Favicon changed: ", href); */
 
   var itype = "";
   if (href.match(/chat-favicon-no-new/)) {
     itype = "NORMAL";
-  }
-  if (href.match(/chat-favicon-new-non-notif/)) {
+  }else if (href.match(/chat-favicon-new-non-notif/)) {
     itype = "UNREAD";
-  }
-  if (href.match(/chat-favicon-new-notif/)) {
+  }else if (href.match(/chat-favicon-new-notif/)) {
     itype = "ATTENTION";
-  }
-  if (href.match(/^data:image\/png;base64,iVBOR.+/)) {
+  }else if (href.match(/^data:image\/png;base64,iVBOR.+/)) {
     itype = "OFFLINE";
   }
 
-  var icon = iconForType(itype);
-  if (icon != null) {
-    if (appIcon === undefined) {
-      appIcon = new Tray(icon);
-    } else {
-      appIcon.setImage(icon);
-    }
-  }
+  appIcon.setImage(iconForType(itype));
+
 });
