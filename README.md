@@ -1,5 +1,8 @@
 # google-chat-linux
 
+**Note**: I decide to move to another company that doesn't use Google Hangouts Chat. So I cannot go on maintaining this
+project as I will not be able to test changes anymore. Hopefully someone will adopt this and keep developing it!
+
 An unofficial desktop client for Google Hangouts Chat. Created because Google didn't release one
 for Linux even if the official one is just an Electron app.
 
