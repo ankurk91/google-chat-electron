@@ -22,6 +22,7 @@ const ICON_NO_NEW_MSG = path.join(__dirname, 'assets/icon/chat-favicon-no-new-25
 const ICON_NEW_NON_NOTIF_MSG = path.join(__dirname, 'assets/icon/chat-favicon-new-non-notif-256dp.png');
 const ICON_NEW_NOTIF_MSG = path.join(__dirname, 'assets/icon/chat-favicon-new-notif-256dp.png');
 const ICON_OFFLINE_MSG = path.join(__dirname, 'assets/icon/chat-favicon-offline-256dp.png');
+const HELPER_JS = path.join(__dirname, 'assets/js/helper.js');
 
 module.exports = function createWrappedWindow(opts) {
   // Thanks imskull! (https://github.com/atom/electron/issues/526#issuecomment-132942967)
@@ -124,9 +125,9 @@ module.exports = function createWrappedWindow(opts) {
   });
 
   window.webContents.on('dom-ready', () => {
-    const scriptPath = path.join('file://', __dirname, 'node_modules/jquery/dist/jquery.min.js');
-    window.webContents.executeJavaScript('var ipc = require(\'electron\').ipcRenderer; document.addEventListener("click", (evt) => { if (evt.target && evt.target.localName == "a" && evt.target.target == "_blank" && evt.target.href.startsWith("http")) { ipc.send("open-link", evt.target.href); evt.preventDefault(); } }, true);');
-    window.webContents.executeJavaScript('var fi = document.querySelector("link#favicon256"); ipc.send("favicon-changed", fi.href); var callback = function(mutationList) { ipc.send("favicon-changed", fi.href); }; var observer = new MutationObserver(callback); observer.observe(fi, { attributes: true });');
+    const js = fs.readFileSync(HELPER_JS, 'utf8')
+    // const scriptPath = path.join('file://', __dirname, 'node_modules/jquery/dist/jquery.min.js');
+    window.webContents.executeJavaScript(js);
   });
 
   appIcon = new Tray(ICON_OFFLINE_MSG);
