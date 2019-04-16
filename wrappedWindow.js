@@ -161,10 +161,12 @@ module.exports = function createWrappedWindow(opts) {
   return window;
 };
 
-
-
 ipc.on('open-link', (evt, href) => {
   shell.openExternal(href);
+});
+
+ipc.on('show', (evt, href) => {
+  window.show();
 });
 
 function iconForType(itype) {
