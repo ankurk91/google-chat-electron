@@ -37,7 +37,7 @@ module.exports = function createWrappedWindow(opts) {
   sha.update(opts.name);
   var hash = sha.digest('hex');
 
-  const iconPath = path.join(__dirname, 'assets/icon/icon.png');
+  const iconPath = path.join(__dirname, 'assets/icon/chat-favicon-no-new-256dp.png');
 
   // Create the browser window.
   var windowOpts = (data && data[hash] && data[hash].bounds) ? data[hash].bounds : { width: 800, height: 600 };
