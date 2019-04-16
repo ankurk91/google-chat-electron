@@ -185,8 +185,10 @@ ipc.on('favicon-changed', (evt, href) => {
     itype = "NORMAL";
   } else if (href.match(/chat-favicon-new-non-notif/)) {
     itype = "UNREAD";
+    window.webContents.executeJavaScript('newMessage()');
   } else if (href.match(/chat-favicon-new-notif/)) {
     itype = "ATTENTION";
+    window.webContents.executeJavaScript('newMessage()');
   } else if (href.match(/^data:image\/png;base64,iVBOR.+/)) {
     itype = "OFFLINE";
   }
