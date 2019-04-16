@@ -31,7 +31,7 @@ module.exports = function createWrappedWindow(opts) {
   try {
     data = JSON.parse(fs.readFileSync(initPath, 'utf8'));
   }
-  catch(e) { }
+  catch (e) { }
 
   var sha = crypto.createHash('sha256');
   sha.update(opts.name);
@@ -91,21 +91,21 @@ module.exports = function createWrappedWindow(opts) {
 
     return domain;
   }
-  var handleRedirect = function(e, url) {
+  var handleRedirect = function (e, url) {
     if (!opts.openLocally && extractDomain(url) !== extractDomain(window.webContents.getURL()) && extractDomain(url) !== "accounts.google.com" && extractDomain(url) !== "accounts.youtube.com" && extractDomain(url) !== "support.google.com" && extractDomain(url) !== "chat.google.com") {
       require('electron').shell.openExternal(url);
       e.preventDefault();
-/*
-    } else {
-      var nested = createWrappedWindow({
-        name: opts.name,
-        url: url,
-        openLocally: opts.openLocally
-      });
-      nested.on('closed', function() {
-        nested = null;
-      });
-*/
+      /*
+          } else {
+            var nested = createWrappedWindow({
+              name: opts.name,
+              url: url,
+              openLocally: opts.openLocally
+            });
+            nested.on('closed', function() {
+              nested = null;
+            });
+      */
     }
   };
 
@@ -113,7 +113,7 @@ module.exports = function createWrappedWindow(opts) {
   window.webContents.on('new-window', handleRedirect);
 
   // Save the window bounds on close
-  window.on('close', function() {
+  window.on('close', function () {
     var maximized = window.isMaximized();
     var newData = data || {};
     newData[hash] = { bounds: window.getBounds() };
@@ -133,25 +133,25 @@ module.exports = function createWrappedWindow(opts) {
   const contextMenu = Menu.buildFromTemplate([
     {
       label: 'Show', click: function () {
-	window.show()
+        window.show()
       }
-    },{
+    }, {
       label: 'Hide', click: function () {
-	window.minimize()
+        window.minimize()
       }
-    },{
+    }, {
       label: 'Quit', click: function () {
-	app.isQuiting = true
-	app.quit()
+        app.isQuiting = true
+        app.quit()
       }
     }
   ]);
   appIcon.setContextMenu(contextMenu);
 
-  appIcon.on('click', function(e){
-    if (window.isMinimized()){
+  appIcon.on('click', function (e) {
+    if (window.isMinimized()) {
       window.show();
-    }else{
+    } else {
       window.focus();
     }
   });
@@ -168,9 +168,9 @@ ipc.on('open-link', (evt, href) => {
 function iconForType(itype) {
   if (itype == "NORMAL") {
     return ICON_NO_NEW_MSG;
-  }else if (itype == "UNREAD") {
+  } else if (itype == "UNREAD") {
     return ICON_NEW_NON_NOTIF_MSG;
-  }else if (itype == "ATTENTION") {
+  } else if (itype == "ATTENTION") {
     return ICON_NEW_NOTIF_MSG;
   }
   return ICON_OFFLINE_MSG;
@@ -182,11 +182,11 @@ ipc.on('favicon-changed', (evt, href) => {
   var itype = "";
   if (href.match(/chat-favicon-no-new/)) {
     itype = "NORMAL";
-  }else if (href.match(/chat-favicon-new-non-notif/)) {
+  } else if (href.match(/chat-favicon-new-non-notif/)) {
     itype = "UNREAD";
-  }else if (href.match(/chat-favicon-new-notif/)) {
+  } else if (href.match(/chat-favicon-new-notif/)) {
     itype = "ATTENTION";
-  }else if (href.match(/^data:image\/png;base64,iVBOR.+/)) {
+  } else if (href.match(/^data:image\/png;base64,iVBOR.+/)) {
     itype = "OFFLINE";
   }
 
