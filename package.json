@@ -12,9 +12,9 @@
   "author": "Roberto Fasciolo <rob@robyf.net> (https://www.robyf.net/)",
   "license": "WTFPL",
   "devDependencies": {
-    "electron": "~1.8.4",
+    "electron": "^4.0.1",
     "electron-installer-debian": "^0.8.1",
-    "electron-packager": "^11.1.0"
+    "electron-packager": "^12.1.0"
   },
   "dependencies": {
     "electron-context-menu": "^0.9.1",
