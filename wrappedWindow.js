@@ -13,6 +13,7 @@ var Menu = electron.Menu;
 var localShortcut = require('electron-localshortcut'); // Module to register keyboard shortcuts
 
 var appIcon = undefined;
+var window;
 
 const contextMenu = require('electron-context-menu');
 
@@ -45,7 +46,7 @@ module.exports = function createWrappedWindow(opts) {
   windowOpts['auto-hide-menu-bar'] = true;
   windowOpts['web-preferences'] = { 'node-integration': false };
   windowOpts['icon'] = iconPath;
-  var window = new BrowserWindow(windowOpts);
+  window = new BrowserWindow(windowOpts);
   window.setMenu(null);
   //window.webContents.openDevTools();
 
