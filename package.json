@@ -1,11 +1,11 @@
 {
   "name": "google-chat-linux",
-  "version": "0.0.4-2",
+  "version": "0.0.4-3",
   "description": "Google Hangouts Chat unofficial linux app",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . --icon=assets/icon/icon.png --platform=linux --arch=x64 --electron-version=1.8.4 --overwrite --out dist/",
+    "build": "electron-packager . --icon=assets/icon/icon.png --platform=linux --arch=x64 --electron-version=5.0.0 --overwrite --out dist/",
     "deb64": "electron-installer-debian --config deb-config.json --arch amd64",
     "rpm64": "electron-installer-redhat --config rpm-config.json --arch x86_64"
   },
