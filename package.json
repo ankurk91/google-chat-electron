@@ -13,7 +13,7 @@
   "license": "WTFPL",
   "devDependencies": {
     "electron": "^4.0.1",
-    "electron-installer-debian": "^0.8.1",
+    "electron-installer-debian": "^1.1.1",
     "electron-packager": "^12.1.0"
   },
   "dependencies": {
