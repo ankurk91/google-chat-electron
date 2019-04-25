@@ -13,10 +13,10 @@
   "author": "Roberto Fasciolo <rob@robyf.net> (https://www.robyf.net/)",
   "license": "WTFPL",
   "devDependencies": {
-    "electron": "^4.0.1",
+    "electron": "^5.0.0",
     "electron-installer-debian": "^1.1.1",
-    "electron-installer-redhat": "^0.5.0",
-    "electron-packager": "^12.1.0"
+    "electron-installer-redhat": "^1.0.1",
+    "electron-packager": "^13.1.1"
   },
   "dependencies": {
     "electron-context-menu": "^0.9.1",
