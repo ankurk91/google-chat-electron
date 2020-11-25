@@ -1,5 +1,52 @@
-node_modules
+# http://git-scm.com/docs/gitignore
+
+# various IDEs
+.idea/
 .project
-dist
+*.sublime-*
+.vscode/
+
+# logs and cache
 *.log
+npm-debug.log*
+error_log
+.sass-cache
+.cache
+.php_cs.cache
+
+# OS generated files
+[Tt]humbs.db
+ehthumbs.db
+*~
+.*~
+._*
+*.bak
+*.sw[a-p]
+
+# Recycle bin folder used by different os
+.Trash-*
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+
+# Folder config file
+[Dd]esktop.ini
+.DS_Store
+*.DS_Store
+.Spotlight-V100
+
+# node packages
+node_modules/
+
+# Security tokens
+*.pem
+*.pub
+*.crt
+*.key
+
+# Force yarn usage
 package-lock.json
+
+# This project
+/dist/

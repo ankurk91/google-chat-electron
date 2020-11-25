@@ -1,27 +1,27 @@
-# google-chat-linux
+# Google Chat Electron Linux App
 
-**Note**: I decide to move to another company that doesn't use Google Hangouts Chat. So I cannot go on maintaining this
-project as I will not be able to test changes anymore. Hopefully someone will adopt this and keep developing it!
+[![build](https://github.com/ankurk91/google-chat-electron-linux/workflows/build/badge.svg)](https://github.com/ankurk91/google-chat-electorn-linux/actions)
 
-An unofficial desktop client for Google Hangouts Chat. Created because Google didn't release one
-for Linux even if the official one is just an Electron app.
-
-### Known issues
-
-Logging in spans multiple windows and eventually opens up the chat to the default browser. After that
-this app works fine.
-Should be fixed in 0.0.2 but not fully tested yet.
+An unofficial desktop client for Google Chat. 
 
 ### Installation
+You can download the latest `.deb` file from the [releases](https://github.com/ankurk91/google-chat-electron-linux/releases) section and install it via command.
+```
+sudo dpkg -i path/to/installer-file.deb
+sudo install -f 
+```
 
-#### Debian-based distributions
-You should download the latest .deb file from the [releases](https://github.com/robyf/google-chat-linux/releases) section and install it following the instructions here, for example: https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt
+Notice: This should work on Debian Linux or derivatives (Ubuntu, Mint, elementary etc).
 
-Note that this works only on Debian Linux or derivatives (Ubuntu, Mint, etc).
+### Todos
+* [ ] Save and restore window size via [electron-settings](https://github.com/nathanbuchar/electron-settings)
+* [ ] Create automated release via [gh-actions](https://github.com/actions/create-release) 
+* [ ] App updates
+* [ ] Unread message badge
 
+### Acknowledgements
+* [@robyf](https://github.com/robyf) for the initial work
+* [@mwpeterson](https://github.com/mwpeterson) for the enhancements
 
-#### Arch Linux
-
-There's an AUR package called google-chat-linux-git. 
-
- 
+## License
+[MIT](LICENSE.txt) License

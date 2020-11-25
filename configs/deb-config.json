@@ -1,0 +1,19 @@
+{
+  "src": "dist/google-chat-electron-linux-x64",
+  "dest": "dist/installers/",
+  "options": {
+    "icon": {
+      "16x16": "resources/icons/16.png",
+      "48x48": "resources/icons/48.png",
+      "64x64": "resources/icons/64.png",
+      "128x128": "resources/icons/128.png",
+      "256x256": "resources/icons/256.png",
+      "scalable": "resources/icons/scalable.svg"
+    },
+    "categories": [
+      "Network",
+      "Communication"
+    ],
+    "productName": "Google Chat"
+  }
+}

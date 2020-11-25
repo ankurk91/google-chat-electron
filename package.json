@@ -1,25 +1,25 @@
 {
-  "name": "google-chat-linux",
-  "version": "0.0.4-3",
-  "description": "Google Hangouts Chat unofficial linux app",
-  "main": "main.js",
+  "name": "google-chat-electron",
+  "version": "1.0.0",
+  "description": "Google Chat unofficial Linux  app",
+  "main": "src/js/index.js",
+  "private": true,
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . --icon=assets/icon/icon.png --platform=linux --arch=x64 --electron-version=5.0.0 --overwrite --out dist/",
-    "deb64": "electron-installer-debian --config deb-config.json --arch amd64",
-    "rpm64": "electron-installer-redhat --config rpm-config.json --arch x86_64"
+    "build": "electron-packager . --icon=assets/icon/icon.png --platform=linux --arch=x64 --overwrite --out dist/",
+    "pack:deb": "electron-installer-debian --config configs/deb-config.json --arch amd64"
   },
-  "repository": "TODO",
-  "author": "Roberto Fasciolo <rob@robyf.net> (https://www.robyf.net/)",
-  "license": "WTFPL",
+  "repository": "https://github.com/ankurk91/google-chat-electron-linux",
+  "homepage": "https://github.com/ankurk91/google-chat-electron-linux",
+  "author": "ankurk91",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^5.0.0",
-    "electron-installer-debian": "^1.1.1",
-    "electron-installer-redhat": "^1.0.1",
-    "electron-packager": "^13.1.1"
+    "electron": "^11.0.3",
+    "electron-installer-debian": "^3.1.0",
+    "electron-packager": "^15.0.0"
   },
-  "dependencies": {
-    "electron-context-menu": "^0.9.1",
-    "electron-localshortcut": "^3.1.0"
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.15.0"
   }
 }
