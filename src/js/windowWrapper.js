@@ -47,15 +47,8 @@ module.exports = (url) => {
       }
     }
   ]);
+  trayIcon.setToolTip('Google Chat')
   trayIcon.setContextMenu(contextMenu);
-
-  trayIcon.on('click', (e) => {
-    if (window.isMinimized()) {
-      window.show();
-    } else {
-      window.focus();
-    }
-  });
 
   // Open EXTERNAL links in the OS default browser instead
   window.webContents.on('will-navigate', handleRedirect);

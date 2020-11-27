@@ -14,10 +14,11 @@ sudo install -f
 Notice: This should work on Debian Linux or derivatives (Ubuntu, Mint, elementary etc).
 
 ### Todos
+* [x] Create automated release via [gh-actions](https://github.com/actions/create-release) 
 * [ ] Save and restore window size via [electron-settings](https://github.com/nathanbuchar/electron-settings)
-* [ ] Create automated release via [gh-actions](https://github.com/actions/create-release) 
-* [ ] App updates
 * [ ] Unread message badge
+* [ ] Logout from app
+* [ ] App updates
 
 ### Acknowledgements
 * [@robyf](https://github.com/robyf) for the initial work

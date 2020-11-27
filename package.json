@@ -1,13 +1,14 @@
 {
   "name": "google-chat-electron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Google Chat unofficial Linux  app",
   "main": "src/js/index.js",
   "private": true,
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . --icon=assets/icon/icon.png --platform=linux --arch=x64 --overwrite --out dist/",
-    "pack:deb": "electron-installer-debian --config configs/deb-config.json --arch amd64"
+    "clean": "rm -rf ./dist",
+    "build": "electron-packager . --icon=resources/icons/256.png --platform=linux --arch=x64 --overwrite --out dist/",
+    "pack:deb": "electron-installer-debian --config configs/deb-config.json --arch x64"
   },
   "repository": "https://github.com/ankurk91/google-chat-electron-linux",
   "homepage": "https://github.com/ankurk91/google-chat-electron-linux",

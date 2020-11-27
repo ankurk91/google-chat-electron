@@ -30,6 +30,7 @@ app.on('second-instance', () => {
   }
 })
 
+//todo load them from package.json
 app.setAboutPanelOptions({
   applicationName: 'Google Chat Linux',
   version: app.getVersion(),

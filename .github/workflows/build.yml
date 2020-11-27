@@ -10,10 +10,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -21,17 +17,15 @@ jobs:
       - name: Build and pack
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
 
       - run: yarn install --non-interactive --frozen-lockfile
       - run: yarn run build
       - run: yarn run pack:deb
-      - run: mv ./dist/installers/*.deb ./dist/installers/google-chat-electron.deb
 
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -40,16 +34,11 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Upload Release Binaries
+        uses: alexellis/upload-assets@0.2.3
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/installers/google-chat-electron.deb
-          asset_name: google-chat-electron.deb
-          asset_content_type: application/zip
+          asset_paths: '["./dist/installers/*.*"]'
 
 
