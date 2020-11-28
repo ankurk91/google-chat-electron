@@ -1,4 +1,4 @@
-name: build
+name: release
 
 on:
   push:
@@ -31,4 +31,3 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
-

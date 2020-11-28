@@ -30,12 +30,13 @@ app.on('second-instance', () => {
   }
 })
 
-//todo load them from package.json
+const packageJson = require(path.join('../../package.json'));
+
 app.setAboutPanelOptions({
-  applicationName: 'Google Chat Linux',
+  applicationName: app.getName(),
   version: app.getVersion(),
-  authors: ['ankurk91'],
-  website: 'https://github.com/ankurk91/google-chat-electron-linux',
+  authors: [packageJson.author],
+  website: packageJson.homepage,
   iconPath: path.join(__dirname, '../../resources/icons/64.png')
 });
 

@@ -2,6 +2,7 @@
   "src": "dist/google-chat-electron-linux-x64",
   "dest": "dist/installers/",
   "options": {
+    "productName": "Google Chat",
     "icon": {
       "16x16": "resources/icons/16.png",
       "48x48": "resources/icons/48.png",
@@ -14,6 +15,9 @@
       "Network",
       "Communication"
     ],
-    "productName": "Google Chat"
+    "depends": [
+      "libnotify4",
+      "libappindicator1"
+    ]
   }
 }

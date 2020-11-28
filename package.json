@@ -8,7 +8,7 @@
     "start": "electron .",
     "clean": "rm -rf ./dist",
     "build": "electron-packager . --icon=resources/icons/256.png --platform=linux --arch=x64 --overwrite --out dist/",
-    "pack:deb": "electron-installer-debian --config configs/deb-config.json --arch x64"
+    "pack:deb": "electron-installer-debian --config configs/deb-config.json --arch amd64"
   },
   "repository": "https://github.com/ankurk91/google-chat-electron-linux",
   "homepage": "https://github.com/ankurk91/google-chat-electron-linux",
