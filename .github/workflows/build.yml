@@ -23,22 +23,12 @@ jobs:
       - run: yarn run build
       - run: yarn run pack:deb
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-
-      - name: Upload Release Binaries
-        uses: alexellis/upload-assets@0.2.3
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          asset_paths: '["./dist/installers/*.*"]'
-
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: './dist/installers/*.*'
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
 
