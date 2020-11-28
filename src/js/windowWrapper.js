@@ -4,6 +4,9 @@ const path = require('path');
 const electron = require('electron');
 const app = electron.app;
 
+const electronStore = require('electron-store');
+const store = new electronStore();
+
 // Garbage collection hack
 let trayIcon = undefined;
 let window;
@@ -14,8 +17,21 @@ module.exports = (url) => {
     webPreferences: {
       contextIsolation: true,
     },
-    icon: path.join(__dirname, '../../resources/icons/256.png')
+    icon: path.join(__dirname, '../../resources/icons/256.png'),
+    show: false
   });
+
+  if (store.has('window.bounds')) {
+    window.setBounds(store.get('window.bounds'))
+  }
+
+  window.once('ready-to-show', () => {
+    window.show()
+  })
+
+  if (store.get('window.isMaximised')) {
+    window.maximize()
+  }
 
   window.loadURL(url);
 
@@ -53,6 +69,13 @@ module.exports = (url) => {
   // Open EXTERNAL links in the OS default browser instead
   window.webContents.on('will-navigate', handleRedirect);
   window.webContents.on('new-window', handleRedirect);
+
+  window.on('close', () => {
+    store.set('window', {
+      bounds: window.getBounds(),
+      isMaximized: window.isMaximized()
+    })
+  });
 
   return window;
 };

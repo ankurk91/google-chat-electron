@@ -18,7 +18,7 @@ Notice: This should work on Debian Linux or derivatives (Ubuntu, Mint, elementar
 
 ### Todos
 * [x] Create automated release via Github actions
-* [ ] Save and restore window size 
+* [x] Save and restore window size 
 * [ ] Unread message count badge
 * [ ] Logout from app
 * [ ] App updates

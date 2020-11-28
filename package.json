@@ -19,7 +19,9 @@
     "electron-installer-debian": "^3.1.0",
     "electron-packager": "^15.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "electron-store": "^6.0.1"
+  },
   "engines": {
     "node": ">=14.15.0"
   }
