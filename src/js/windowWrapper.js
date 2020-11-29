@@ -17,6 +17,7 @@ module.exports = (url) => {
     autoHideMenuBar: true,
     webPreferences: {
       contextIsolation: true,
+      spellcheck: true
     },
     icon: path.join(app.getAppPath(), 'resources/icons/256.png'),
     show: false
