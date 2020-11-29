@@ -14,14 +14,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build and pack
+      - name: Setup node.js
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
 
       - run: yarn install --non-interactive --frozen-lockfile
       - run: yarn run build
-      - run: yarn run pack:deb
+      - run: yarn run dist:deb
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2

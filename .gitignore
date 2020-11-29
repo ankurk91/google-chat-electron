@@ -50,3 +50,4 @@ package-lock.json
 
 # This project
 /dist/
+/*.deb
