@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "electron-context-menu": "^2.3.0",
-    "electron-store": "^6.0.1"
+    "electron-store": "^6.0.1",
+    "electron-unhandled": "^3.0.2",
+    "electron-util": "^0.14.2"
   },
   "engines": {
     "node": ">=14.15.0"

@@ -24,7 +24,7 @@ module.exports = (url) => {
   });
 
   window.once('ready-to-show', () => {
-    window.show()
+    window.show();
   });
 
   window.loadURL(url);

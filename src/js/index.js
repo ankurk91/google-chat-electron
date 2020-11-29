@@ -2,6 +2,7 @@
 
 const electron = require('electron');
 const app = electron.app;
+const reportExceptions = require('./features/reportExceptions.js');
 const windowWrapper = require('./windowWrapper.js');
 const aboutPanel = require('./features/about.js');
 const enforceSingleInstance = require('./features/singleInstance.js');
@@ -11,7 +12,9 @@ const enableContextMenu = require('./features/contextmenu.js');
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow = null;
 
+// Features
 enforceSingleInstance(app, mainWindow);
+reportExceptions(app);
 aboutPanel(app);
 enableContextMenu();
 
