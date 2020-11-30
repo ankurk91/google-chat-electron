@@ -3,6 +3,7 @@ module.exports = (app, mainWindow) => {
   const gotTheLock = app.requestSingleInstanceLock();
 
   if (!gotTheLock) {
+    console.log('Quit from second instance')
     app.quit();
     return;
   }

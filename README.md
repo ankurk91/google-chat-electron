@@ -25,7 +25,6 @@ sudo apt-get remove --purge google-chat-electron
 * [x] Create automated release via Github actions
 * [x] Save and restore window size 
 * [ ] Unread message count badge
-* [ ] Logout from app
 * [ ] App updates notification
 * [ ] Run at OS startup
 

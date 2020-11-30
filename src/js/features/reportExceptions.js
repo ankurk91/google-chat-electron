@@ -6,7 +6,6 @@ module.exports = (app) => {
   const packageJson = require(path.join(app.getAppPath(), 'package.json'));
 
   return unhandled({
-    showDialog: true,
     reportButton: error => {
       openNewGitHubIssue({
         repoUrl: packageJson.repository,

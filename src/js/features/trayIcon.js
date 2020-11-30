@@ -20,12 +20,6 @@ module.exports = (app, window) => {
       type: 'separator'
     },
     {
-      label: 'About',
-      click: () => {
-        app.showAboutPanel()
-      }
-    },
-    {
       label: 'Quit',
       click: () => {
         app.isQuiting = true
