@@ -7,6 +7,7 @@ const app = electron.app;
 const TrayIcon = require('./features/trayIcon.js');
 const WindowState = require('./features/windowState.js');
 const ExternalLinks = require('./features/externalLinks.js');
+const BadgeIcons = require('./features/badgeIcon.js');
 
 // Garbage collection hack
 let trayIcon = null;
@@ -17,9 +18,10 @@ module.exports = (url) => {
     autoHideMenuBar: true,
     webPreferences: {
       contextIsolation: true,
-      spellcheck: true
+      spellcheck: true,
+      preload: path.join(app.getAppPath(), 'src/js/renderer.js'),
     },
-    icon: path.join(app.getAppPath(), 'resources/icons/256.png'),
+    icon: path.join(app.getAppPath(), 'resources/icons/normal/256.png'),
     show: false
   });
 
@@ -31,6 +33,7 @@ module.exports = (url) => {
 
   WindowState(window);
   trayIcon = TrayIcon(app, window);
+  BadgeIcons(app, window, trayIcon);
 
   ExternalLinks(window);
   return window;
