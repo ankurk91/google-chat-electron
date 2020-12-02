@@ -13,7 +13,7 @@ module.exports = (app, window) => {
     {
       label: 'Hide',
       click: () => {
-        window.minimize()
+        window.hide()
       }
     },
     {

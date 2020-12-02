@@ -8,6 +8,7 @@ const TrayIcon = require('./features/trayIcon.js');
 const WindowState = require('./features/windowState.js');
 const ExternalLinks = require('./features/externalLinks.js');
 const BadgeIcons = require('./features/badgeIcon.js');
+const CloseToTray = require('./features/closeToTray.js');
 
 // Garbage collection hack
 let trayIcon = null;
@@ -34,7 +35,8 @@ module.exports = (url) => {
   WindowState(window);
   trayIcon = TrayIcon(app, window);
   BadgeIcons(app, window, trayIcon);
-
+  CloseToTray(app, window);
   ExternalLinks(window);
+
   return window;
 };
