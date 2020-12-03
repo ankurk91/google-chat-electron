@@ -10,7 +10,7 @@ module.exports = (window) => {
     window.maximize()
   }
 
-  window.once('close', () => {
+  window.on('close', () => {
     store.set('window', {
       bounds: window.getBounds(),
       isMaximized: window.isMaximized()

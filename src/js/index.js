@@ -13,7 +13,7 @@ const openAtLogin = require('./features/openAtLogin.js');
 let mainWindow = null;
 
 // Features
-enforceSingleInstance(app, mainWindow);
+enforceSingleInstance(app);
 reportExceptions(app);
 enableContextMenu();
 

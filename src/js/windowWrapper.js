@@ -12,7 +12,7 @@ const CloseToTray = require('./features/closeToTray.js');
 
 // Garbage collection hack
 let trayIcon = null;
-let window;
+let window = null;
 
 module.exports = (url) => {
   window = new electron.BrowserWindow({
@@ -23,7 +23,11 @@ module.exports = (url) => {
       preload: path.join(app.getAppPath(), 'src/js/renderer.js'),
     },
     icon: path.join(app.getAppPath(), 'resources/icons/normal/256.png'),
-    show: false
+    show: false,
+    minHeight: 570,
+    minWidth: 400,
+    title: app.getName(),
+    backgroundColor: '#ffffff',
   });
 
   window.once('ready-to-show', () => {

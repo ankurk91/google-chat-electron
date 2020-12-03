@@ -11,7 +11,9 @@ module.exports = (window) => {
     ];
 
     if (!whiteListDomains.includes(extractHostname(url))) {
-      electron.shell.openExternal(url);
+      setImmediate(() => {
+        electron.shell.openExternal(url);
+      })
       event.preventDefault();
     }
   };
