@@ -3,12 +3,12 @@
 [![gh-actions](https://github.com/ankurk91/google-chat-electron-linux/workflows/release/badge.svg)](https://github.com/ankurk91/google-chat-electron-linux/actions)
 [![license](https://badgen.net/github/license/ankurk91/google-chat-electron-linux)](https://github.com/ankurk91/google-chat-electron-linux)
 [![latest-release](https://badgen.net/github/release/ankurk91/google-chat-electron-linux)](https://github.com/ankurk91/google-chat-electron-linux/tags)
-[![downloads](https://badgen.net/github/assets-dl/ankurk91/google-chat-electron-linux)](https://github.com/ankurk91/google-chat-electron-linux/releases)
+[![downloads](https://img.shields.io/github/downloads/ankurk91/google-chat-electron-linux/total?style=flat)](https://github.com/ankurk91/google-chat-electron-linux/releases)
 
 An unofficial desktop client for [Google Chat](https://chat.google.com/) build with [Electron](https://www.electronjs.org/).
 
 ### Installation
-* Download the latest `.deb` file from the [releases](https://github.com/ankurk91/google-chat-electron-linux/releases) section.
+* Download the latest `.deb` file from the [releases](https://github.com/ankurk91/google-chat-electron-linux/releases/latest) section.
 * Install the package with this command:
 ```
 sudo apt install ~/path/to/google-chat-electron-xxx.deb
