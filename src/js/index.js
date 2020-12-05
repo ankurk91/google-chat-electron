@@ -19,8 +19,8 @@ let mainWindow = null;
 let trayIcon = null;
 
 // Features
-reportExceptions(app);
-if (!enforceSingleInstance(app)) {
+reportExceptions();
+if (!enforceSingleInstance()) {
   return;
 }
 
@@ -28,16 +28,21 @@ app.whenReady()
   .then(() => {
     mainWindow = windowWrapper('https://chat.google.com/');
 
-    trayIcon = setupTrayIcon(app, mainWindow);
-    restoreFirstInstance(app, mainWindow);
+    trayIcon = setupTrayIcon(mainWindow);
+    restoreFirstInstance(mainWindow);
     keepWindowState(mainWindow);
-    runAtLogin(app, mainWindow);
+    runAtLogin(mainWindow);
     updateNotifier();
     enableContextMenu();
-    badgeIcons(app, mainWindow, trayIcon);
-    closeToTray(app, mainWindow);
+    badgeIcons(mainWindow, trayIcon);
+    closeToTray(mainWindow);
     externalLinks(mainWindow);
   })
   .catch((error) => {
     console.error(error)
   });
+
+app.on('window-all-closed', () => {
+  app.isQuiting = true;
+  app.quit();
+})

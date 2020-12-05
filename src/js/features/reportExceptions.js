@@ -1,8 +1,9 @@
 const unhandled = require('electron-unhandled');
 const {openNewGitHubIssue, debugInfo} = require('electron-util');
 const path = require('path');
+const {app} = require('electron');
 
-module.exports = (app) => {
+module.exports = () => {
   const packageJson = require(path.join(app.getAppPath(), 'package.json'));
 
   return unhandled({

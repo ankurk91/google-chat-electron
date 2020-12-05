@@ -1,6 +1,7 @@
 const AutoLaunch = require('auto-launch');
+const {app} = require('electron');
 
-module.exports = (app, window) => {
+module.exports = (window) => {
   if (!app.isPackaged) return;
 
   let autoLaunch = new AutoLaunch({

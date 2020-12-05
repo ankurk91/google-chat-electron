@@ -1,10 +1,10 @@
 const path = require('path');
-const electron = require('electron');
+const {app, Tray, Menu} = require('electron');
 
-module.exports = (app, window) => {
-  const trayIcon = new electron.Tray(path.join(app.getAppPath(), 'resources/icons/normal/48.png'));
+module.exports = (window) => {
+  const trayIcon = new Tray(path.join(app.getAppPath(), 'resources/icons/normal/48.png'));
 
-  trayIcon.setContextMenu(electron.Menu.buildFromTemplate([
+  trayIcon.setContextMenu(Menu.buildFromTemplate([
     {
       label: 'Show/Hide',
       click: () => {

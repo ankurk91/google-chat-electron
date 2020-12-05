@@ -1,7 +1,7 @@
-const {ipcMain} = require('electron');
+const {ipcMain, app} = require('electron');
 const path = require('path');
 
-module.exports = (app, window, trayIcon) => {
+module.exports = (window, trayIcon) => {
 
   ipcMain.on('favicon-changed', (evt, href) => {
     const type = decideIcon(href);

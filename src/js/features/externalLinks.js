@@ -1,4 +1,4 @@
-const electron = require('electron');
+const {shell} = require('electron');
 
 module.exports = (window) => {
   const handleRedirect = (event, url) => {
@@ -12,7 +12,7 @@ module.exports = (window) => {
 
     if (!whiteListDomains.includes(extractHostname(url))) {
       setImmediate(() => {
-        electron.shell.openExternal(url);
+        shell.openExternal(url);
       })
       event.preventDefault();
     }

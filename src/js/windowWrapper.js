@@ -1,15 +1,12 @@
 'use strict';
 
 const path = require('path');
-const electron = require('electron');
-const app = electron.app;
+const {app, BrowserWindow} = require('electron');
 
 module.exports = (url) => {
-  const window = new electron.BrowserWindow({
-    autoHideMenuBar: true,
+  const window = new BrowserWindow({
     webPreferences: {
       contextIsolation: true,
-      spellcheck: true,
       preload: path.join(app.getAppPath(), 'src/js/renderer.js'),
     },
     icon: path.join(app.getAppPath(), 'resources/icons/normal/256.png'),
