@@ -9,7 +9,7 @@ module.exports = (app, window) => {
       label: 'Show/Hide',
       click: () => {
         if (window.isVisible()) {
-          window.hide()
+          window.minimize()
         } else {
           window.show()
         }
