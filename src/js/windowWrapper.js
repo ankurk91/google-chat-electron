@@ -4,18 +4,8 @@ const path = require('path');
 const electron = require('electron');
 const app = electron.app;
 
-const TrayIcon = require('./features/trayIcon.js');
-const WindowState = require('./features/windowState.js');
-const ExternalLinks = require('./features/externalLinks.js');
-const BadgeIcons = require('./features/badgeIcon.js');
-const CloseToTray = require('./features/closeToTray.js');
-
-// Garbage collection hack
-let trayIcon = null;
-let window = null;
-
 module.exports = (url) => {
-  window = new electron.BrowserWindow({
+  const window = new electron.BrowserWindow({
     autoHideMenuBar: true,
     webPreferences: {
       contextIsolation: true,
@@ -26,6 +16,7 @@ module.exports = (url) => {
     show: false,
     minHeight: 570,
     minWidth: 400,
+    center: true,
     title: app.getName(),
     backgroundColor: '#ffffff',
   });
@@ -35,12 +26,6 @@ module.exports = (url) => {
   });
 
   window.loadURL(url);
-
-  WindowState(window);
-  trayIcon = TrayIcon(app, window);
-  BadgeIcons(app, window, trayIcon);
-  CloseToTray(app, window);
-  ExternalLinks(window);
 
   return window;
 };

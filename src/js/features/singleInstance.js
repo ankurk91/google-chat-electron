@@ -6,6 +6,8 @@ module.exports.enforceSingleInstance = (app) => {
     app.isQuiting = true
     app.quit();
   }
+
+  return gotTheLock;
 }
 
 module.exports.restoreFirstInstance = (app, mainWindow) => {
