@@ -12,6 +12,7 @@ const keepWindowState = require('./features/windowState.js');
 const externalLinks = require('./features/externalLinks.js');
 const badgeIcons = require('./features/badgeIcon.js');
 const closeToTray = require('./features/closeToTray.js');
+const setAppMenu = require('./features/appMenu.js');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -29,6 +30,7 @@ app.whenReady()
     mainWindow = windowWrapper('https://chat.google.com/');
 
     trayIcon = setupTrayIcon(mainWindow);
+    setAppMenu();
     restoreFirstInstance(mainWindow);
     keepWindowState(mainWindow);
     runAtLogin(mainWindow);
