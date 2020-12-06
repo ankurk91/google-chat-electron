@@ -29,5 +29,9 @@ module.exports = (window) => {
 
   trayIcon.setToolTip(app.getName());
 
+  trayIcon.on('click', () => {
+    window.show();
+  });
+
   return trayIcon;
 }

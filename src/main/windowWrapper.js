@@ -1,5 +1,3 @@
-'use strict';
-
 const path = require('path');
 const {app, BrowserWindow} = require('electron');
 
@@ -10,7 +8,7 @@ module.exports = (url) => {
       contextIsolation: true,
       enableRemoteModule: false,
       nodeIntegration: false,
-      preload: path.join(app.getAppPath(), 'src/js/renderer.js'),
+      preload: path.join(app.getAppPath(), 'src/renderer/index.js'),
     },
     icon: path.join(app.getAppPath(), 'resources/icons/normal/256.png'),
     show: false,
@@ -18,7 +16,7 @@ module.exports = (url) => {
     minWidth: 400,
     center: true,
     title: app.getName(),
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f8f8f8',
   });
 
   window.once('ready-to-show', () => {

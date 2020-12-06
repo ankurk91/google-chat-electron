@@ -1,4 +1,4 @@
-# Google Chat Linux App
+# Google Chat Linux Desktop App
 
 [![gh-actions](https://github.com/ankurk91/google-chat-electron-linux/workflows/release/badge.svg)](https://github.com/ankurk91/google-chat-electron-linux/actions)
 [![license](https://badgen.net/github/license/ankurk91/google-chat-electron-linux)](https://github.com/ankurk91/google-chat-electron-linux)
@@ -35,7 +35,7 @@ rm -f ~/.config/autostart/google-chat-electron.desktop
 
 ### Acknowledgements
 * [@robyf](https://github.com/robyf) for the initial work
-* [@mwpeterson](https://github.com/mwpeterson) for the enhancements
+* All other [contributors](https://github.com/ankurk91/google-chat-electron-linux/graphs/contributors)
 
 ## Disclaimer
 This desktop client is just a wrapper which starts a chromium instance locally and runs the actual web-app in it. 

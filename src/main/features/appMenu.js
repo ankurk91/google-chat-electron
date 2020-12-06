@@ -1,13 +1,30 @@
 const {Menu, app, shell} = require('electron');
 const {checkForUpdates} = require('electron-update-notifier');
 const path = require('path');
-const pkg = require(path.join(app.getAppPath(), 'package.json'));
 
-module.exports = () => {
+module.exports = (window) => {
+  const pkg = require(path.join(app.getAppPath(), 'package.json'));
+
   const menuItems = Menu.buildFromTemplate([
     {
       label: 'File',
       submenu: [
+        {
+          label: 'Close To Tray',
+          click: () => {
+            window.hide()
+          }
+        },
+        {
+          label: 'Relaunch',
+          click: () => {
+            app.relaunch();
+            app.exit();
+          }
+        },
+        {
+          type: 'separator'
+        },
         {
           label: 'Quit',
           accelerator: 'Ctrl+Q',

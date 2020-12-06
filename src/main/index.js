@@ -30,7 +30,7 @@ app.whenReady()
     mainWindow = windowWrapper('https://chat.google.com/');
 
     trayIcon = setupTrayIcon(mainWindow);
-    setAppMenu();
+    setAppMenu(mainWindow);
     restoreFirstInstance(mainWindow);
     keepWindowState(mainWindow);
     runAtLogin(mainWindow);
