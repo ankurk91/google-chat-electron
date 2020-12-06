@@ -20,11 +20,6 @@ You can remove the app with this command
 ```
 sudo apt-get remove --purge google-chat-electron
 ```
-Remove leftover files
-```
-rm -rf ~/.config/google-chat-electron/
-rm -f ~/.config/autostart/google-chat-electron.desktop
-```
 
 ### Todos
 * [x] Create automated release via Github actions

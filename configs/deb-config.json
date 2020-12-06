@@ -18,6 +18,9 @@
     "depends": [
       "libnotify4",
       "libappindicator1"
-    ]
+    ],
+    "scripts": {
+      "postrm": "configs/debian-scripts/post-remove.sh"
+    }
   }
 }
