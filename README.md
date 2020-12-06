@@ -11,7 +11,7 @@ An unofficial desktop client for [Google Chat](https://chat.google.com/) build w
 * Download the latest `.deb` file from the [releases](https://github.com/ankurk91/google-chat-electron-linux/releases/latest) section.
 * Install the package with this command:
 ```
-sudo apt install ~/path/to/google-chat-electron-xxx.deb
+sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ```
 * This should work on Debian Linux or derivatives (Ubuntu, Mint, Elementary etc).
 
@@ -19,6 +19,11 @@ sudo apt install ~/path/to/google-chat-electron-xxx.deb
 You can remove the app with this command
 ```
 sudo apt-get remove --purge google-chat-electron
+```
+Remove leftover files
+```
+rm -rf ~/.config/google-chat-electron/
+rm -f ~/.config/autostart/google-chat-electron.desktop
 ```
 
 ### Todos
@@ -32,6 +37,10 @@ sudo apt-get remove --purge google-chat-electron
 * [@robyf](https://github.com/robyf) for the initial work
 * [@mwpeterson](https://github.com/mwpeterson) for the enhancements
 
+## Disclaimer
+This desktop client is just a wrapper which starts a chromium instance locally and runs the actual web-app in it. 
+All rights to the [Google Chat](https://chat.google.com/) is reserved by [Google Inc.](https://en.wikipedia.org/wiki/Google) 
+This desktop client has no way to access any of your data.
+
 ## License
-* Source code licensed under [MIT](LICENSE.txt) License
-* Google Chat Icons taken from [Wikipedia](https://en.wikipedia.org/wiki/Google_Chat)
+[MIT](LICENSE.txt) License
