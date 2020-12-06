@@ -16,7 +16,7 @@ module.exports = (url) => {
     minWidth: 400,
     center: true,
     title: app.getName(),
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#E8EAED',
   });
 
   window.once('ready-to-show', () => {

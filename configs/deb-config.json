@@ -5,6 +5,8 @@
     "productName": "Google Chat",
     "icon": {
       "16x16": "resources/icons/normal/16.png",
+      "24x24": "resources/icons/normal/24.png",
+      "32x32": "resources/icons/normal/32.png",
       "48x48": "resources/icons/normal/48.png",
       "64x64": "resources/icons/normal/64.png",
       "128x128": "resources/icons/normal/128.png",
