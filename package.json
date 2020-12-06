@@ -8,8 +8,8 @@
     "start": "electron .",
     "clean": "rm -rf ./dist",
     "prebuild": "yarn run clean",
-    "build": "electron-packager . --icon=resources/icons/256.png --platform=linux --arch=x64 --asar --overwrite --out dist/",
-    "dist:deb": "electron-installer-debian --config configs/deb-config.json --arch amd64"
+    "build": "electron-packager . --icon=./resources/icons/normal/256.png --platform=linux --arch=x64 --asar --overwrite --out=./dist/",
+    "dist:deb": "electron-installer-debian --config=./configs/deb-config.json --arch=amd64"
   },
   "repository": "https://github.com/ankurk91/google-chat-electron-linux",
   "homepage": "https://github.com/ankurk91/google-chat-electron-linux",
