@@ -23,6 +23,12 @@ module.exports = (window) => {
           }
         },
         {
+          label: 'Logout',
+          click: () => {
+            window.loadURL('https://www.google.com/accounts/Logout?continue=https://chat.google.com/')
+          }
+        },
+        {
           type: 'separator'
         },
         {
