@@ -6,7 +6,10 @@ const {app, BrowserWindow} = require('electron');
 module.exports = (url) => {
   const window = new BrowserWindow({
     webPreferences: {
+      autoplayPolicy: 'user-gesture-required',
       contextIsolation: true,
+      enableRemoteModule: false,
+      nodeIntegration: false,
       preload: path.join(app.getAppPath(), 'src/js/renderer.js'),
     },
     icon: path.join(app.getAppPath(), 'resources/icons/normal/256.png'),
