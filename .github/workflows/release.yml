@@ -21,7 +21,7 @@ jobs:
 
       - run: yarn install --non-interactive --frozen-lockfile
       - run: yarn run build
-      - run: yarn run dist:deb
+      - run: yarn run build:deb
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
