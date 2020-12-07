@@ -1,23 +1,27 @@
 const {ipcRenderer} = require('electron');
+let favicon = null;
+let observer = null;
+
+const emitFaviconChanged = () => {
+  ipcRenderer.send('favicon-changed', favicon?.href);
+}
 
 const watchFaviconChange = () => {
-  const favicon = document.querySelector('link#favicon256');
-
-  const sendFaviconChanged = () => {
-    ipcRenderer.send('favicon-changed', favicon.href);
-  }
-
-  sendFaviconChanged()
-  const observer = new MutationObserver(sendFaviconChanged);
+  observer = new MutationObserver(emitFaviconChanged);
 
   observer.observe(favicon, {
     attributes: true
   });
 };
 
-if (window.location.host.includes('chat.google.com')) {
-  window.addEventListener('DOMContentLoaded', watchFaviconChange);
-}
+window.addEventListener('DOMContentLoaded', () => {
+  favicon = document.querySelector('link#favicon256');
+  emitFaviconChanged();
+
+  if (favicon) {
+    watchFaviconChange()
+  }
+});
 
 
 

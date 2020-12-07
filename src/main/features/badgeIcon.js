@@ -1,18 +1,7 @@
 const {ipcMain, app} = require('electron');
 const path = require('path');
 
-module.exports = (window, trayIcon) => {
-
-  ipcMain.on('favicon-changed', (evt, href) => {
-    const type = decideIcon(href);
-
-    trayIcon.setImage(path.join(app.getAppPath(), `resources/icons/${type}/48.png`));
-    window.setIcon(path.join(app.getAppPath(), `resources/icons/${type}/256.png`));
-  });
-
-}
-
-function decideIcon(href) {
+const decideIcon = (href) => {
   let type = 'normal';
 
   if (href.match(/chat-favicon-new-non-notif/) ||
@@ -21,4 +10,14 @@ function decideIcon(href) {
   }
 
   return type;
+}
+
+module.exports = (window, trayIcon) => {
+
+  ipcMain.on('favicon-changed', (evt, href) => {
+    const type = decideIcon(String(href));
+
+    trayIcon.setImage(path.join(app.getAppPath(), `resources/icons/${type}/48.png`));
+    window.setIcon(path.join(app.getAppPath(), `resources/icons/${type}/256.png`));
+  });
 }
