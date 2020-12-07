@@ -1,6 +1,10 @@
 #!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
+set -e
+
+if [ "$1" != "purge" ]; then
+    echo "Skipped running post removal script."
+    exit 0
+fi
 
 echo "Starting post removal script ..."
 
