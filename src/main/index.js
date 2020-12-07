@@ -40,9 +40,6 @@ app.whenReady()
     closeToTray(mainWindow);
     externalLinks(mainWindow);
   })
-  .catch((error) => {
-    console.error(error)
-  });
 
 app.on('window-all-closed', () => {
   app.isQuiting = true;
