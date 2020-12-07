@@ -9,7 +9,7 @@ An unofficial desktop client for [Google Chat](https://chat.google.com/) build w
 
 ### Installation
 * Download the latest `.deb` file from the [releases](https://github.com/ankurk91/google-chat-electron-linux/releases/latest) section.
-* Install the package with this command:
+* Install the package with this command: (correct the path)
 ```
 sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ```
