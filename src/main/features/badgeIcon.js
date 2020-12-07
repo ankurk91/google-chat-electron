@@ -17,7 +17,7 @@ module.exports = (window, trayIcon) => {
   ipcMain.on('favicon-changed', (evt, href) => {
     const type = decideIcon(String(href));
 
-    trayIcon.setImage(path.join(app.getAppPath(), `resources/icons/${type}/48.png`));
+    trayIcon.setImage(path.join(app.getAppPath(), `resources/icons/${type}/256.png`));
     window.setIcon(path.join(app.getAppPath(), `resources/icons/${type}/256.png`));
   });
 }
