@@ -17,6 +17,7 @@ module.exports = (url) => {
     center: true,
     title: app.getName(),
     backgroundColor: '#E8EAED',
+    fullscreenable: false,
   });
 
   window.once('ready-to-show', () => {

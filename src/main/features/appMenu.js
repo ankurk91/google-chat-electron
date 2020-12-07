@@ -23,7 +23,7 @@ module.exports = (window) => {
           }
         },
         {
-          label: 'Logout',
+          label: 'Sign Out',
           click: () => {
             window.loadURL('https://www.google.com/accounts/Logout?continue=https://chat.google.com/')
           }
@@ -45,20 +45,37 @@ module.exports = (window) => {
       role: 'editMenu'
     },
     {
-      role: 'viewMenu'
-    },
-    {
-      label: 'Help',
+      label: 'View',
       submenu: [
         {
-          label: `v${app.getVersion()}`,
-          enabled: false
+          role: 'reload'
+        },
+        {
+          role: 'forceReload'
+        },
+        {
+          role: 'toggleDevTools',
+          visible: !app.isPackaged || app.commandLine.hasSwitch('debug')
         },
         {
           type: 'separator'
         },
         {
-          label: 'Website',
+          role: 'resetZoom'
+        },
+        {
+          role: 'zoomIn'
+        },
+        {
+          role: 'zoomOut'
+        },
+      ]
+    },
+    {
+      label: 'Help',
+      submenu: [
+        {
+          label: 'Visit Website',
           click: () => {
             setImmediate(() => {
               shell.openExternal(pkg.homepage)
@@ -70,7 +87,14 @@ module.exports = (window) => {
           click: () => {
             checkForUpdates();
           }
-        }
+        },
+        {
+          type: 'separator'
+        },
+        {
+          label: `Version ${app.getVersion()}`,
+          enabled: false
+        },
       ]
     }
   ]);
