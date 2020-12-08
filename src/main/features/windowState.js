@@ -1,7 +1,8 @@
 const electronStore = require('electron-store');
+let store = null;
 
 module.exports = (window) => {
-  const store = new electronStore();
+  store = new electronStore();
 
   if (store.has('window.bounds')) {
     window.setBounds(store.get('window.bounds'))

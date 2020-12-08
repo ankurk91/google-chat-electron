@@ -4,6 +4,7 @@
 [![license](https://badgen.net/github/license/ankurk91/google-chat-electron-linux)](https://github.com/ankurk91/google-chat-electron-linux)
 [![latest-release](https://badgen.net/github/release/ankurk91/google-chat-electron-linux)](https://github.com/ankurk91/google-chat-electron-linux/tags)
 [![downloads](https://img.shields.io/github/downloads/ankurk91/google-chat-electron-linux/total?style=flat)](https://github.com/ankurk91/google-chat-electron-linux/releases)
+[![dependencies](https://img.shields.io/david/ankurk91/google-chat-electron-linux)](https://david-dm.org/ankurk91/google-chat-electron-linux)
 
 An unofficial desktop client for [Google Chat](https://chat.google.com/) build with [Electron](https://www.electronjs.org/).
 
@@ -27,6 +28,11 @@ sudo apt-get remove --purge google-chat-electron
 * [x] Unread message count badge
 * [x] Run at OS startup
 * [x] App updates notification
+
+### Supported Platforms
+This application is being tested on:
+* Ubuntu 18.04, 20.04 GNOME
+* Linux Mint 20.04 Cinnamon
 
 ### Acknowledgements
 * [@robyf](https://github.com/robyf) for the initial work
