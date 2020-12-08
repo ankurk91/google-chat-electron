@@ -117,7 +117,9 @@ module.exports = (window) => {
         {
           label: 'Check For Updates',
           click: () => {
-            checkForUpdates();
+            checkForUpdates({
+              silent: false
+            });
           }
         },
         {

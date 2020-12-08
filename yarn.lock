@@ -521,10 +521,10 @@ electron-unhandled@^3.0.2:
     ensure-error "^2.0.0"
     lodash.debounce "^4.0.8"
 
-electron-update-notifier@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/electron-update-notifier/-/electron-update-notifier-1.1.0.tgz#5fa5cc1989c9609e9571b00be7a3974f5d71c966"
-  integrity sha512-VxNSakleQ84nVKlovlV3yuZ2IjcRTG5sp0ISeVRM4FpKJ87KzCa/Xyj1BcCbz82d7ukiwchVD7R2ZlsUYV/6Ew==
+electron-update-notifier@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/electron-update-notifier/-/electron-update-notifier-1.2.0.tgz#b55fe5df9abd8ea6e0e9a65cd0bab0748d65e225"
+  integrity sha512-vZzMo8IwOxK0gzpNUuHcrRVtKhTa+7U9sqKfRD0nDsR5F/LnBlj034IEikkNEyFmbcMHasOoFIe9Zz8Pl2BC7g==
   dependencies:
     compare-versions "^3.6.0"
     github-url-to-object "^4.0.4"
