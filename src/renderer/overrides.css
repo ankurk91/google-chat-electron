@@ -1,0 +1,19 @@
+/* hide products menu*/
+#gbwa {
+  display: none !important;
+}
+
+/* align user avatar */
+#gb > div > div {
+  min-width: 30px !important;
+  padding: 0 20px 0 0 !important;
+}
+
+#gb > div > div > div {
+  min-width: 30px !important;
+}
+
+/* hide manage account link*/
+#gb .gb_fb a[href^="https://myaccount.google.com"] {
+  display: none !important;
+}

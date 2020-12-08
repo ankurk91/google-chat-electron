@@ -1,1 +1,2 @@
-require('./faviconChanged.js')
+require('./faviconChanged.js');
+require('./customCss.js');
