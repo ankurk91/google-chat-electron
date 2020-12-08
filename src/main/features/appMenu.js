@@ -1,9 +1,13 @@
 const {Menu, app, shell} = require('electron');
 const {checkForUpdates} = require('electron-update-notifier');
 const path = require('path');
+const electronStore = require('electron-store');
+const {autoLaunch} = require('./openAtLogin.js');
+let store = null;
 
 module.exports = (window) => {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
+  store = new electronStore();
 
   const menuItems = Menu.buildFromTemplate([
     {
@@ -69,6 +73,34 @@ module.exports = (window) => {
         {
           role: 'zoomOut'
         },
+      ]
+    },
+    {
+      label: 'Preferences',
+      submenu: [
+        {
+          label: 'Auto check for Updates',
+          type: 'checkbox',
+          checked: store.get('app.autoCheckForUpdates', true),
+          click: (menuItem) => {
+            store.set('app.autoCheckForUpdates', menuItem.checked)
+          }
+        },
+        {
+          label: 'Auto launch at Login',
+          type: 'checkbox',
+          checked: store.get('app.autoLaunchAtLogin', true),
+          click: async (menuItem) => {
+
+            if (menuItem.checked) {
+              await autoLaunch().enable()
+            } else {
+              await autoLaunch().disable()
+            }
+
+            store.set('app.autoLaunchAtLogin', menuItem.checked)
+          }
+        }
       ]
     },
     {
