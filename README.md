@@ -14,13 +14,19 @@ An unofficial desktop client for [Google Chat](https://chat.google.com/) build w
 ```
 sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ```
-* This should work on Debian Linux or derivatives (Ubuntu, Mint, Elementary etc).
+* Relaunch the app if already running
 
 ### Uninstall
-You can remove the app with this command
+* Quit from app if running
+* You can remove the app with this command
 ```
 sudo apt-get remove --purge google-chat-electron
 ```
+* The uninstallation script should remove all relevant files and folders
+
+### Troubleshoot
+#### White screen on launch?
+Press `CTRL+R` to reload the app, check your internet connection.
 
 ### Todos
 * [x] Create automated release via Github actions
