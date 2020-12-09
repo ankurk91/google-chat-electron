@@ -6,8 +6,8 @@ on:
       - '*'
 
 jobs:
-  build:
-
+  release:
+    name: release
     runs-on: ubuntu-latest
 
     steps:
@@ -19,9 +19,16 @@ jobs:
         with:
           node-version: 14.x
 
-      - run: yarn install --non-interactive --frozen-lockfile
-      - run: yarn run build
-      - run: yarn run build:deb
+      - name: Install dependencies with yarn
+        run: yarn install --non-interactive --frozen-lockfile
+
+      - name: Build for linux
+        run: |
+          rm -rf ./.github
+          yarn run build
+
+      - name: Create debian installer
+        run: yarn run build:deb
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
