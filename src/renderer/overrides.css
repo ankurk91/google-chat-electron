@@ -13,7 +13,7 @@
   min-width: 30px !important;
 }
 
-/* hide manage account link*/
-#gb .gb_fb a[href^="https://myaccount.google.com"] {
+/* Hide add another account button */
+#gb a[href^="https://accounts.google.com/AddSession?continue=https://chat.google.com"] {
   display: none !important;
 }
