@@ -5,7 +5,11 @@ module.exports = (window) => {
   window.on('close', (event) => {
     if (!app.isQuiting) {
       event.preventDefault();
-      window.minimize();
+      if (window.isVisible()) {
+        window.minimize();
+      } else {
+        window.hide()
+      }
     }
   });
 }
