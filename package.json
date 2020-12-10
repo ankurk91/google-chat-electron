@@ -27,7 +27,8 @@
     "electron-store": "^6.0.1",
     "electron-unhandled": "^3.0.2",
     "electron-update-notifier": "^1.2.0",
-    "electron-util": "^0.14.2"
+    "electron-util": "^0.14.2",
+    "lodash": "^4.17.20"
   },
   "engines": {
     "node": ">=14.15.0"

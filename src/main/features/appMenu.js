@@ -39,8 +39,7 @@ module.exports = (window) => {
           label: 'Quit',
           accelerator: 'Ctrl+Q',
           click: () => {
-            app.isQuiting = true
-            app.quit();
+            app.exit();
           }
         }
       ]

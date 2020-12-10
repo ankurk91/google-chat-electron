@@ -21,8 +21,7 @@ module.exports = (window) => {
     {
       label: 'Quit',
       click: () => {
-        app.isQuiting = true
-        app.quit()
+        app.exit()
       }
     }
   ]));

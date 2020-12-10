@@ -42,6 +42,5 @@ app.whenReady()
   })
 
 app.on('window-all-closed', () => {
-  app.isQuiting = true;
-  app.quit();
+  app.exit();
 })

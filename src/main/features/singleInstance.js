@@ -4,9 +4,8 @@ module.exports.enforceSingleInstance = () => {
   const gotTheLock = app.requestSingleInstanceLock();
 
   if (!gotTheLock) {
-    console.log('Quit from second instance');
-    app.isQuiting = true
-    app.quit();
+    console.info('Force exit from second instance');
+    app.exit();
   }
 
   return gotTheLock;
