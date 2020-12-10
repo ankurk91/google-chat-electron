@@ -1,4 +1,4 @@
-const {Menu, app, shell} = require('electron');
+const {Menu, app, shell, clipboard} = require('electron');
 const {checkForUpdates} = require('electron-update-notifier');
 const path = require('path');
 const electronStore = require('electron-store');
@@ -56,6 +56,12 @@ module.exports = (window) => {
         },
         {
           role: 'forceReload'
+        },
+        {
+          label: 'Copy Current URL',
+          click: () => {
+            clipboard.writeText(window.webContents.getURL())
+          }
         },
         {
           role: 'toggleDevTools',
