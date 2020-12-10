@@ -8,7 +8,7 @@ module.exports = (window) => {
     {
       label: 'Show/Hide',
       click: () => {
-        if (window.isVisible()) {
+        if (window.isVisible() && window.isFocused()) {
           window.minimize()
         } else {
           window.show()
