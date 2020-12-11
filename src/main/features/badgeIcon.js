@@ -1,4 +1,4 @@
-const {ipcMain, app} = require('electron');
+const {ipcMain, app, nativeImage} = require('electron');
 const path = require('path');
 
 const decideIcon = (href) => {
@@ -17,7 +17,8 @@ module.exports = (window, trayIcon) => {
   ipcMain.on('favicon-changed', (evt, href) => {
     const type = decideIcon(String(href));
 
-    trayIcon.setImage(path.join(app.getAppPath(), `resources/icons/${type}/256.png`));
-    window.setIcon(path.join(app.getAppPath(), `resources/icons/${type}/256.png`));
+    const icon = nativeImage.createFromPath(path.join(app.getAppPath(), `resources/icons/${type}/256.png`))
+    trayIcon.setImage(icon);
+    window.setIcon(icon);
   });
 }

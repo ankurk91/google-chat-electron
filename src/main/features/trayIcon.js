@@ -1,8 +1,8 @@
 const path = require('path');
-const {app, Tray, Menu} = require('electron');
+const {app, Tray, Menu, nativeImage} = require('electron');
 
 module.exports = (window) => {
-  const trayIcon = new Tray(path.join(app.getAppPath(), 'resources/icons/normal/256.png'));
+  const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png')));
 
   trayIcon.setContextMenu(Menu.buildFromTemplate([
     {

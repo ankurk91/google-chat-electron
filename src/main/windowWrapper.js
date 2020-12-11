@@ -1,5 +1,5 @@
 const path = require('path');
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, nativeImage} = require('electron');
 
 module.exports = (url) => {
   const window = new BrowserWindow({
@@ -10,7 +10,7 @@ module.exports = (url) => {
       nodeIntegration: false,
       preload: path.join(app.getAppPath(), 'src/renderer/index.js'),
     },
-    icon: path.join(app.getAppPath(), 'resources/icons/normal/256.png'),
+    icon: nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png')),
     show: false,
     minHeight: 570,
     minWidth: 400,
