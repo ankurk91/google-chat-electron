@@ -16,7 +16,7 @@
   "author": "ankurk91",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^11.0.3",
+    "electron": "^11.0.4",
     "electron-installer-debian": "^3.1.0",
     "electron-packager": "^15.2.0",
     "rimraf": "^3.0.2"
