@@ -3,6 +3,8 @@ const {checkForUpdates} = require('electron-update-notifier');
 const path = require('path');
 const electronStore = require('electron-store');
 const {autoLaunch} = require('./openAtLogin.js');
+const aboutPanel = require('./aboutPanel.js');
+
 let store = null;
 
 module.exports = (window) => {
@@ -125,6 +127,12 @@ module.exports = (window) => {
             checkForUpdates({
               silent: false
             });
+          }
+        },
+        {
+          label: 'About',
+          click: () => {
+            aboutPanel(window)
           }
         },
         {
