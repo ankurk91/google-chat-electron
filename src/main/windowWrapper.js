@@ -8,6 +8,8 @@ module.exports = (url) => {
       contextIsolation: true,
       enableRemoteModule: false,
       nodeIntegration: false,
+      sandbox: false,
+      disableBlinkFeatures: 'Auxclick',
       preload: path.join(app.getAppPath(), 'src/renderer/index.js'),
     },
     icon: nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png')),
