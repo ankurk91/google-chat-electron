@@ -14,7 +14,7 @@ An unofficial desktop client for [Google Chat](https://chat.google.com/) build w
 ```
 sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ```
-* Relaunch the app if already running
+* Relaunch the app if running already.
 
 ### Uninstall
 * Quit from app if running
@@ -22,7 +22,7 @@ sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ```
 sudo apt-get remove --purge google-chat-electron
 ```
-* The uninstallation script should remove all relevant files and folders
+* The uninstallation script should remove all relevant files and folders.
 
 ### Troubleshoot
 #### White screen on launch?

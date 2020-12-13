@@ -1,9 +1,9 @@
-/* hide products menu*/
+/* Hide products menu */
 #gbwa {
   display: none !important;
 }
 
-/* align user avatar */
+/* Align user avatar, since products menu is hidden */
 #gb > div > div {
   min-width: 30px !important;
   padding: 0 20px 0 0 !important;
@@ -13,7 +13,7 @@
   min-width: 30px !important;
 }
 
-/* Hide add another account button */
+/* Hide "Add another account" button */
 #gb a[href^="https://accounts.google.com/AddSession?continue=https://chat.google.com"] {
   display: none !important;
 }
