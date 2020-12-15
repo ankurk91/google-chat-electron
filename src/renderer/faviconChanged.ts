@@ -1,6 +1,7 @@
-const {ipcRenderer} = require('electron');
-let favicon = null;
-let observer = null;
+import {ipcRenderer} from 'electron';
+
+let favicon: HTMLLinkElement;
+let observer: MutationObserver;
 
 const emitFaviconChanged = () => {
   ipcRenderer.send('favicon-changed', favicon?.href);
@@ -15,7 +16,7 @@ const watchFaviconChange = () => {
 };
 
 window.addEventListener('DOMContentLoaded', () => {
-  favicon = document.querySelector('link#favicon256');
+  favicon = <HTMLLinkElement>document.querySelector('link#favicon256');
   emitFaviconChanged();
 
   if (favicon) {

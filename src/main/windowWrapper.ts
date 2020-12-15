@@ -1,7 +1,7 @@
-const path = require('path');
-const {app, BrowserWindow, nativeImage} = require('electron');
+import path from 'path';
+import {app, BrowserWindow, nativeImage} from 'electron';
 
-module.exports = (url) => {
+export default function (url: string) {
   const window = new BrowserWindow({
     webPreferences: {
       autoplayPolicy: 'user-gesture-required',
@@ -10,7 +10,7 @@ module.exports = (url) => {
       nodeIntegration: false,
       sandbox: false,
       disableBlinkFeatures: 'Auxclick',
-      preload: path.join(app.getAppPath(), 'src/renderer/index.js'),
+      preload: path.join(app.getAppPath(), 'lib/renderer/index.js'),
     },
     icon: nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png')),
     show: false,

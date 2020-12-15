@@ -1,7 +1,7 @@
-const path = require('path');
-const {app, Tray, Menu, nativeImage} = require('electron');
+import path from 'path';
+import {BrowserWindow, app, Tray, Menu, nativeImage} from "electron";
 
-module.exports = (window) => {
+export default function (window: BrowserWindow) {
   const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png')));
 
   const handleIconClick = () => {

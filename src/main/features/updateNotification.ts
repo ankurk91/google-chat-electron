@@ -1,10 +1,10 @@
-const {setUpdateNotification, checkForUpdates} = require('electron-update-notifier');
-const electronStore = require('electron-store');
+import {setUpdateNotification, checkForUpdates} from 'electron-update-notifier';
+import electronStore from 'electron-store';
 
-let interval = null;
-let store = null;
+let interval: NodeJS.Timeout;
+let store: electronStore;
 
-module.exports = () => {
+export default function () {
   clearInterval(interval);
   store = new electronStore();
 

@@ -1,7 +1,7 @@
-const {shell} = require('electron');
+import {BrowserWindow, shell} from 'electron';
 
-module.exports = (window) => {
-  const handleRedirect = (event, url) => {
+export default function (window: BrowserWindow) {
+  const handleRedirect = (event: Event, url: string) => {
     const whiteListDomains = [
       extractHostname(window.webContents.getURL()),
       'accounts.google.com',
@@ -22,6 +22,6 @@ module.exports = (window) => {
   window.webContents.on('new-window', handleRedirect);
 }
 
-function extractHostname(url) {
+function extractHostname(url: string) {
   return (new URL(url)).hostname;
 }

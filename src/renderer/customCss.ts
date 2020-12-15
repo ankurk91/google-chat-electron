@@ -1,9 +1,9 @@
 const getCssContent = async () => {
   const {readFile} = require('fs').promises;
-  const path = require('path');
+  const path = require('path')
 
   try {
-    return await readFile(path.join(__dirname, 'overrides.css'), {
+    return await readFile(path.join(__dirname, '../../src/renderer/overrides.css'), {
       encoding: 'utf-8'
     });
   } catch (error) {

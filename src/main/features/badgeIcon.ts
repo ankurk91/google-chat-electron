@@ -1,7 +1,7 @@
-const {ipcMain, app, nativeImage} = require('electron');
-const path = require('path');
+import {ipcMain, app, nativeImage, BrowserWindow, Tray} from 'electron';
+import path from 'path';
 
-const decideIcon = (href) => {
+const decideIcon = (href: string) => {
   let type = 'normal';
 
   if (href.match(/chat-favicon-new-non-notif/) ||
@@ -12,7 +12,7 @@ const decideIcon = (href) => {
   return type;
 }
 
-module.exports = (window, trayIcon) => {
+export default function (window: BrowserWindow, trayIcon: Tray) {
 
   ipcMain.on('favicon-changed', (evt, href) => {
     const type = decideIcon(String(href));

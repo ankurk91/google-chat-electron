@@ -1,13 +1,13 @@
-const {Menu, app, shell, clipboard} = require('electron');
-const {checkForUpdates} = require('electron-update-notifier');
-const path = require('path');
-const electronStore = require('electron-store');
-const {autoLaunch} = require('./openAtLogin.js');
-const aboutPanel = require('./aboutPanel.js');
+import {Menu, app, shell, clipboard, BrowserWindow} from 'electron';
+import {checkForUpdates} from 'electron-update-notifier';
+import path from 'path';
+import electronStore from 'electron-store';
+import {autoLaunch} from './openAtLogin.js';
+import aboutPanel from './aboutPanel.js';
 
-let store = null;
+let store: electronStore;
 
-module.exports = (window) => {
+export default function (window: BrowserWindow) {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
   store = new electronStore();
 
@@ -88,7 +88,7 @@ module.exports = (window) => {
         {
           label: 'Auto check for Updates',
           type: 'checkbox',
-          checked: store.get('app.autoCheckForUpdates', true),
+          checked: <boolean>store.get('app.autoCheckForUpdates', true),
           click: (menuItem) => {
             store.set('app.autoCheckForUpdates', menuItem.checked)
           }
@@ -96,7 +96,7 @@ module.exports = (window) => {
         {
           label: 'Auto launch at Login',
           type: 'checkbox',
-          checked: store.get('app.autoLaunchAtLogin', true),
+          checked: <boolean>store.get('app.autoLaunchAtLogin', true),
           click: async (menuItem) => {
 
             if (menuItem.checked) {

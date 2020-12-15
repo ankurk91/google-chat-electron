@@ -1,6 +1,6 @@
-const contextMenu = require('electron-context-menu');
+import contextMenu from 'electron-context-menu';
 
-module.exports = () => {
+export default function () {
   return contextMenu({
     showSaveImage: true,
     showCopyImageAddress: true,

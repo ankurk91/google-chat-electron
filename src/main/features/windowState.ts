@@ -1,12 +1,14 @@
-const electronStore = require('electron-store');
-const throttle = require('lodash/throttle');
-let store = null;
+import electronStore from 'electron-store';
+import throttle from 'lodash/throttle';
+import {BrowserWindow, Rectangle} from "electron";
 
-module.exports = (window) => {
+let store: electronStore;
+
+export default function (window: BrowserWindow) {
   store = new electronStore();
 
   if (store.has('window.bounds')) {
-    window.setBounds(store.get('window.bounds'))
+    window.setBounds(<Rectangle>store.get('window.bounds'))
   }
 
   if (store.get('window.isMaximised', false)) {

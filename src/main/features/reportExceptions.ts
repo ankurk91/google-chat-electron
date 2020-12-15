@@ -1,10 +1,10 @@
-const unhandled = require('electron-unhandled');
-const log = require('electron-log');
-const {openNewGitHubIssue, debugInfo} = require('electron-util');
-const path = require('path');
-const {app} = require('electron');
+import unhandled from 'electron-unhandled';
+import log from 'electron-log';
+import {openNewGitHubIssue, debugInfo} from 'electron-util';
+import path from 'path';
+import {app} from 'electron';
 
-module.exports = () => {
+export default function () {
   const packageJson = require(path.join(app.getAppPath(), 'package.json'));
 
   return unhandled({

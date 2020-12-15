@@ -1,7 +1,8 @@
-const AutoLaunch = require('auto-launch');
-const {app} = require('electron');
-const electronStore = require('electron-store');
-let autoLaunchInstance = null;
+import AutoLaunch from 'auto-launch';
+import {app, BrowserWindow} from 'electron';
+import electronStore from 'electron-store';
+
+let autoLaunchInstance: AutoLaunch;
 
 const autoLaunch = () => {
   if (autoLaunchInstance) {
@@ -16,7 +17,7 @@ const autoLaunch = () => {
   return autoLaunchInstance;
 }
 
-module.exports = (window) => {
+export default function (window: BrowserWindow) {
   if (!app.isPackaged) return;
 
   const store = new electronStore();
@@ -39,4 +40,4 @@ module.exports = (window) => {
     });
 }
 
-module.exports.autoLaunch = autoLaunch
+export {autoLaunch};

@@ -1,6 +1,6 @@
-const {app} = require('electron');
+import {app, BrowserWindow} from 'electron';
 
-module.exports.enforceSingleInstance = () => {
+const enforceSingleInstance = () => {
   const gotTheLock = app.requestSingleInstanceLock();
 
   if (!gotTheLock) {
@@ -11,7 +11,7 @@ module.exports.enforceSingleInstance = () => {
   return gotTheLock;
 }
 
-module.exports.restoreFirstInstance = (window) => {
+const restoreFirstInstance = (window: BrowserWindow) => {
   app.on('second-instance', () => {
     // Someone tried to run a second instance, we should focus our window.
     if (window) {
@@ -22,3 +22,5 @@ module.exports.restoreFirstInstance = (window) => {
     }
   })
 }
+
+export {restoreFirstInstance, enforceSingleInstance}
