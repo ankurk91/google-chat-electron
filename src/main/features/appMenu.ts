@@ -1,7 +1,9 @@
-import {Menu, app, shell, clipboard, BrowserWindow} from 'electron';
+import {Menu, app, shell, clipboard, BrowserWindow, dialog} from 'electron';
 import {checkForUpdates} from 'electron-update-notifier';
 import path from 'path';
 import electronStore from 'electron-store';
+import {openNewGitHubIssue, debugInfo} from 'electron-util';
+import log from 'electron-log';
 import {autoLaunch} from './openAtLogin.js';
 import aboutPanel from './aboutPanel.js';
 
@@ -10,6 +12,21 @@ let store: electronStore;
 export default function (window: BrowserWindow) {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
   store = new electronStore();
+
+  const relaunchApp = () => {
+    app.relaunch();
+    app.exit();
+  }
+
+  const resetAppAndRestart = async () => {
+    log.log('clearing app data');
+    store.clear();
+    const {session} = window.webContents;
+    await session.clearStorageData();
+    await session.clearCache();
+    log.log('cleared app data');
+    relaunchApp();
+  }
 
   const menuItems = Menu.buildFromTemplate([
     {
@@ -23,10 +40,7 @@ export default function (window: BrowserWindow) {
         },
         {
           label: 'Relaunch',
-          click: () => {
-            app.relaunch();
-            app.exit();
-          }
+          click: relaunchApp
         },
         {
           label: 'Sign Out',
@@ -83,6 +97,25 @@ export default function (window: BrowserWindow) {
       ]
     },
     {
+      label: 'History',
+      submenu: [
+        {
+          label: 'Back',
+          accelerator: 'Alt+Left',
+          click: () => {
+            window.webContents.goBack()
+          }
+        },
+        {
+          label: 'Forward',
+          accelerator: 'Alt+Right',
+          click: () => {
+            window.webContents.goForward()
+          }
+        },
+      ]
+    },
+    {
       label: 'Preferences',
       submenu: [
         {
@@ -94,7 +127,7 @@ export default function (window: BrowserWindow) {
           }
         },
         {
-          label: 'Auto launch at Login',
+          label: 'Auto launch on Login',
           type: 'checkbox',
           checked: <boolean>store.get('app.autoLaunchAtLogin', true),
           click: async (menuItem) => {
@@ -128,6 +161,48 @@ export default function (window: BrowserWindow) {
               silent: false
             });
           }
+        },
+        {
+          label: 'Troubleshooting',
+          submenu: [
+            {
+              label: 'Report issue',
+              click: () => {
+                openNewGitHubIssue({
+                  repoUrl: pkg.repository,
+                  body: `### Platform\n\n${debugInfo()}`
+                });
+              }
+            },
+            {
+              type: 'separator'
+            },
+            {
+              label: 'Show Logs in File Manager',
+              click: () => {
+                shell.showItemInFolder(path.join(app.getPath('userData'), 'logs'))
+              }
+            },
+            {
+              label: 'Reset App and Relaunch',
+              click: () => {
+                dialog.showMessageBox(window, {
+                  type: 'warning',
+                  title: 'Confirm',
+                  message: 'Reset app data?',
+                  detail: `You will be logged out from application.\nAll settings will be reset to default.\nPress 'Yes' to proceed.`,
+                  buttons: ['Yes', 'No'],
+                  cancelId: 1,
+                  defaultId: 1,
+                })
+                  .then(({response}) => {
+                    if (response === 0) {
+                      resetAppAndRestart()
+                    }
+                  })
+              }
+            },
+          ]
         },
         {
           label: 'About',
