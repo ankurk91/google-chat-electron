@@ -1,6 +1,6 @@
 import {app, BrowserWindow} from 'electron';
 
-const enforceSingleInstance = () => {
+const enforceSingleInstance = (): boolean => {
   const gotTheLock = app.requestSingleInstanceLock();
 
   if (!gotTheLock) {
