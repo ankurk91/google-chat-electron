@@ -34,6 +34,7 @@ export default function (window: BrowserWindow) {
       submenu: [
         {
           label: 'Close To Tray',
+          accelerator: 'Ctrl+W',
           click: () => {
             window.hide()
           }
