@@ -2,6 +2,11 @@ import {BrowserWindow, shell} from 'electron';
 
 export default function (window: BrowserWindow) {
   const handleRedirect = (event: Event, url: string) => {
+    if (url === 'about:blank') {
+      event.preventDefault();
+      return false;
+    }
+
     const whiteListDomains = [
       extractHostname(window.webContents.getURL()),
       'accounts.google.com',
