@@ -26,14 +26,9 @@ sudo apt-get remove --purge google-chat-electron
 
 ### Troubleshoot
 #### White screen on launch?
-Press `CTRL+R` to reload the app, check your internet connection.
-
-### Todos
-* [x] Create automated release via Github actions
-* [x] Save and restore window size 
-* [x] Unread message count badge
-* [x] Run at OS startup
-* [x] App updates notification
+* Press <kbd>Ctrl</kbd> <kbd>+</kbd> <kbd>Shift</kbd> <kbd>+</kbd> <kbd>R</kbd> to reload the app.
+* Check your internet connection.
+* If it does not work then, reset the app data and restart.
 
 ### Supported Platforms
 This application is being tested on:
@@ -47,7 +42,7 @@ This application is being tested on:
 ## Disclaimer
 This desktop client is just a wrapper which starts a chromium instance locally and runs the actual web-app in it. 
 All rights to the [Google Chat](https://chat.google.com/) is reserved by [Google Inc.](https://en.wikipedia.org/wiki/Google) 
-This desktop client has no way to access any of your data.
+This desktop client has no way to access none of your data.
 
 ## License
 [MIT](LICENSE.txt) License
