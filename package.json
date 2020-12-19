@@ -37,6 +37,7 @@
     "electron-unhandled": "^3.0.2",
     "electron-update-notifier": "^1.3.0",
     "electron-util": "^0.14.2",
+    "is-online": "^9.0.0",
     "throttle-debounce": "^3.0.1"
   },
   "engines": {

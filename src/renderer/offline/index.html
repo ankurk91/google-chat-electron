@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Offline | Google Chat</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="app">
+  <main class="main">
+    <img class="logo" src="../../../resources/icons/normal/scalable.svg" alt="Google Chat" width="200">
+    <h1 class="app-name">Google Chat</h1>
+
+    <div id="app-offline" class="app-offline">
+      <h3 class="app-offline text-muted">You are offline :( </h3>
+      <button id="retry-btn" class="btn">Retry</button>
+      <div class="mt-3">
+        <a href="https://chat.google.com" rel="noreferrer" class="small text-muted">Take me to Google Chat anyway</a>
+      </div>
+    </div>
+
+  </main>
+</div>
+<script src="../../../lib/renderer/offline/index.js" async></script>
+</body>
+</html>

@@ -1,1 +1,2 @@
-import './faviconChanged.js';
+import './faviconChanged';
+import './offline';

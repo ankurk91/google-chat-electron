@@ -14,6 +14,7 @@ import badgeIcons from './features/badgeIcon.js';
 import closeToTray from './features/closeToTray.js';
 import setAppMenu from './features/appMenu.js';
 import overrideUserAgent from "./features/userAgent";
+import {checkForInternet} from "./features/inOnline";
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -28,6 +29,7 @@ if (enforceSingleInstance()) {
     .then(() => {
       overrideUserAgent();
       mainWindow = windowWrapper('https://chat.google.com/');
+      checkForInternet(mainWindow);
 
       trayIcon = setupTrayIcon(mainWindow);
       setAppMenu(mainWindow);
