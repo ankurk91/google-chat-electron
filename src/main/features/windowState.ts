@@ -25,4 +25,12 @@ export default function (window: BrowserWindow) {
   window.on('close', saveWindowPosition);
   window.on('resize', throttle(saveWindowPosition, 500));
   window.on('move', throttle(saveWindowPosition, 500));
+
+  window.on('maximize', () => {
+    store.set('window.isMaximized', true);
+  });
+
+  window.on('unmaximize', () => {
+    store.set('window.isMaximized', false);
+  });
 }
