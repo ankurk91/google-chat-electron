@@ -1,16 +1,19 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "target": "esnext",
-    "module": "commonjs",
-    "strict": true,
-    "sourceMap": false,
-    "declaration": false,
     "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "declaration": false,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "noEmitOnError": true,
     "outDir": "./lib",
+    "pretty": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "target": "esnext",
     "typeRoots": [
       "node_modules/@types"
     ]

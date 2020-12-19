@@ -21,7 +21,7 @@ export default function (window: BrowserWindow) {
   })
     .then(({response}) => {
       if (response === 0) {
-        clipboard.writeText(getDetails().join("\n"))
+        clipboard.writeText(getDetails().join('\n'))
       }
     })
 }
@@ -30,7 +30,7 @@ const getDetails = () => {
   return [
     'App Version: ' + app.getVersion(),
     'Electron version: ' + process.versions.electron,
-    'Platform: ' + os.type() + ', ' + os.release() + ', ' + os.arch(),
+    'Platform: ' + [os.type(), os.release(), os.arch()].join(', '),
     'OS: ' + os.version(),
     'Locale: ' + app.getLocale()
   ]
