@@ -1,5 +1,5 @@
 import electronStore from 'electron-store';
-import throttle from 'lodash/throttle';
+import {throttle} from 'throttle-debounce';
 import {BrowserWindow, Rectangle} from "electron";
 
 let store: electronStore;
@@ -23,8 +23,8 @@ export default function (window: BrowserWindow) {
   }
 
   window.on('close', saveWindowPosition);
-  window.on('resize', throttle(saveWindowPosition, 500));
-  window.on('move', throttle(saveWindowPosition, 500));
+  window.on('resize', throttle(500, saveWindowPosition));
+  window.on('move', throttle(500, saveWindowPosition));
 
   window.on('maximize', () => {
     store.set('window.isMaximized', true);
