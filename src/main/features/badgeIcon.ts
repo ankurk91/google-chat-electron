@@ -2,9 +2,11 @@ import {ipcMain, app, nativeImage, BrowserWindow, Tray} from 'electron';
 import path from 'path';
 
 const decideIcon = (href: string) => {
-  let type = 'normal';
+  let type = 'offline';
 
-  if (href.match(/chat-favicon-new-non-notif/) ||
+  if (href.match(/chat-favicon-no-new/)) {
+    type = 'normal';
+  } else if (href.match(/chat-favicon-new-non-notif/) ||
     href.match(/chat-favicon-new-notif/)) {
     type = 'badge';
   }

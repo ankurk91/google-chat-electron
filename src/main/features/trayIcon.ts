@@ -2,7 +2,7 @@ import path from 'path';
 import {BrowserWindow, app, Tray, Menu, nativeImage} from "electron";
 
 export default function (window: BrowserWindow) {
-  const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png')));
+  const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/offline/256.png')));
 
   const handleIconClick = () => {
     if (window.isVisible() && window.isFocused()) {
