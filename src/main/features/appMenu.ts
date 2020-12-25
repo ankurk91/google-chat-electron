@@ -4,8 +4,8 @@ import path from 'path';
 import electronStore from 'electron-store';
 import {openNewGitHubIssue, debugInfo} from 'electron-util';
 import log from 'electron-log';
-import {autoLaunch} from './openAtLogin.js';
-import aboutPanel from './aboutPanel.js';
+import {autoLaunch} from './openAtLogin';
+import aboutPanel from './aboutPanel';
 
 let store: electronStore;
 
@@ -114,6 +114,16 @@ export default function (window: BrowserWindow) {
             window.webContents.goForward()
           }
         },
+        {
+          type: 'separator'
+        },
+        {
+          label: 'Navigate to Home',
+          accelerator: 'Alt+Home',
+          click: () => {
+            window.loadURL('https://chat.google.com')
+          }
+        }
       ]
     },
     {
@@ -167,7 +177,7 @@ export default function (window: BrowserWindow) {
           label: 'Troubleshooting',
           submenu: [
             {
-              label: 'Report issue',
+              label: 'Report issue...',
               click: () => {
                 openNewGitHubIssue({
                   repoUrl: pkg.repository,
@@ -215,7 +225,7 @@ export default function (window: BrowserWindow) {
           type: 'separator'
         },
         {
-          label: `Version ${app.getVersion()}`,
+          label: `Version ${app.getVersion()}${!app.isPackaged ? '-(dev)' : ''}`,
           enabled: false
         },
       ]

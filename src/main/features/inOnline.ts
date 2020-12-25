@@ -1,6 +1,6 @@
-import isOnline from "is-online";
+import isOnline from 'is-online';
 import {BrowserWindow, ipcMain, Notification, app, nativeImage, IpcMainEvent} from 'electron';
-import path from "path";
+import path from 'path';
 
 const checkForInternet = async (window: BrowserWindow) => {
   const canChat = await isOnline({

@@ -1,6 +1,6 @@
 import electronStore from 'electron-store';
 import {throttle} from 'throttle-debounce';
-import {BrowserWindow, Rectangle} from "electron";
+import {BrowserWindow, Rectangle} from 'electron';
 
 let store: electronStore;
 

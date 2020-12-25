@@ -1,5 +1,5 @@
 import path from 'path';
-import {BrowserWindow, app, Tray, Menu, nativeImage} from "electron";
+import {BrowserWindow, app, Tray, Menu, nativeImage} from 'electron';
 
 export default function (window: BrowserWindow) {
   const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/offline/256.png')));
@@ -28,7 +28,7 @@ export default function (window: BrowserWindow) {
     }
   ]));
 
-  trayIcon.setToolTip(app.getName());
+  trayIcon.setToolTip('Google Chat');
 
   trayIcon.on('click', handleIconClick);
 

@@ -1,6 +1,6 @@
 import path from 'path';
 import {app, BrowserWindow, nativeImage} from 'electron';
-import {userAgentString} from "./features/userAgent";
+import {userAgentString} from './features/userAgent';
 
 export default function (url: string) {
   const window = new BrowserWindow({
@@ -18,7 +18,7 @@ export default function (url: string) {
     minHeight: 570,
     minWidth: 400,
     center: true,
-    title: app.getName(),
+    title: 'Google Chat',
     backgroundColor: '#E8EAED',
     fullscreenable: false,
   });

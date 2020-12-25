@@ -12,7 +12,7 @@ export default function (window: BrowserWindow) {
   return dialog.showMessageBox(window, {
     type: 'info',
     title: 'About',
-    message: app.getName(),
+    message: 'Google Chat',
     detail: packageJson.description + "\n\n" + detail.join('\n'),
     buttons: ['Copy', 'Ok'],
     cancelId: 1,
