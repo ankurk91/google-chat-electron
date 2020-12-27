@@ -11,15 +11,16 @@ export default function (window: BrowserWindow) {
     window.setBounds(<Rectangle>store.get('window.bounds'))
   }
 
-  if (store.get('window.isMaximised', false)) {
-    window.maximize()
-  }
+  window.on('ready-to-show', () => {
+    if (store.get('window.isMaximized', false)) {
+      window.maximize()
+    }
+  })
 
   const saveWindowPosition = () => {
-    store.set('window', {
-      bounds: window.getBounds(),
-      isMaximized: window.isMaximized()
-    })
+    if (!window.isMaximized()) {
+      store.set('window.bounds', window.getBounds())
+    }
   }
 
   window.on('close', saveWindowPosition);
