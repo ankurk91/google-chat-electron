@@ -8,7 +8,7 @@ const checkForInternet = async (window: BrowserWindow) => {
   });
 
   if (!canChat) {
-    const offlinePagePath = path.join(app.getAppPath(), 'src/renderer/offline/index.html');
+    const offlinePagePath = path.join(app.getAppPath(), 'src/offline/index.html');
     await window.loadURL(`file://${offlinePagePath}`);
     showOfflineNotification();
   }

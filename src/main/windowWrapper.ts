@@ -11,7 +11,7 @@ export default function (url: string) {
       nodeIntegration: false,
       sandbox: false,
       disableBlinkFeatures: 'Auxclick',
-      preload: path.join(app.getAppPath(), 'lib/renderer/index.js'),
+      preload: path.join(app.getAppPath(), 'lib/preload/index.js'),
     },
     icon: nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png')),
     show: false,
