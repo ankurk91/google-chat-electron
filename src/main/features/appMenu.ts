@@ -1,17 +1,14 @@
 import {Menu, app, shell, clipboard, BrowserWindow, dialog} from 'electron';
 import {checkForUpdates} from 'electron-update-notifier';
 import path from 'path';
-import electronStore from 'electron-store';
 import {openNewGitHubIssue, debugInfo} from 'electron-util';
 import log from 'electron-log';
 import {autoLaunch} from './openAtLogin';
 import aboutPanel from './aboutPanel';
-
-let store: electronStore;
+import store from './../config';
 
 export default function (window: BrowserWindow) {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
-  store = new electronStore();
 
   const relaunchApp = () => {
     app.relaunch();

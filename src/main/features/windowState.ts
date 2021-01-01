@@ -1,14 +1,11 @@
-import electronStore from 'electron-store';
 import {throttle} from 'throttle-debounce';
-import {BrowserWindow, Rectangle} from 'electron';
-
-let store: electronStore;
+import {BrowserWindow} from 'electron';
+import store from '../config';
 
 export default function (window: BrowserWindow) {
-  store = new electronStore();
 
   if (store.has('window.bounds')) {
-    window.setBounds(<Rectangle>store.get('window.bounds'))
+    window.setBounds(store.get('window.bounds'))
   }
 
   window.on('ready-to-show', () => {

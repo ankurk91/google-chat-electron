@@ -1,12 +1,10 @@
 import {setUpdateNotification, checkForUpdates} from 'electron-update-notifier';
-import electronStore from 'electron-store';
+import store from '../config'
 
 let interval: NodeJS.Timeout;
-let store: electronStore;
 
 export default function () {
   clearInterval(interval);
-  store = new electronStore();
 
   const shouldCheckForUpdates = () => {
     return store.get('app.autoCheckForUpdates', true);

@@ -1,6 +1,6 @@
 import AutoLaunch from 'auto-launch';
 import {app, BrowserWindow} from 'electron';
-import electronStore from 'electron-store';
+import store from '../config';
 
 let autoLaunchInstance: AutoLaunch;
 
@@ -20,10 +20,9 @@ const autoLaunch = () => {
 export default function (window: BrowserWindow) {
   if (!app.isPackaged) return;
 
-  const store = new electronStore();
   autoLaunchInstance = autoLaunch();
 
-  if (!<boolean>store.get('app.autoLaunchAtLogin', true)) {
+  if (!store.get('app.autoLaunchAtLogin', true)) {
     autoLaunchInstance.disable();
     return
   }
