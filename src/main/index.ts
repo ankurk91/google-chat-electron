@@ -15,6 +15,7 @@ import closeToTray from './features/closeToTray';
 import setAppMenu from './features/appMenu';
 import overrideUserAgent from './features/userAgent';
 import {checkForInternet} from './features/inOnline';
+import handleNotification from './features/handleNotification';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -41,6 +42,7 @@ if (enforceSingleInstance()) {
       badgeIcons(mainWindow, trayIcon);
       closeToTray(mainWindow);
       externalLinks(mainWindow);
+      handleNotification(mainWindow);
     })
 }
 
