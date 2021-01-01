@@ -8,10 +8,16 @@
 
 An unofficial desktop app for [Google Chat](https://chat.google.com/) build with [Electron](https://www.electronjs.org/)
 
+### Motivation
+
+* Official Google Chat electron app is only [available](https://chat.google.com/download/) on Mac
+* Official Google Chat electron app will [stop running](https://support.google.com/chat/answer/10194711) after Jan 2021
+* Google is forcing users to use PWA which has fewer features
+
 ### Installation
 
-* Download the latest `.deb` file from
-  the [releases](https://github.com/ankurk91/google-chat-electron/releases/latest) section.
+* Download the latest `.deb` file from the [releases](https://github.com/ankurk91/google-chat-electron/releases/latest)
+  section.
 * Install the package with this command: (correct the path)
 
 ```
@@ -24,7 +30,7 @@ sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ### Uninstall
 
 * Quit from app if running
-* You can remove the app with this command
+* Remove the app with this command
 
 ```
 sudo apt-get remove --purge google-chat-electron
