@@ -23,7 +23,7 @@ export default function (window: BrowserWindow) {
   const store = new electronStore();
   autoLaunchInstance = autoLaunch();
 
-  if (!store.get('app.autoCheckForUpdates', true)) {
+  if (!<boolean>store.get('app.autoLaunchAtLogin', true)) {
     autoLaunchInstance.disable();
     return
   }
