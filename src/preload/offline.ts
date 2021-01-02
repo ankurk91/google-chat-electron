@@ -1,6 +1,6 @@
 import {ipcRenderer} from 'electron';
 
-window.addEventListener('checkIfOnline', () => {
+window.addEventListener('gchat:checkIfOnline', () => {
   ipcRenderer.send('checkIfOnline')
 });
 

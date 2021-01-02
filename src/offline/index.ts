@@ -5,7 +5,7 @@
     btn.disabled = true;
     btn.innerText = 'Checking...';
 
-    window.dispatchEvent(new Event('checkIfOnline'));
+    window.dispatchEvent(new Event('gchat:checkIfOnline'));
   }
 
   btn.addEventListener('click', checkIsOnline);
