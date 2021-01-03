@@ -192,7 +192,7 @@ export default function (window: BrowserWindow) {
               }
             },
             {
-              label: 'Reset App and Relaunch',
+              label: 'Reset and Relaunch App',
               click: () => {
                 dialog.showMessageBox(window, {
                   type: 'warning',

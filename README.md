@@ -54,9 +54,9 @@ The app should work on Ubuntu and its derivatives.
 
 ## Disclaimer
 
-This desktop app is just a wrapper which starts a chromium instance locally and runs the actual web-app in it. All
-rights to the [Google Chat](https://chat.google.com/) product is reserved
-by [Google Inc.](https://en.wikipedia.org/wiki/Google)
+This desktop app is just a wrapper which starts a chromium instance locally and runs the actual web-app in it. 
+All rights to the [Google Chat](https://chat.google.com/) product is reserved by 
+[Google Inc.](https://en.wikipedia.org/wiki/Google)
 This desktop client has no way to access none of your data.
 
 ## License

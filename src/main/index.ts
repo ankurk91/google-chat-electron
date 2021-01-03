@@ -6,7 +6,7 @@ import {enforceSingleInstance, restoreFirstInstance} from './features/singleInst
 
 import enableContextMenu from './features/contextMenu';
 import runAtLogin from './features/openAtLogin';
-import updateNotifier from './features/updateNotification';
+import updateNotifier from './features/appUpdates';
 import setupTrayIcon from './features/trayIcon';
 import keepWindowState from './features/windowState';
 import externalLinks from './features/externalLinks';
