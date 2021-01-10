@@ -11,7 +11,9 @@ export default function (window: BrowserWindow) {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
 
   const relaunchApp = () => {
-    app.relaunch();
+    app.relaunch({
+      args: process.argv.filter(flag => flag !== '--hidden')
+    });
     app.exit();
   }
 
