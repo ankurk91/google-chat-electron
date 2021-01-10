@@ -22,6 +22,7 @@ let mainWindow = null;
 let trayIcon = null;
 
 // Features
+app.commandLine.appendSwitch('disk-cache-size', String(300 * 1024 * 1024))
 reportExceptions();
 
 if (enforceSingleInstance()) {
