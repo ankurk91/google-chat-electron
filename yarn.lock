@@ -509,10 +509,10 @@ duplexer3@^0.1.4:
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
-electron-context-menu@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/electron-context-menu/-/electron-context-menu-2.3.1.tgz#3ff66e17eaef06a57f25bbc58102622c0e4d2850"
-  integrity sha512-Kvjy7G9aYfOzxH5OYdDsGev+cpdVc2KFOt0cbVjzOdQxZi16gUh2RnPLa2a6O4wDyBRfkAe8kKKcSNfnasmA4Q==
+electron-context-menu@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/electron-context-menu/-/electron-context-menu-2.4.0.tgz#58e3a0e0ff847d3ce78ee81b49544a62b6bf0b00"
+  integrity sha512-6HRAEeFoMoBZyQ69FBGNQIVVDRBw8nYmvMPaV+CfRDa/spreHsjMD+XesJ/2/lMSAAMDTCgFCC24167Uer2cZw==
   dependencies:
     cli-truncate "^2.0.0"
     electron-dl "^3.0.0"
@@ -646,10 +646,10 @@ electron-util@^0.14.2:
     electron-is-dev "^1.1.0"
     new-github-issue-url "^0.2.1"
 
-electron@^11.1.1:
-  version "11.1.1"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-11.1.1.tgz#188f036f8282798398dca9513e9bb3b10213e3aa"
-  integrity sha512-tlbex3xosJgfileN6BAQRotevPRXB/wQIq48QeQ08tUJJrXwE72c8smsM/hbHx5eDgnbfJ2G3a60PmRjHU2NhA==
+electron@^11.2.0:
+  version "11.2.0"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-11.2.0.tgz#f8577ea4c9ba94068850256145be26b0b89a5dd7"
+  integrity sha512-weszOPAJPoPu6ozL7vR9enXmaDSqH+KE9iZODfbGdnFgtVfVdfyedjlvEGIUJkLMPXM1y/QWwCl2dINzr0Jq5Q==
   dependencies:
     "@electron/get" "^1.0.1"
     "@types/node" "^12.0.12"
