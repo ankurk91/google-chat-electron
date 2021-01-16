@@ -14,6 +14,14 @@ const decideIcon = (href: string) => {
   return type;
 }
 
+const getBadgeCount = (type: string): number => {
+  if (type === 'badge') {
+    return 1
+  }
+
+  return 0;
+}
+
 export default function (window: BrowserWindow, trayIcon: Tray) {
 
   ipcMain.on('favicon-changed', (evt, href) => {
@@ -22,5 +30,9 @@ export default function (window: BrowserWindow, trayIcon: Tray) {
     const icon = nativeImage.createFromPath(path.join(app.getAppPath(), `resources/icons/${type}/256.png`))
     trayIcon.setImage(icon);
     window.setIcon(icon);
+
+    // Unless we found a way to get real unread count,
+    // lets show the badge as 1
+    app.setBadgeCount(getBadgeCount(type))
   });
 }
