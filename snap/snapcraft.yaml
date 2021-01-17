@@ -1,0 +1,42 @@
+title: Google Chat
+name: google-chat-electron
+version: '1.0.19'
+base: core18
+summary: Unofficial desktop app for Google Chat.
+description: |
+  Unofficial desktop app for Google Chat.
+grade: stable
+confinement: strict
+icon: ./resources/icons/normal/scalable.svg
+license: MIT
+compression: xz
+architectures:
+  - amd64
+
+parts:
+  electron-deb:
+    plugin: dump
+    source: ./dist/installers/google-chat-electron_1.0.19_amd64.deb
+    source-type: deb
+
+    stage-packages:
+      - libnss3
+      - libnspr4
+
+apps:
+  google-chat-electron:
+    command: usr/bin/google-chat-electron --no-sandbox
+    extensions: [gnome-3-34]
+    plugs:
+      - home
+      - browser-support
+      - network
+      - network-bind
+
+    desktop: usr/share/applications/google-chat-electron.desktop
+    autostart : google-chat-electron.desktop
+    # Correct the TMPDIR path for Chromium Framework/Electron to ensure
+    # libappindicator has readable resources.
+    environment:
+      DISABLE_WAYLAND: 1
+      TMPDIR: $XDG_RUNTIME_DIR

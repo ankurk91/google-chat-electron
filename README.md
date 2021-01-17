@@ -5,6 +5,7 @@
 [![gh-actions](https://github.com/ankurk91/google-chat-electron/workflows/release/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions)
 [![license](https://badgen.net/github/license/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron)
 [![dependencies](https://img.shields.io/david/ankurk91/google-chat-electron?cacheSeconds=86400)](https://david-dm.org/ankurk91/google-chat-electron)
+[![snapcraft](https://snapcraft.io/google-chat-electron/badge.svg)](https://snapcraft.io/google-chat-electron)
 
 An unofficial desktop app for [Google Chat](https://chat.google.com/) build with [Electron](https://www.electronjs.org/)
 
@@ -58,6 +59,28 @@ This desktop app is just a wrapper which starts a chromium instance locally and 
 All rights to the [Google Chat](https://chat.google.com/) product is reserved by 
 [Google Inc.](https://en.wikipedia.org/wiki/Google)
 This desktop client has no way to access none of your data.
+
+### Development
+### Building a snap package
+* Install snapcraft
+```
+sudo snap install snapcraft --classic
+sudo snap install lxd
+sudo /snap/bin/lxd init --auto
+```
+* Build snap
+```
+yarn run build
+yarn run build:deb
+yarn run build:snap
+snapcraft --use-lxd
+
+unsquashfs /path/to/file.snap
+snapcraft pack ./squashfs-root
+snapcraft upload --release=stable file.snap
+```
+
+[![Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/google-chat-electron)
 
 ## License
 
