@@ -1,4 +1,4 @@
-import {Menu, app, shell, clipboard, BrowserWindow, dialog} from 'electron';
+import {Menu, app, shell, ipcMain, clipboard, BrowserWindow, dialog} from 'electron';
 import {checkForUpdates} from 'electron-update-notifier';
 import path from 'path';
 import {openNewGitHubIssue, debugInfo} from 'electron-util';
@@ -71,6 +71,13 @@ export default function (window: BrowserWindow) {
         },
         {
           role: 'forceReload'
+        },
+        {
+          label: 'Search',
+          accelerator: 'Ctrl+F',
+          click: () => {
+            window.webContents.send('searchShortcut');
+          }
         },
         {
           label: 'Copy Current URL',
