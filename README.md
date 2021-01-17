@@ -44,7 +44,7 @@ The app should work on Ubuntu and its derivatives.
 
 | OS                    | Version         | Tested              |
 | :---                  | :---:           |                ---: |
-| Ubuntu GNOME          | 18, 20          |  :heavy_check_mark: |
+| Ubuntu GNOME          | 20              |  :heavy_check_mark: |
 | Linux Mint Cinnamon   | 20              |  :heavy_check_mark: |
 
 ### Acknowledgements
