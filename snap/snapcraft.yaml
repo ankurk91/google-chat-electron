@@ -28,6 +28,7 @@ apps:
     command: usr/bin/google-chat-electron --no-sandbox
     extensions: [gnome-3-34]
     plugs:
+      - audio-playback
       - home
       - browser-support
       - network

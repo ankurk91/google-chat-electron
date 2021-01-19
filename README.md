@@ -61,21 +61,23 @@ All rights to the [Google Chat](https://chat.google.com/) product is reserved by
 This desktop client has no way to access none of your data.
 
 ### Development
-### Building a snap package
-* Install snapcraft
+#### Building the snap package
+* Install snapcraft tools
 ```
 sudo snap install snapcraft --classic
 sudo snap install lxd
+sudo snap install review-tools
 sudo /snap/bin/lxd init --auto
 ```
-* Build snap
+* Build snap package
 ```
 yarn run build
 yarn run build:deb
 yarn run build:snap
 snapcraft --use-lxd
 
-unsquashfs /path/to/file.snap
+# Publish to store
+unsquashfs file.snap
 snapcraft pack ./squashfs-root
 snapcraft upload --release=stable file.snap
 ```
