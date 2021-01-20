@@ -33,6 +33,7 @@ apps:
       - browser-support
       - network
       - network-bind
+      - unity7
 
     desktop: usr/share/applications/google-chat-electron.desktop
     autostart : google-chat-electron.desktop

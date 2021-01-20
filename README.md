@@ -55,22 +55,27 @@ The app should work on Ubuntu and its derivatives.
 
 ## Disclaimer
 
-This desktop app is just a wrapper which starts a chromium instance locally and runs the actual web-app in it. 
-All rights to the [Google Chat](https://chat.google.com/) product is reserved by 
+This desktop app is just a wrapper which starts a chromium instance locally and runs the actual web-app in it. All
+rights to the [Google Chat](https://chat.google.com/) product is reserved by
 [Google Inc.](https://en.wikipedia.org/wiki/Google)
 This desktop client has no way to access none of your data.
 
 ### Development
+
 #### Building the snap package
+
 * Install snapcraft tools
-```
+
+```bash
 sudo snap install snapcraft --classic
 sudo snap install lxd
 sudo snap install review-tools
 sudo /snap/bin/lxd init --auto
 ```
+
 * Build snap package
-```
+
+```bash
 yarn run build
 yarn run build:deb
 yarn run build:snap
@@ -79,6 +84,7 @@ snapcraft --use-lxd
 # Publish to store
 unsquashfs file.snap
 snapcraft pack ./squashfs-root
+snapcraft login
 snapcraft upload --release=stable file.snap
 ```
 
