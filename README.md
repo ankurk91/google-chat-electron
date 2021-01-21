@@ -11,8 +11,9 @@ An unofficial desktop app for [Google Chat](https://chat.google.com/) build with
 
 ### Motivation
 
-* Official Google Chat electron app is only [available](https://chat.google.com/download/) on Mac
-* Official Google Chat electron app will [stop running](https://support.google.com/chat/answer/10194711) after Jan 2021
+* Official Google Chat electron app 
+    - is only [available](https://chat.google.com/download/) on Mac
+    - will [stop running](https://support.google.com/chat/answer/10194711) after Jan 2021
 * Google is forcing users to use PWA which has fewer features
 
 ### Installation
@@ -64,7 +65,7 @@ This desktop client has no way to access none of your data.
 
 #### Building the snap package
 
-* Install snapcraft tools
+* Install [snapcraft](https://snapcraft.io/snapcraft) tools (onetime)
 
 ```bash
 sudo snap install snapcraft --classic
@@ -79,16 +80,12 @@ sudo /snap/bin/lxd init --auto
 yarn run build
 yarn run build:deb
 yarn run build:snap
-snapcraft --use-lxd
 ```
 
 * Publish to store
 
 ```bash
-unsquashfs file.snap
-snapcraft pack ./squashfs-root
-snapcraft login
-snapcraft upload --release=stable file.snap
+yarn run build:snap-publish
 ```
 
 [![Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/google-chat-electron)

@@ -1,6 +1,6 @@
 title: Google Chat
 name: google-chat-electron
-version: '1.0.19'
+version: '{{SNAP_VERSION}}'
 base: core18
 summary: Unofficial desktop app for Google Chat.
 description: |
@@ -16,7 +16,7 @@ architectures:
 parts:
   electron-deb:
     plugin: dump
-    source: ./dist/installers/google-chat-electron_1.0.19_amd64.deb
+    source: ./dist/installers/google-chat-electron_{{SNAP_VERSION}}_amd64.deb
     source-type: deb
 
     stage-packages:

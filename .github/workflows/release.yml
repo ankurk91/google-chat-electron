@@ -38,3 +38,15 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           file_glob: true
+
+      - name: Install Snapcraft with LXD
+        uses: samuelmeuli/action-snapcraft@v1
+        with:
+          snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
+          use_lxd: true
+
+      - name: Create snap package
+        run: yarn run build:snap
+
+      - name: Publish to snap store
+        run: yarn run build:snap-publish

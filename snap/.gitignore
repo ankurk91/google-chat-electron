@@ -1,0 +1,4 @@
+*
+!.gitignore
+!/local/
+/snapcraft.yaml
