@@ -8,7 +8,7 @@ on:
 jobs:
   release:
     name: release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - name: Checkout code
@@ -27,7 +27,7 @@ jobs:
           rm -rf ./.github
           yarn run build
 
-      - name: Create debian installer
+      - name: Create debian package
         run: yarn run build:deb
 
       - name: Upload binaries to release

@@ -30,15 +30,20 @@ apps:
     plugs:
       - audio-playback
       - home
+      - removable-media
       - browser-support
+      - cups-control
       - network
       - network-bind
+      - network-observe
       - unity7
 
     desktop: usr/share/applications/google-chat-electron.desktop
     autostart : google-chat-electron.desktop
-    # Correct the TMPDIR path for Chromium Framework/Electron to ensure
-    # libappindicator has readable resources.
+
     environment:
       DISABLE_WAYLAND: 1
+      # Correct the TMPDIR path for Chromium Framework/Electron to ensure
+      # libappindicator has readable resources.
       TMPDIR: $XDG_RUNTIME_DIR
+

@@ -21,7 +21,7 @@ An unofficial desktop app for [Google Chat](https://chat.google.com/) build with
   section.
 * Install the package with this command: (correct the path)
 
-```
+```bash
 sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ```
 
@@ -33,7 +33,7 @@ sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 * Quit from app if running
 * Remove the app with this command
 
-```
+```bash
 sudo apt-get remove --purge google-chat-electron
 ```
 
@@ -80,8 +80,11 @@ yarn run build
 yarn run build:deb
 yarn run build:snap
 snapcraft --use-lxd
+```
 
-# Publish to store
+* Publish to store
+
+```bash
 unsquashfs file.snap
 snapcraft pack ./squashfs-root
 snapcraft login
