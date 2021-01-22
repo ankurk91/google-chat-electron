@@ -563,6 +563,11 @@ electron-is-dev@^1.0.1, electron-is-dev@^1.1.0:
   resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-1.2.0.tgz#2e5cea0a1b3ccf1c86f577cee77363ef55deb05e"
   integrity sha512-R1oD5gMBPS7PVU8gJwH6CtT0e6VSoD0+SzSnYpNm+dBkcijgA+K7VAMHDfnRq/lkKPZArpzplTW6jfiMYosdzw==
 
+electron-is-snap@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/electron-is-snap/-/electron-is-snap-1.0.1.tgz#9c66d0b05bfec9a4b7444d3d98d1d615c886b5f1"
+  integrity sha512-WLATDjVMcgWak7bVkHOt4FYCmYSJHwfzdluqYyBsIDMbSOO0AXulAC8kSUM9FoC/6aiWmytSn9JBbRvwuM4x/Q==
+
 electron-log@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/electron-log/-/electron-log-4.3.1.tgz#1405fef9d4e6964a5fdb8790a69163aa237ffe91"

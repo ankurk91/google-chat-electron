@@ -7,6 +7,8 @@ import {autoLaunch} from './openAtLogin';
 import aboutPanel from './aboutPanel';
 import store from './../config';
 
+const isSnap = require('electron-is-snap').isSnap;
+
 export default function (window: BrowserWindow) {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
 
@@ -138,7 +140,8 @@ export default function (window: BrowserWindow) {
         {
           label: 'Auto check for Updates',
           type: 'checkbox',
-          checked: <boolean>store.get('app.autoCheckForUpdates', true),
+          enabled: !isSnap,
+          checked: <boolean>store.get('app.autoCheckForUpdates', !isSnap),
           click: (menuItem) => {
             store.set('app.autoCheckForUpdates', menuItem.checked)
           }
@@ -173,6 +176,7 @@ export default function (window: BrowserWindow) {
         },
         {
           label: 'Check For Updates',
+          enabled: !isSnap,
           click: () => {
             checkForUpdates({
               silent: false

@@ -1,10 +1,16 @@
 import {setUpdateNotification, checkForUpdates} from 'electron-update-notifier';
 import store from '../config'
 
+const isSnap = require('electron-is-snap').isSnap;
+
 let interval: NodeJS.Timeout;
 
 export default function () {
   clearInterval(interval);
+
+  if (isSnap) {
+    return
+  }
 
   const shouldCheckForUpdates = () => {
     return store.get('app.autoCheckForUpdates', true);
