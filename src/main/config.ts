@@ -62,4 +62,7 @@ const schema: Store.Schema<StoreType> = {
   }
 }
 
-export default new Store<StoreType>({schema});
+export default new Store<StoreType>({
+  schema,
+  clearInvalidConfig: true
+});
