@@ -49,4 +49,6 @@ jobs:
         run: yarn run build:snap
 
       - name: Publish to snap store
-        run: yarn run build:snap-publish
+        run: |
+          sudo snap install review-tools
+          yarn run build:snap-publish

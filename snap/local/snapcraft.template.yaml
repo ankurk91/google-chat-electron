@@ -4,7 +4,7 @@ version: '{{SNAP_VERSION}}'
 base: core18
 summary: Unofficial desktop app for Google Chat.
 description: |
-  Unofficial desktop app for Google Chat.
+  Unofficial desktop app for Google Chat built with Electron.
 grade: stable
 confinement: strict
 icon: ./resources/icons/normal/scalable.svg
@@ -36,7 +36,6 @@ apps:
       - network
       - network-bind
       - network-observe
-      - unity7
 
     desktop: usr/share/applications/google-chat-electron.desktop
     autostart : google-chat-electron.desktop
