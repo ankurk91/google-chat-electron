@@ -10,7 +10,8 @@ type StoreType = {
   },
   app: {
     autoCheckForUpdates: boolean,
-    launchAtLogin: boolean
+    launchAtLogin: boolean,
+    darkReader: boolean,
   }
 }
 
@@ -57,6 +58,10 @@ const schema: Store.Schema<StoreType> = {
       autoLaunchAtLogin: {
         type: 'boolean',
         default: true
+      },
+      darkReader: {
+        type: 'boolean',
+        default: false
       }
     }
   }

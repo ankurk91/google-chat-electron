@@ -160,6 +160,15 @@ export default function (window: BrowserWindow) {
 
             store.set('app.autoLaunchAtLogin', menuItem.checked)
           }
+        },
+        {
+          label: 'Enable Dark Theme',
+          type: 'checkbox',
+          checked: <boolean>store.get('app.darkReader', false),
+          click: async (menuItem) => {
+            window.webContents.send('darkReader', menuItem.checked)
+            store.set('app.darkReader', menuItem.checked)
+          }
         }
       ]
     },
