@@ -7,7 +7,7 @@
   "scripts": {
     "prestart": "yarn run ts",
     "start": "electron .",
-    "clean:dist": "rimraf ./dist",
+    "clean:dist": "rimraf ./dist && rimraf ./*.snap",
     "clean:lib": "rimraf ./lib",
     "prets": "yarn run clean:lib",
     "ts": "tsc",

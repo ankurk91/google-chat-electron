@@ -11,23 +11,28 @@ An unofficial desktop app for [Google Chat](https://chat.google.com/) built with
 
 ### Motivation
 
-* Official Google Chat electron app 
+* The official Google Chat electron app
     - is only [available](https://chat.google.com/download/) on Mac
     - will [stop running](https://support.google.com/chat/answer/10194711) after Jan 2021
 * Google is forcing users to use PWA which has fewer features
 
 ### Installation
 
-* Download the latest `.deb` file from the [releases](https://github.com/ankurk91/google-chat-electron/releases/latest)
+* Install via [snap](https://snapcraft.io/google-chat-electron) (recommended)
+
+```bash
+sudo snap install google-chat-electron
+sudo snap set core experimental.refresh-app-awareness=true
+```
+
+* Alternatively you can download the latest `.deb` installer from
+  the [releases](https://github.com/ankurk91/google-chat-electron/releases/latest)
   section.
-* Install the package with this command: (correct the path)
+* Install the debian package with this command: (correct the path)
 
 ```bash
 sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ```
-
-* Relaunch the app if already running.
-* Follow the same steps for future updates.
 
 ### Uninstall
 
@@ -35,6 +40,9 @@ sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 * Remove the app with this command
 
 ```bash
+sudo snap remove google-chat-electron
+
+# or when installed via debian package
 sudo apt-get remove --purge google-chat-electron
 ```
 
