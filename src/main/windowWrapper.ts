@@ -6,7 +6,7 @@ export default function (url: string) {
   const window = new BrowserWindow({
     webPreferences: {
       autoplayPolicy: 'user-gesture-required',
-      contextIsolation: true,
+      contextIsolation: false,
       enableRemoteModule: false,
       nodeIntegration: false,
       sandbox: false,
