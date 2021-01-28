@@ -13,7 +13,7 @@ export default function () {
   }
 
   const shouldCheckForUpdates = () => {
-    return store.get('app.autoCheckForUpdates', true);
+    return store.get('app.autoCheckForUpdates');
   }
 
   setTimeout(() => {

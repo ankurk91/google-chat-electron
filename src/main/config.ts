@@ -46,6 +46,9 @@ const schema: Store.Schema<StoreType> = {
         type: 'boolean',
         default: false
       }
+    },
+    default: {
+      bounds: {}
     }
   },
   app: {
@@ -63,7 +66,8 @@ const schema: Store.Schema<StoreType> = {
         type: 'boolean',
         default: false
       }
-    }
+    },
+    default: {}
   }
 }
 

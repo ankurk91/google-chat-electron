@@ -22,7 +22,7 @@ export default function (window: BrowserWindow) {
 
   autoLaunchInstance = autoLaunch();
 
-  if (!store.get('app.autoLaunchAtLogin', true)) {
+  if (!store.get('app.autoLaunchAtLogin')) {
     autoLaunchInstance.disable();
     return
   }

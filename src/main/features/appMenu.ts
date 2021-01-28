@@ -141,7 +141,7 @@ export default function (window: BrowserWindow) {
           label: 'Auto check for Updates',
           type: 'checkbox',
           enabled: !isSnap,
-          checked: <boolean>store.get('app.autoCheckForUpdates', !isSnap),
+          checked: <boolean>store.get('app.autoCheckForUpdates'),
           click: (menuItem) => {
             store.set('app.autoCheckForUpdates', menuItem.checked)
           }
@@ -149,7 +149,7 @@ export default function (window: BrowserWindow) {
         {
           label: 'Auto launch on Login',
           type: 'checkbox',
-          checked: <boolean>store.get('app.autoLaunchAtLogin', true),
+          checked: <boolean>store.get('app.autoLaunchAtLogin'),
           click: async (menuItem) => {
 
             if (menuItem.checked) {
@@ -164,7 +164,7 @@ export default function (window: BrowserWindow) {
         {
           label: 'Enable Dark Theme',
           type: 'checkbox',
-          checked: <boolean>store.get('app.darkReader', false),
+          checked: <boolean>store.get('app.darkReader'),
           click: async (menuItem) => {
             window.webContents.send('darkReader', menuItem.checked)
             store.set('app.darkReader', menuItem.checked)

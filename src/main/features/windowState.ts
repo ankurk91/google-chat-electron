@@ -9,7 +9,7 @@ export default function (window: BrowserWindow) {
   }
 
   window.on('ready-to-show', () => {
-    if (store.get('window.isMaximized', false)) {
+    if (store.get('window.isMaximized')) {
       window.maximize()
     }
   })
