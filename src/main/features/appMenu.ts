@@ -1,4 +1,4 @@
-import {Menu, app, shell, ipcMain, clipboard, BrowserWindow, dialog} from 'electron';
+import {Menu, app, shell, clipboard, BrowserWindow, dialog} from 'electron';
 import {checkForUpdates} from 'electron-update-notifier';
 import path from 'path';
 import {openNewGitHubIssue, debugInfo} from 'electron-util';
@@ -7,10 +7,9 @@ import {autoLaunch} from './openAtLogin';
 import aboutPanel from './aboutPanel';
 import store from './../config';
 
-const isSnap = require('electron-is-snap').isSnap;
-
 export default function (window: BrowserWindow) {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
+  const isSnap = require('electron-is-snap').isSnap;
 
   const relaunchApp = () => {
     app.relaunch({
@@ -141,7 +140,7 @@ export default function (window: BrowserWindow) {
           label: 'Auto check for Updates',
           type: 'checkbox',
           enabled: !isSnap,
-          checked: <boolean>store.get('app.autoCheckForUpdates'),
+          checked: store.get('app.autoCheckForUpdates'),
           click: (menuItem) => {
             store.set('app.autoCheckForUpdates', menuItem.checked)
           }
@@ -149,7 +148,7 @@ export default function (window: BrowserWindow) {
         {
           label: 'Auto launch on Login',
           type: 'checkbox',
-          checked: <boolean>store.get('app.autoLaunchAtLogin'),
+          checked: store.get('app.autoLaunchAtLogin'),
           click: async (menuItem) => {
 
             if (menuItem.checked) {
@@ -164,7 +163,7 @@ export default function (window: BrowserWindow) {
         {
           label: 'Enable Dark Theme',
           type: 'checkbox',
-          checked: <boolean>store.get('app.darkReader'),
+          checked: store.get('app.darkReader'),
           click: async (menuItem) => {
             window.webContents.send('darkReader', menuItem.checked)
             store.set('app.darkReader', menuItem.checked)

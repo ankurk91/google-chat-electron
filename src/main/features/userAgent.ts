@@ -16,6 +16,7 @@ export default function () {
   const userAgent: string = userAgentString();
   session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details: OnBeforeSendHeadersListenerDetails, callback) => {
     details.requestHeaders['User-Agent'] = userAgent
+
     callback({
       requestHeaders: details.requestHeaders
     })

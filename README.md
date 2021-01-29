@@ -50,16 +50,17 @@ sudo apt-get remove --purge google-chat-electron
 
 ### Supported Platforms
 
-The app should work on Ubuntu and its derivatives.
+The app should work on most linux distros, but due to lack of time; we test on most popular only.
 
-| OS                    | Version         | Tested              |
-| :---                  | :---:           |                ---: |
-| Ubuntu GNOME          | 20              |  :heavy_check_mark: |
-| Linux Mint Cinnamon   | 20              |  :heavy_check_mark: |
+| OS                    | Version          | Tested              |
+| :---                  | :---:            |                ---: |
+| Ubuntu GNOME          | 20.x             |  :heavy_check_mark: |
+| Linux Mint Cinnamon   | 20.x             |  :heavy_check_mark: |
 
 ### Acknowledgements
 
-* [@robyf](https://github.com/robyf) for the initial work
+* [@robyf](https://github.com/robyf/google-chat-linux) for the initial work
+* [@squalou](https://github.com/squalou/google-chat-linux) for enhancements
 * All other [contributors](https://github.com/ankurk91/google-chat-electron/graphs/contributors)
 
 ## Disclaimer
@@ -68,33 +69,6 @@ This desktop app is just a wrapper which starts a chromium instance locally and 
 rights to the [Google Chat](https://chat.google.com/) product is reserved by
 [Google Inc.](https://en.wikipedia.org/wiki/Google)
 This desktop client has no way to access none of your data.
-
-### Development
-
-#### Building the snap package
-
-* Install [snapcraft](https://snapcraft.io/snapcraft) tools (onetime)
-
-```bash
-sudo snap install snapcraft --classic
-sudo snap install lxd
-sudo snap install review-tools
-sudo /snap/bin/lxd init --auto
-```
-
-* Build snap package
-
-```bash
-yarn run build
-yarn run build:deb
-yarn run build:snap
-```
-
-* Publish to store
-
-```bash
-yarn run build:snap-publish
-```
 
 [![Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/google-chat-electron)
 

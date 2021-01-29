@@ -14,7 +14,7 @@ export default function (window: BrowserWindow) {
 
   trayIcon.setContextMenu(Menu.buildFromTemplate([
     {
-      label: 'Show/Hide',
+      label: 'Toggle',
       click: handleIconClick
     },
     {
