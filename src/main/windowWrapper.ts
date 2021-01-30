@@ -1,6 +1,7 @@
 import path from 'path';
 import {app, BrowserWindow, nativeImage} from 'electron';
 import {userAgentString} from './features/userAgent';
+import store from './config';
 
 export default function (url: string) {
   const window = new BrowserWindow({
@@ -24,7 +25,9 @@ export default function (url: string) {
   });
 
   window.once('ready-to-show', () => {
-    window.show();
+    if (!store.get('app.startHidden')) {
+      window.show();
+    }
   });
 
   window.loadURL(url, {

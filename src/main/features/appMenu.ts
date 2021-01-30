@@ -161,6 +161,14 @@ export default function (window: BrowserWindow) {
           }
         },
         {
+          label: 'Start Hidden',
+          type: 'checkbox',
+          checked: store.get('app.startHidden'),
+          click: async (menuItem) => {
+            store.set('app.startHidden', menuItem.checked)
+          }
+        },
+        {
           label: 'Enable Dark Theme',
           type: 'checkbox',
           checked: store.get('app.darkReader'),
@@ -168,7 +176,7 @@ export default function (window: BrowserWindow) {
             window.webContents.send('darkReader', menuItem.checked)
             store.set('app.darkReader', menuItem.checked)
           }
-        }
+        },
       ]
     },
     {
