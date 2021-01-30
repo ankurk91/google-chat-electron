@@ -30,10 +30,10 @@ echo "Display file size"
 du -sh "$PACKAGE_FILE"
 
 # You must be logged-in to snapcraft.io in-order to run next command
-echo "Uploading to store..."
+echo "Uploading to snap store..."
 snapcraft upload --release=stable "$PACKAGE_FILE"
 
 echo "Show package info"
 snap info "$PACKAGE_NAME"
 
-echo "Finished!"
+printf "\nFinished!"

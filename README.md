@@ -1,11 +1,12 @@
 # Google Chat Desktop App
 
-[![latest-release](https://badgen.net/github/release/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/tags)
+[![latest-tag](https://badgen.net/github/release/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/tags)
 [![downloads](https://img.shields.io/github/downloads/ankurk91/google-chat-electron/total?cacheSeconds=1800)](https://github.com/ankurk91/google-chat-electron/releases)
 [![gh-actions](https://github.com/ankurk91/google-chat-electron/workflows/release/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions)
 [![license](https://badgen.net/github/license/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron)
 [![dependencies](https://img.shields.io/david/ankurk91/google-chat-electron?cacheSeconds=86400)](https://david-dm.org/ankurk91/google-chat-electron)
 [![snapcraft](https://snapcraft.io/google-chat-electron/badge.svg)](https://snapcraft.io/google-chat-electron)
+[![bintray](https://api.bintray.com/packages/ankurk91/debian/google-chat-electron/images/download.svg)](https://bintray.com/ankurk91/debian/google-chat-electron/_latestVersion)
 
 An unofficial desktop app for [Google Chat](https://chat.google.com/) built with [Electron](https://www.electronjs.org/)
 
@@ -25,13 +26,13 @@ sudo snap install google-chat-electron
 sudo snap set core experimental.refresh-app-awareness=true
 ```
 
-* Alternatively you can download the latest `.deb` installer from
-  the [releases](https://github.com/ankurk91/google-chat-electron/releases/latest)
-  section.
-* Install the debian package with this command: (correct the path)
+* Alternatively you can install the debian package on Ubuntu and its derivatives
 
 ```bash
-sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
+echo "deb https://dl.bintray.com/ankurk91/debian all main" | sudo tee -a /etc/apt/sources.list.d/google-chat-electron.list
+sudo apt update
+sudo apt install -y google-chat-electron
 ```
 
 ### Uninstall
@@ -71,6 +72,7 @@ rights to the [Google Chat](https://chat.google.com/) product is reserved by
 This desktop client has no way to access none of your data.
 
 [![Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/google-chat-electron)
+[![Bintray](https://www.bintray.com/docs/images/bintray_badge_color.png)](https://bintray.com/ankurk91/debian/google-chat-electron?source=watch)
 
 ## License
 

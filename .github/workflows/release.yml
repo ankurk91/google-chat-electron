@@ -30,7 +30,12 @@ jobs:
       - name: Create debian package
         run: yarn run build:deb
 
-      - name: Upload binaries to release
+      - name: Publish deb package to bintray
+        run: yarn run build:deb-publish
+        env:
+          BINTRAY_API_KEY: ${{ secrets.BINTRAY_API_KEY }}
+
+      - name: Upload binaries to GitHub release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
