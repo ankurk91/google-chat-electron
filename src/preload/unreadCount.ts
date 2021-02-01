@@ -16,19 +16,23 @@ const isMuted = (node: any) => {
   }
 }
 
-const getMessages = () => {
-  let allMessageCount = 0;
+const getMessageCount = (): Number => {
+  let counter = 0;
 
   document.querySelectorAll(allMessageSelector).forEach((node) => {
     if (!isMuted(node)) {
-      allMessageCount += 1;
+      counter += 1;
     }
   });
 
-  return allMessageCount
+  return counter
 };
 
-ipcRenderer.on('unreadCount', (event) => {
-  event.sender.send('unreadCount', getMessages())
+const emitCount = () => {
+  ipcRenderer.send('unreadCount', getMessageCount())
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  setInterval(emitCount, 1000)
 });
 

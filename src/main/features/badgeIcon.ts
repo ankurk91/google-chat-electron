@@ -22,15 +22,9 @@ export default function (window: BrowserWindow, trayIcon: Tray) {
     const icon = nativeImage.createFromPath(path.join(app.getAppPath(), `resources/icons/${type}/256.png`))
     trayIcon.setImage(icon);
     window.setIcon(icon);
-
-    if (type === 'badge') {
-      window.webContents.send('unreadCount');
-    } else {
-      app.setBadgeCount(0)
-    }
   });
 
   ipcMain.on('unreadCount', (event, count: number) => {
-    app.setBadgeCount(count)
+    app.setBadgeCount(Number(count))
   });
 }
