@@ -15,7 +15,6 @@
     "prebuild": "yarn run clean:dist && yarn run ts",
     "build": "electron-packager . --platform=linux --arch=x64 --asar --overwrite --out=./dist/",
     "build:deb": "electron-installer-debian --config=./debian/config.json --arch=amd64",
-    "build:deb-publish": "bash ./debian/publish.sh",
     "build:snap-clean": "sg lxd -c 'snapcraft clean electron-deb --use-lxd'",
     "build:snap-version": "bash ./snap/local/version.sh",
     "prebuild:snap": "yarn run build:snap-version",
