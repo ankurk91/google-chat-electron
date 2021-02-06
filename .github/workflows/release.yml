@@ -28,7 +28,9 @@ jobs:
           yarn run build
 
       - name: Create debian package
-        run: yarn run build:deb
+        run: |
+          yarn run build:deb
+          yarn run build:deb-checksum
 
       - name: Upload binaries to GitHub release
         uses: svenstaro/upload-release-action@v2
