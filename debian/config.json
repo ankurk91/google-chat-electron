@@ -17,12 +17,6 @@
       "Social",
       "Communication"
     ],
-    "depends": [
-      "libnotify4",
-      "libappindicator1",
-      "libxtst6",
-      "libnss3"
-    ],
     "scripts": {
       "postrm": "debian/scripts/post-remove.sh"
     }
