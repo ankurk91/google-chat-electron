@@ -6,6 +6,7 @@ import log from 'electron-log';
 import {autoLaunch} from './openAtLogin';
 import aboutPanel from './aboutPanel';
 import store from './../config';
+import {toggleExternalLinksGuard} from "./externalLinks";
 
 export default function (window: BrowserWindow) {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
@@ -209,6 +210,12 @@ export default function (window: BrowserWindow) {
                   repoUrl: pkg.repository,
                   body: `### Platform\n\n${debugInfo()}`
                 });
+              }
+            },
+            {
+              label: 'Toggle External Links Guard',
+              click: () => {
+                toggleExternalLinksGuard(window);
               }
             },
             {
