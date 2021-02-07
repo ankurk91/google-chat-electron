@@ -5,7 +5,7 @@
 [![gh-actions](https://github.com/ankurk91/google-chat-electron/workflows/release/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions)
 [![license](https://badgen.net/github/license/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron)
 [![snapcraft](https://snapcraft.io/google-chat-electron/badge.svg)](https://snapcraft.io/google-chat-electron)
-[![vulnerabilities](https://snyk.io/test/github/ankurk91/google-chat-electron/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ankurk91/google-chat-electron)
+[![dependabot](https://badgen.net/dependabot/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/pulls)
 
 An unofficial desktop app for [Google Chat](https://chat.google.com/) built with [Electron](https://www.electronjs.org/)
 
