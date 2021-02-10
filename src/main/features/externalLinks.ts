@@ -23,7 +23,8 @@ export default function (window: BrowserWindow) {
       'chat.google.com'
     ];
 
-    if (!whiteListDomains.includes(extractHostname(url))) {
+    if (url.startsWith('https://chat.google.com/api/get_attachment_url') ||
+      !whiteListDomains.includes(extractHostname(url))) {
       setImmediate(() => {
         shell.openExternal(url);
       })
