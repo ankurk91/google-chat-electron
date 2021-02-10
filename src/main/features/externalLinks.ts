@@ -20,7 +20,6 @@ export default function (window: BrowserWindow) {
       extractHostname(window.webContents.getURL()),
       'accounts.google.com',
       'accounts.youtube.com',
-      'support.google.com',
       'chat.google.com'
     ];
 
