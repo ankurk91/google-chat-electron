@@ -24,5 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-
+window.addEventListener('focus', () => {
+  emitFaviconChanged();
+});
