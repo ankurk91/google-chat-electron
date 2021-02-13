@@ -22,5 +22,6 @@ yarn run build:snap
 * Publish to store
 
 ```bash
-yarn run build:snap-publish
+yarn run build:snap-repack
+snapcraft upload --release=stable ./*.snap
 ```

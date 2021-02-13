@@ -17,10 +17,10 @@
     "build:deb": "electron-installer-debian --config=./debian/config.json --arch=amd64",
     "build:deb-checksum": "cd ./dist/installers && sha512sum *.deb > google-chat-electron-SHA512.txt",
     "build:snap-clean": "sg lxd -c 'snapcraft clean electron-deb --use-lxd'",
-    "build:snap-version": "bash ./snap/local/version.sh",
-    "prebuild:snap": "yarn run build:snap-version",
+    "build:snap-template": "bash ./snap/local/template.sh",
+    "prebuild:snap": "yarn run build:snap-template",
     "build:snap": "sg lxd -c 'snapcraft --use-lxd'",
-    "build:snap-publish": "bash ./snap/local/publish.sh"
+    "build:snap-repack": "bash ./snap/local/repack.sh"
   },
   "repository": "https://github.com/ankurk91/google-chat-electron",
   "homepage": "https://github.com/ankurk91/google-chat-electron",

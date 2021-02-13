@@ -8,7 +8,7 @@ on:
 jobs:
   release:
     name: release
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout code
@@ -41,16 +41,22 @@ jobs:
           overwrite: true
           file_glob: true
 
-      - name: Install Snapcraft with LXD
-        uses: samuelmeuli/action-snapcraft@v1
-        with:
-          snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
-          use_lxd: true
+      - name: Prepare for building snap package
+        run: yarn run build:snap-template
 
-      - name: Create snap package
-        run: yarn run build:snap
+      - name: Create Snap package
+        uses: snapcore/action-build@v1
+        id: snapcraft
 
-      - name: Publish to snap store
+      - name: Prepare for snap publishing
         run: |
           sudo snap install review-tools
-          yarn run build:snap-publish
+          yarn run build:snap-repack
+
+      - name: Publish to snap store
+        uses: snapcore/action-publish@v1
+        with:
+          store_login: ${{ secrets.SNAPCRAFT_TOKEN }}
+          snap: ${{ steps.snapcraft.outputs.snap }}
+          release: stable
+
