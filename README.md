@@ -22,6 +22,7 @@ An unofficial desktop app for [Google Chat](https://chat.google.com/) built with
 
 ```bash
 sudo snap install google-chat-electron
+sudo snap connect google-chat-electron:removable-media :removable-media
 sudo snap set core experimental.refresh-app-awareness=true
 ```
 
