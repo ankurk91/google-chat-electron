@@ -1,5 +1,11 @@
 import {app} from 'electron';
 
+// Need to fix the paths before loading any other library
+// https://github.com/electron/electron/issues/23854
+import fixPathsForSnap from './features/fixPathsForSnap';
+
+fixPathsForSnap();
+
 import reportExceptions from './features/reportExceptions';
 import windowWrapper from './windowWrapper';
 import {enforceSingleInstance, restoreFirstInstance} from './features/singleInstance';
@@ -25,7 +31,7 @@ let mainWindow = null;
 let trayIcon = null;
 
 // Features
-app.commandLine.appendSwitch('disk-cache-size', String(300 * 1024 * 1024))
+app.commandLine.appendSwitch('disk-cache-size', String(300 * 1024 * 1024));
 reportExceptions();
 
 if (enforceSingleInstance()) {
