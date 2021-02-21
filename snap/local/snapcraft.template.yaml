@@ -14,19 +14,46 @@ architectures:
   - amd64
 
 parts:
+  libappindicator:
+    plugin: nil
+    stage-packages:
+      - libappindicator3-1
+    prime:
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libdbusmenu*.so*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libappindicator*.so*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libindicator*.so*
+      - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libgtk*.so*
+
   electron-deb:
+    after: [ libappindicator ]
     plugin: dump
-    source: ./dist/installers/google-chat-electron_{{SNAP_VERSION}}_amd64.deb
+    source: ./dist/installers/google-chat-electron_$SNAPCRAFT_PROJECT_VERSION_amd64.deb
     source-type: deb
 
+    prime:
+      - -usr/lib/google-chat-electron/chrome-sandbox
+
     stage-packages:
-      - libnss3
       - libnspr4
+      - libnss3
+      - libunity9
+
+  cleanup:
+    after: [ electron-deb ]
+    plugin: nil
+    build-snaps: [ gnome-3-34-1804 ]
+    override-prime: |
+      set -eux
+      cd /snap/gnome-3-34-1804/current
+      find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/{} \;
 
 apps:
   google-chat-electron:
     command: usr/bin/google-chat-electron --no-sandbox
-    extensions: [gnome-3-34]
+    desktop: usr/share/applications/google-chat-electron.desktop
+    autostart: google-chat-electron.desktop
+    extensions: [ gnome-3-34 ]
+
     plugs:
       - audio-playback
       - home
@@ -36,13 +63,11 @@ apps:
       - network
       - network-bind
       - network-observe
-
-    desktop: usr/share/applications/google-chat-electron.desktop
-    autostart : google-chat-electron.desktop
+      - unity7
 
     environment:
-      DISABLE_WAYLAND: 1
-      # Correct the TMPDIR path for Chromium Framework/Electron to ensure
-      # libappindicator has readable resources.
+      # Correct the TMPDIR path for Chromium Framework/Electron to
+      # ensure libappindicator has readable resources
       TMPDIR: $XDG_RUNTIME_DIR
-
+      # Fallback to XWayland if running in a Wayland session.
+      DISABLE_WAYLAND: 1
