@@ -32,7 +32,9 @@ const emitCount = () => {
   ipcRenderer.send('unreadCount', getMessageCount())
 }
 
+let interval: NodeJS.Timeout;
 window.addEventListener('DOMContentLoaded', () => {
-  setInterval(emitCount, 1000)
+  clearInterval(interval)
+  interval = setInterval(emitCount, 1000)
 });
 
