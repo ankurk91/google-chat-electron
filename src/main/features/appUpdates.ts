@@ -3,7 +3,7 @@ import store from '../config'
 
 let interval: NodeJS.Timeout;
 
-export default function () {
+export default () => {
   const isSnap = require('electron-is-snap').isSnap;
   clearInterval(interval);
 

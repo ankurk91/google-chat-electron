@@ -5,7 +5,7 @@ let guardAgainstExternalLinks: Boolean = true;
 const RE_GUARD_IN_MINUTES: number = 5;
 let interval: NodeJS.Timeout;
 
-export default function (window: BrowserWindow) {
+export default (window: BrowserWindow) => {
   const handleRedirect = (event: Event, url: string) => {
     if (url === 'about:blank') {
       event.preventDefault();

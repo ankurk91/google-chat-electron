@@ -1,7 +1,7 @@
 import path from 'path';
 import {BrowserWindow, app, Tray, Menu, nativeImage} from 'electron';
 
-export default function (window: BrowserWindow) {
+export default (window: BrowserWindow) => {
   const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/offline/256.png')));
 
   const handleIconClick = () => {

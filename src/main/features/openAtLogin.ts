@@ -17,7 +17,7 @@ const autoLaunch = () => {
   return autoLaunchInstance;
 }
 
-export default function (window: BrowserWindow) {
+export default (window: BrowserWindow) => {
   if (!app.isPackaged) return;
 
   autoLaunchInstance = autoLaunch();

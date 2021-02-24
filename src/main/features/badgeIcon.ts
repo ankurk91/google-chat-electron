@@ -14,7 +14,7 @@ const decideIcon = (href: string) => {
   return type;
 }
 
-export default function (window: BrowserWindow, trayIcon: Tray) {
+export default (window: BrowserWindow, trayIcon: Tray) => {
 
   ipcMain.on('favicon-changed', (evt, href) => {
     const type = decideIcon(String(href));

@@ -1,6 +1,6 @@
 import {BrowserWindow} from 'electron';
 
-export default function (window: BrowserWindow) {
+export default (window: BrowserWindow) => {
 
   window.on('close', (event) => {
     event.preventDefault();

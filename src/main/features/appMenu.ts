@@ -8,7 +8,7 @@ import aboutPanel from './aboutPanel';
 import store from './../config';
 import {toggleExternalLinksGuard} from "./externalLinks";
 
-export default function (window: BrowserWindow) {
+export default (window: BrowserWindow) => {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
   const isSnap = require('electron-is-snap').isSnap;
 

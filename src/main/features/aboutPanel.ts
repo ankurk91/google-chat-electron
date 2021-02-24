@@ -2,7 +2,7 @@ import {app, dialog, nativeImage, clipboard, BrowserWindow} from 'electron';
 import path from 'path';
 import os from 'os';
 
-export default function (window: BrowserWindow) {
+export default (window: BrowserWindow) => {
   const packageJson = require(path.join(app.getAppPath(), 'package.json'));
   const detail = getDetails();
 

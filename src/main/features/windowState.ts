@@ -2,7 +2,7 @@ import {throttle} from 'throttle-debounce';
 import {BrowserWindow} from 'electron';
 import store from '../config';
 
-export default function (window: BrowserWindow) {
+export default (window: BrowserWindow) => {
 
   if (store.has('window.bounds')) {
     window.setBounds(store.get('window.bounds'))

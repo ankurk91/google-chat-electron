@@ -3,7 +3,7 @@ import {app, BrowserWindow, nativeImage} from 'electron';
 import {userAgentString} from './features/userAgent';
 import store from './config';
 
-export default function (url: string) {
+export default (url: string) => {
   const window = new BrowserWindow({
     webPreferences: {
       autoplayPolicy: 'user-gesture-required',

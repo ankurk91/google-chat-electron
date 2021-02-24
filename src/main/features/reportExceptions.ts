@@ -4,7 +4,7 @@ import {openNewGitHubIssue, debugInfo} from 'electron-util';
 import path from 'path';
 import {app} from 'electron';
 
-export default function () {
+export default () => {
   const packageJson = require(path.join(app.getAppPath(), 'package.json'));
 
   return unhandled({

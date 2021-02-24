@@ -8,7 +8,7 @@ const userAgentString = () => {
   return defaultAgent;
 }
 
-export default function () {
+export default () => {
   const filter = {
     urls: ['https://*.google.com/*']
   }
