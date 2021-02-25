@@ -44,8 +44,16 @@ parts:
     build-snaps: [ gnome-3-34-1804 ]
     override-prime: |
       set -eux
-      cd /snap/gnome-3-34-1804/current
-      find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/{} \;
+
+      for snap in "gnome-3-34-1804"; do
+        cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" \;
+      done
+
+      for CRUFT in "bug" "lintian" "man" "doc"; do
+         rm -rf "$SNAPCRAFT_PRIME/usr/share/$CRUFT"
+      done
+
+      find "$SNAPCRAFT_PRIME/usr/share" -type d -empty -delete
 
 apps:
   google-chat-electron:
