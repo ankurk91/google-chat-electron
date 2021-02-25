@@ -219,6 +219,12 @@ export default (window: BrowserWindow) => {
               }
             },
             {
+              label: 'Demo Badge Count',
+              click: () => {
+                app.setBadgeCount(Math.floor(Math.random() * 99))
+              }
+            },
+            {
               type: 'separator'
             },
             {
