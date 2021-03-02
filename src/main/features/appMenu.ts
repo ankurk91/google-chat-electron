@@ -14,6 +14,7 @@ export default (window: BrowserWindow) => {
 
   const relaunchApp = () => {
     app.relaunch({
+      // This will launch app without hidden flag
       args: process.argv.filter(flag => flag !== '--hidden')
     });
     app.exit();

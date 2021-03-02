@@ -1,5 +1,7 @@
 import {session, OnBeforeSendHeadersListenerDetails} from 'electron'
 
+// Prevent Google from tracking if the website is running inside Electron
+
 const userAgentString = () => {
   let defaultAgent = session.defaultSession.getUserAgent();
   defaultAgent = defaultAgent.replace(/Electron\/[0-9]/, 'DesktopAppFramework/');
