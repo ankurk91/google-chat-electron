@@ -20,7 +20,7 @@ import badgeIcons from './features/badgeIcon';
 import closeToTray from './features/closeToTray';
 import setAppMenu from './features/appMenu';
 import overrideUserAgent from './features/userAgent';
-import {checkForInternet} from './features/inOnline';
+import setupOfflineHandlers, {checkForInternet} from './features/inOnline';
 import logFirstLaunch from './features/firstLaunch';
 import darkReader from './features/darkReader';
 import handleNotification from './features/handleNotification';
@@ -39,6 +39,7 @@ if (enforceSingleInstance()) {
     .then(() => {
       overrideUserAgent();
       mainWindow = windowWrapper('https://chat.google.com/');
+      setupOfflineHandlers(mainWindow);
       checkForInternet(mainWindow);
 
       trayIcon = setupTrayIcon(mainWindow);

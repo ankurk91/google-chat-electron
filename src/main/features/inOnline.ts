@@ -2,14 +2,30 @@ import isOnline from 'is-online';
 import {BrowserWindow, ipcMain, Notification, app, nativeImage, IpcMainEvent} from 'electron';
 import path from 'path';
 
-const checkForInternet = async (window: BrowserWindow) => {
-  const canChat = await isOnline({
-    timeout: 3000
+export default (window: BrowserWindow) => {
+
+  window.webContents.on('did-fail-load', () => {
+    const offlinePagePath = path.join(app.getAppPath(), 'src/offline/index.html');
+    window.loadURL(`file://${offlinePagePath}`);
   });
 
+  ipcMain.on('checkIfOnline', async (event: IpcMainEvent) => {
+    const online = await checkIfOnline(5000)
+
+    event.reply('onlineStatus', online);
+  });
+}
+
+const checkIfOnline = async (timeout = 3000) => {
+  return await isOnline({
+    timeout
+  });
+}
+
+const checkForInternet = async (window: BrowserWindow) => {
+  const canChat = await checkIfOnline();
+
   if (!canChat) {
-    const offlinePagePath = path.join(app.getAppPath(), 'src/offline/index.html');
-    await window.loadURL(`file://${offlinePagePath}`);
     showOfflineNotification();
   }
 }
@@ -25,13 +41,5 @@ const showOfflineNotification = () => {
 
   notification.show();
 }
-
-ipcMain.on('checkIfOnline', async (event: IpcMainEvent) => {
-  const online = await isOnline({
-    timeout: 5000
-  });
-
-  event.reply('onlineStatus', online);
-});
 
 export {checkForInternet}
