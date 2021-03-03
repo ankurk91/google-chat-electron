@@ -5,6 +5,8 @@
   "main": "lib/main/index.js",
   "private": true,
   "scripts": {
+    "pretest": "yarn run ts",
+    "test": "mocha -t 30000 --require ts-node/register --extensions ts './tests/**/*.test.ts'",
     "prestart": "yarn run ts",
     "start": "electron .",
     "clean:dist": "rimraf ./dist && rimraf ./*.snap",
@@ -28,11 +30,17 @@
   "license": "MIT",
   "devDependencies": {
     "@types/auto-launch": "^5.0.1",
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^8.2.1",
     "@types/throttle-debounce": "^2.1.0",
+    "chai": "^4.3.3",
     "electron": "^12.0.0",
     "electron-installer-debian": "^3.1.0",
     "electron-packager": "^15.2.0",
+    "mocha": "^8.3.0",
     "rimraf": "^3.0.2",
+    "spectron": "https://github.com/electron-userland/spectron.git#f3c1bfb31d25c047300093ce97d078072652b2bc",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.2"
   },
   "dependencies": {

@@ -1,0 +1,35 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - dev
+      - master
+      - next
+      - feat/**
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 25 * *'
+
+jobs:
+  tests:
+    name: tests
+    runs-on: ubuntu-20.04
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Install dependencies with yarn
+        run: yarn install --non-interactive --frozen-lockfile
+
+      - name: Run tests
+        run: xvfb-run --auto-servernum yarn test

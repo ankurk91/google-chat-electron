@@ -2,6 +2,7 @@ import path from 'path';
 import {app, BrowserWindow, nativeImage} from 'electron';
 import {userAgentString} from './features/userAgent';
 import store from './config';
+import {isTesting} from "../isTesting";
 
 export default (url: string): BrowserWindow => {
   const window = new BrowserWindow({
@@ -9,8 +10,8 @@ export default (url: string): BrowserWindow => {
       autoplayPolicy: 'user-gesture-required',
       contextIsolation: false,
       worldSafeExecuteJavaScript: false,
-      enableRemoteModule: false,
-      nodeIntegration: false,
+      enableRemoteModule: isTesting,
+      nodeIntegration: isTesting,
       sandbox: false,
       disableBlinkFeatures: 'Auxclick',
       preload: path.join(app.getAppPath(), 'lib/preload/index.js'),
