@@ -8,6 +8,7 @@ export default (url: string) => {
     webPreferences: {
       autoplayPolicy: 'user-gesture-required',
       contextIsolation: false,
+      worldSafeExecuteJavaScript: false,
       enableRemoteModule: false,
       nodeIntegration: false,
       sandbox: false,

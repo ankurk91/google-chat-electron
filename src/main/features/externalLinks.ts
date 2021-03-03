@@ -33,6 +33,8 @@ export default (window: BrowserWindow) => {
   };
 
   window.webContents.on('will-navigate', handleRedirect);
+  // @deprecated
+  // https://github.com/electron/electron/pull/24517
   window.webContents.on('new-window', handleRedirect);
 }
 
