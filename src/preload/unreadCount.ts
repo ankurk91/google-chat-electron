@@ -7,13 +7,12 @@ const muteSelector = ".DQy0Rb";
 // class corresponding to the bold text that is visible for all messages
 const allMessageSelector = ".IL9EXe.PL5Wwe.dHI9xe.H7du2";
 
-const isMuted = (node: any) => {
+const isMuted = (node: any): Boolean => {
   const closestItem = node.closest('[role="listitem"]')
   if (closestItem) {
     return !!closestItem.querySelector(muteSelector);
-  } else {
-    return true;
   }
+  return true;
 }
 
 const getMessageCount = (): Number => {

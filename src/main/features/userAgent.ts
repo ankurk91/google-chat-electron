@@ -1,8 +1,8 @@
-import {session, OnBeforeSendHeadersListenerDetails} from 'electron'
+import {session, OnBeforeSendHeadersListenerDetails, Filter} from 'electron'
 
 // Prevent Google from tracking if the website is running inside Electron
 
-const userAgentString = () => {
+const userAgentString = (): string => {
   let defaultAgent = session.defaultSession.getUserAgent();
   defaultAgent = defaultAgent.replace(/Electron\/[0-9]/, 'DesktopAppFramework/');
   defaultAgent = <string>defaultAgent.replace(/electron/g, 'app');
@@ -11,7 +11,7 @@ const userAgentString = () => {
 }
 
 export default () => {
-  const filter = {
+  const filter: Filter = {
     urls: ['https://*.google.com/*']
   }
 

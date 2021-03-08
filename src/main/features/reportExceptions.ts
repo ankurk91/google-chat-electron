@@ -7,7 +7,7 @@ import {app} from 'electron';
 export default () => {
   const packageJson = require(path.join(app.getAppPath(), 'package.json'));
 
-  return unhandled({
+  unhandled({
     logger: log.error,
     reportButton: error => {
       openNewGitHubIssue({

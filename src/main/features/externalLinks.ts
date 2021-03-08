@@ -49,7 +49,7 @@ const toggleExternalLinksGuard = (window: BrowserWindow) => {
     type: 'warning',
     title: 'Confirm',
     message: 'Facing issues during authentication?',
-    detail: `You can disable the external links security feature temporarily.\nDont forget to enable it back.\nIf you don't, we will enabled it automatically in ${RE_GUARD_IN_MINUTES} minutes.`,
+    detail: `You can disable the external links security feature temporarily.\nDont forget to enable it back.\nIf you don't, it will be enabled automatically in ${RE_GUARD_IN_MINUTES} minutes.`,
     buttons: [`${actionLabel} Guard`, 'Close'],
     cancelId: 1,
     defaultId: 1,

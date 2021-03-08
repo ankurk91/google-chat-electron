@@ -4,7 +4,7 @@ import store from '../config';
 
 let autoLaunchInstance: AutoLaunch;
 
-const autoLaunch = () => {
+const autoLaunch = (): AutoLaunch => {
   if (autoLaunchInstance) {
     return autoLaunchInstance;
   }

@@ -148,7 +148,7 @@ export default (window: BrowserWindow) => {
           }
         },
         {
-          label: 'Auto launch on Login',
+          label: 'Auto Launch at Login',
           type: 'checkbox',
           checked: store.get('app.autoLaunchAtLogin'),
           click: async (menuItem) => {
@@ -185,7 +185,7 @@ export default (window: BrowserWindow) => {
       label: 'Help',
       submenu: [
         {
-          label: 'Visit Website',
+          label: 'Kodos Developer',
           click: () => {
             setImmediate(() => {
               shell.openExternal(pkg.homepage)
