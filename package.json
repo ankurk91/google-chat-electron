@@ -34,14 +34,14 @@
     "@types/mocha": "^8.2.1",
     "@types/throttle-debounce": "^2.1.0",
     "chai": "^4.3.3",
-    "electron": "^12.0.0",
+    "electron": "^12.0.1",
     "electron-installer-debian": "^3.1.0",
     "electron-packager": "^15.2.0",
-    "mocha": "^8.3.0",
+    "mocha": "^8.3.1",
     "rimraf": "^3.0.2",
     "spectron": "^14.0.0",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.2"
+    "typescript": "^4.2.3"
   },
   "dependencies": {
     "auto-launch": "^5.0.5",
