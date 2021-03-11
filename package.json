@@ -39,7 +39,7 @@
     "electron-packager": "^15.2.0",
     "mocha": "^8.3.0",
     "rimraf": "^3.0.2",
-    "spectron": "https://github.com/electron-userland/spectron.git#f3c1bfb31d25c047300093ce97d078072652b2bc",
+    "spectron": "^14.0.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.2"
   },
