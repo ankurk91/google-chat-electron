@@ -3,12 +3,6 @@ import {BrowserWindow, ipcMain, Notification, app, nativeImage, IpcMainEvent} fr
 import path from 'path';
 
 export default (window: BrowserWindow) => {
-
-  window.webContents.on('did-fail-load', () => {
-    const offlinePagePath = path.join(app.getAppPath(), 'src/offline/index.html');
-    window.loadURL(`file://${offlinePagePath}`);
-  });
-
   ipcMain.on('checkIfOnline', async (event: IpcMainEvent) => {
     const online = await checkIfOnline(5000)
 
@@ -26,6 +20,8 @@ const checkForInternet = async (window: BrowserWindow) => {
   const canChat = await checkIfOnline();
 
   if (!canChat) {
+    const offlinePagePath = path.join(app.getAppPath(), 'src/offline/index.html');
+    await window.loadURL(`file://${offlinePagePath}`);
     showOfflineNotification();
   }
 }
