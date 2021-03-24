@@ -185,7 +185,7 @@ export default (window: BrowserWindow) => {
       label: 'Help',
       submenu: [
         {
-          label: 'Kodos Developer',
+          label: 'Say Thanks to Developer',
           click: () => {
             setImmediate(() => {
               shell.openExternal(pkg.homepage)
