@@ -33,8 +33,10 @@ export default (url: string): BrowserWindow => {
   });
 
   window.loadURL(url, {
-    userAgent: userAgentString()
+    userAgent: userAgentString
   });
+
+  window.webContents.setUserAgent(userAgentString);
 
   return window;
 };
