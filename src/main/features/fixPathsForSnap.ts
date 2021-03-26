@@ -7,6 +7,7 @@ declare var process: {
   }
 }
 
+// https://github.com/electron/electron/issues/23854
 export default () => {
   const isSnap = require('electron-is-snap').isSnap;
 

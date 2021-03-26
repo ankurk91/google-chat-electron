@@ -2,6 +2,8 @@ import {app, dialog, nativeImage, clipboard, BrowserWindow} from 'electron';
 import path from 'path';
 import os from 'os';
 
+// The default Electron about window does not load app icon from asar
+// So lets create a custom dialog instead
 export default (window: BrowserWindow) => {
   const packageJson = require(path.join(app.getAppPath(), 'package.json'));
   const detail = getDetails();

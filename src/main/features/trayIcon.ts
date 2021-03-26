@@ -23,6 +23,8 @@ export default (window: BrowserWindow) => {
     {
       label: 'Quit',
       click: () => {
+        // The running webpage can prevent the app from quiting via window.onbeforeunload handler
+        // So lets use exit() instead of quit()
         app.exit()
       }
     }
@@ -30,6 +32,7 @@ export default (window: BrowserWindow) => {
 
   trayIcon.setToolTip('Google Chat');
 
+  // Click event may not work on most distros
   trayIcon.on('click', handleIconClick);
 
   return trayIcon;

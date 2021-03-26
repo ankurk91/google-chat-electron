@@ -24,6 +24,9 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Workaround:
+// There might be a case when multiple windows are opened
+// So lets update the icon as soon as user focus on the main window
 window.addEventListener('focus', () => {
   emitFaviconChanged();
 });

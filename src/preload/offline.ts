@@ -1,5 +1,6 @@
 import {ipcRenderer} from 'electron';
 
+// Listen to global event from offline.html
 window.addEventListener('gchat:checkIfOnline', () => {
   ipcRenderer.send('checkIfOnline')
 });

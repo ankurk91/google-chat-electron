@@ -7,6 +7,7 @@ export default () => {
   const isSnap = require('electron-is-snap').isSnap;
   clearInterval(interval);
 
+  // Snap apps has automatic background updates already
   if (isSnap) {
     return
   }

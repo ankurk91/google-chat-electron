@@ -12,6 +12,8 @@
     btn.disabled = true;
     btn.innerText = 'Checking...';
 
+    // This script does not have access to Electron APIs (IPC)
+    // So lets notify the preload script via an global event
     window.dispatchEvent(new Event('gchat:checkIfOnline'));
     attemptCount++
   }

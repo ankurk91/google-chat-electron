@@ -10,7 +10,7 @@ const clickCallback = () => {
 const NativeNotification = window.Notification;
 
 // Note: this must be the good old ES5 function,
-// Dont convert this into an arrow function
+// Dont convert this into an ES6 arrow function
 const newNotify = function (title: string, options?: NotificationOptions) {
   const instance: Notification = new NativeNotification(title, options);
   instance.addEventListener('click', clickCallback);
