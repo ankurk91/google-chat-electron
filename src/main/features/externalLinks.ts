@@ -20,11 +20,13 @@ export default (window: BrowserWindow) => {
       extractHostname(window.webContents.getURL()),
       'accounts.google.com',
       'accounts.youtube.com',
-      'chat.google.com'
+      'chat.google.com',
+      'mail.google.com'
     ];
 
-    if (url.startsWith('https://chat.google.com/api/get_attachment_url') ||
-      !whiteListDomains.includes(extractHostname(url))) {
+    const isDownloadUrl = url.includes('https://chat.google.com/u/0/api/get_attachment_url')
+
+    if (isDownloadUrl || !whiteListDomains.includes(extractHostname(url))) {
       setImmediate(() => {
         shell.openExternal(url);
       })
