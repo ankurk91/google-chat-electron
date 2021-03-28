@@ -7,6 +7,7 @@ import {autoLaunch} from './openAtLogin';
 import aboutPanel from './aboutPanel';
 import store from './../config';
 import {toggleExternalLinksGuard} from "./externalLinks";
+import environment from "../../environment";
 
 export default (window: BrowserWindow) => {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
@@ -49,7 +50,7 @@ export default (window: BrowserWindow) => {
         {
           label: 'Sign Out',
           click: () => {
-            window.loadURL('https://www.google.com/accounts/Logout?continue=https://chat.google.com/')
+            window.loadURL(environment.logoutUrl)
           }
         },
         {
@@ -131,7 +132,7 @@ export default (window: BrowserWindow) => {
           label: 'Navigate to Home',
           accelerator: 'Alt+Home',
           click: () => {
-            window.loadURL('https://chat.google.com')
+            window.loadURL(environment.appUrl)
           }
         }
       ]

@@ -1,10 +1,10 @@
 import {BrowserWindow} from 'electron';
-import {isTesting} from "../../isTesting";
+import environment from "../../environment";
 
 export default (window: BrowserWindow) => {
 
   // Let spectron to stop the app during testing
-  if (isTesting) {
+  if (environment.isTesting) {
     return;
   }
 

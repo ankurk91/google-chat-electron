@@ -9,7 +9,7 @@ fixPathsForSnap();
 import reportExceptions from './features/reportExceptions';
 import windowWrapper from './windowWrapper';
 import {enforceSingleInstance, restoreFirstInstance} from './features/singleInstance';
-
+import environment from "../environment";
 import enableContextMenu from './features/contextMenu';
 import runAtLogin from './features/openAtLogin';
 import updateNotifier from './features/appUpdates';
@@ -38,7 +38,7 @@ if (enforceSingleInstance()) {
   app.whenReady()
     .then(() => {
       overrideUserAgent();
-      mainWindow = windowWrapper('https://chat.google.com/');
+      mainWindow = windowWrapper(environment.appUrl);
       setupOfflineHandlers(mainWindow);
       checkForInternet(mainWindow);
 

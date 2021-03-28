@@ -14,7 +14,7 @@
 
     // This script does not have access to Electron APIs (IPC)
     // So lets notify the preload script via an global event
-    window.dispatchEvent(new Event('gchat:checkIfOnline'));
+    window.dispatchEvent(new Event('app:checkIfOnline'));
     attemptCount++
   }
 
