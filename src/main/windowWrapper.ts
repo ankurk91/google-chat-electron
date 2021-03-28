@@ -19,7 +19,7 @@ export default (url: string): BrowserWindow => {
     icon: nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png')),
     show: false,
     minHeight: 570,
-    minWidth: 400,
+    minWidth: 480,
     center: true,
     title: 'Google Chat',
     backgroundColor: '#E8EAED',
