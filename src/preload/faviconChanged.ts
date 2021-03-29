@@ -1,32 +1,21 @@
 import {ipcRenderer} from 'electron';
 
-let favicon: HTMLLinkElement;
-let observer: MutationObserver;
-
-const emitFaviconChanged = () => {
+const emitFaviconChanged = (favicon: HTMLLinkElement) => {
   ipcRenderer.send('favicon-changed', favicon?.href);
 }
 
-const watchFaviconChange = () => {
-  observer = new MutationObserver(emitFaviconChanged);
+const targetSelectors = [
+  'link[rel="shortcut icon"]',
+  'link[rel="icon"]'
+];
 
-  observer.observe(favicon, {
-    attributes: true
-  });
-};
+const initObserver = () => {
+  let favicons = document.head.querySelectorAll(targetSelectors.join(','));
+  emitFaviconChanged(favicons[0] as HTMLLinkElement);
+}
 
+let interval: NodeJS.Timeout;
 window.addEventListener('DOMContentLoaded', () => {
-  favicon = <HTMLLinkElement>document.querySelector('link#favicon256');
-  emitFaviconChanged();
-
-  if (favicon) {
-    watchFaviconChange()
-  }
-});
-
-// Workaround:
-// There might be a case when multiple windows are opened
-// So lets update the icon as soon as user focus on the main window
-window.addEventListener('focus', () => {
-  emitFaviconChanged();
+  clearInterval(interval);
+  interval = setInterval(initObserver, 1000)
 });

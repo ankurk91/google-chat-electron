@@ -1,14 +1,16 @@
 import {ipcMain, app, nativeImage, BrowserWindow, Tray} from 'electron';
 import path from 'path';
 
-// Decide app icon based on favicon URL
-const decideIcon = (href: string) => {
-  let type = 'offline';
+type IconTypes = 'offline' | 'normal' | 'badge';
 
-  if (href.match(/chat-favicon-no-new/)) {
+// Decide app icon based on favicon URL
+const decideIcon = (href: string): IconTypes => {
+  let type: IconTypes = 'offline';
+
+  if (href.match(/favicon_chat_r2/) ||
+    href.match(/favicon_chat_new_non_notif_r2/)) {
     type = 'normal';
-  } else if (href.match(/chat-favicon-new-non-notif/) ||
-    href.match(/chat-favicon-new-notif/)) {
+  } else if (href.match(/favicon_chat_new_notif_r2/)) {
     type = 'badge';
   }
 
