@@ -16,7 +16,10 @@ export default (window: BrowserWindow) => {
 
   const saveWindowPosition = () => {
     if (!window.isMaximized()) {
-      store.set('window.bounds', window.getBounds())
+      store.set('window', {
+        bounds: window.getBounds(),
+        isMaximized: false
+      });
     }
   }
 
