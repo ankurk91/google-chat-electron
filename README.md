@@ -13,7 +13,7 @@ An unofficial desktop app for [Google Chat](https://chat.google.com/) built with
 
 * The official Google Chat electron app
     - is not [available](https://chat.google.com/download/) on Linux
-    - will [stop running](https://support.google.com/chat/answer/10194711) after mid 2021
+    - will [stop running](https://support.google.com/chat/answer/10194711) after March 2021
 * Google is forcing users to use PWA which has fewer features
 
 ### Installation
