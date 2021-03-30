@@ -1,6 +1,5 @@
 import path from 'path';
 import {app, BrowserWindow, nativeImage} from 'electron';
-import {userAgentString} from './features/userAgent';
 import store from './config';
 import environment from "../environment";
 
@@ -32,11 +31,7 @@ export default (url: string): BrowserWindow => {
     }
   });
 
-  window.loadURL(url, {
-    userAgent: userAgentString
-  });
-
-  window.webContents.setUserAgent(userAgentString);
+  window.loadURL(url);
 
   return window;
 };
