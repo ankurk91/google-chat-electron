@@ -24,13 +24,19 @@ export default (window: BrowserWindow) => {
       'mail.google.com'
     ];
 
-    const isDownloadUrl = url.includes('https://chat.google.com/u/0/api/get_attachment_url')
+    const isDownloadUrl = url.includes('https://chat.google.com/u/0/api/get_attachment_url');
 
-    if (isDownloadUrl || !whiteListDomains.includes(extractHostname(url))) {
+    const isExternalUrl = extractHostname(url) === 'mail.google.com' &&
+      !url.startsWith('https://mail.google.com/chat')
+
+    const isNotWhitelistedDomain = !whiteListDomains.includes(extractHostname(url));
+
+    if (isExternalUrl || isDownloadUrl || isNotWhitelistedDomain) {
+      event.preventDefault();
+
       setImmediate(() => {
         shell.openExternal(url);
       })
-      event.preventDefault();
     }
   };
 
