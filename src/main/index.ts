@@ -22,7 +22,6 @@ import setAppMenu from './features/appMenu';
 import overrideUserAgent from './features/userAgent';
 import setupOfflineHandlers, {checkForInternet} from './features/inOnline';
 import logFirstLaunch from './features/firstLaunch';
-import darkReader from './features/darkReader';
 import handleNotification from './features/handleNotification';
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -43,7 +42,6 @@ if (enforceSingleInstance()) {
       checkForInternet(mainWindow);
 
       trayIcon = setupTrayIcon(mainWindow);
-      darkReader(mainWindow);
       logFirstLaunch();
       setAppMenu(mainWindow);
       restoreFirstInstance(mainWindow);

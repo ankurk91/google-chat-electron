@@ -45,7 +45,6 @@
   },
   "dependencies": {
     "auto-launch": "^5.0.5",
-    "darkreader": "^4.9.27",
     "electron-context-menu": "^2.5.0",
     "electron-is-snap": "^1.0.1",
     "electron-log": "^4.3.2",
