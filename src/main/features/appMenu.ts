@@ -16,7 +16,7 @@ export default (window: BrowserWindow) => {
   const relaunchApp = () => {
     app.relaunch({
       // auto-launch adds the --hidden flag to the command during OS start
-      // This will launch app without hidden flag
+      // This will launch the app without hidden flag
       args: process.argv.filter(flag => flag !== '--hidden')
     });
     app.exit();

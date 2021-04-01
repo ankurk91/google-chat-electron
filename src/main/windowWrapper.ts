@@ -12,7 +12,7 @@ export default (url: string): BrowserWindow => {
       enableRemoteModule: environment.isTesting,
       nodeIntegration: environment.isTesting,
       sandbox: false,
-      disableBlinkFeatures: 'Auxclick',
+      disableBlinkFeatures: 'Auxclick', // Security
       preload: path.join(app.getAppPath(), 'lib/preload/index.js'),
     },
     icon: nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png')),
@@ -22,7 +22,7 @@ export default (url: string): BrowserWindow => {
     center: true,
     title: 'Google Chat',
     backgroundColor: '#E8EAED',
-    fullscreenable: false,
+    fullscreenable: false, // prevent F11
   });
 
   window.once('ready-to-show', () => {

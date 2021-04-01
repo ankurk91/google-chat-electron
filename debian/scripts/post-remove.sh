@@ -2,7 +2,7 @@
 set -e
 
 # post-remove script will be called even on package upgrades
-# lets proceed only when end-user specify the --purge flag in app removal command like
+# this script should only proceed when end-user specify the --purge flag in app removal command like:
 # sudo apt remove --purge google-chat-electron
 
 if [ "$1" != "purge" ]; then

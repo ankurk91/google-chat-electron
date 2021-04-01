@@ -16,6 +16,7 @@ export default () => {
     return store.get('app.autoCheckForUpdates');
   }
 
+  // Runs onetime at startup
   setTimeout(() => {
     if (shouldCheckForUpdates()) {
       setUpdateNotification();

@@ -9,6 +9,7 @@ function isVisible(element: HTMLElement) {
   return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
 }
 
+// Listen to event coming from main process
 ipcRenderer.on('searchShortcut', (event) => {
   const element = getSearchElement();
 
