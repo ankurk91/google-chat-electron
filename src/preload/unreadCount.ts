@@ -5,7 +5,7 @@ const targetSelectors = [
   'div[data-tooltip="Rooms"][role="group"]'
 ];
 
-const getMessageCount = (): Number => {
+const getMessageCount = (): number => {
   let counter = 0;
 
   document.body.querySelectorAll(targetSelectors.join(','))
@@ -19,7 +19,14 @@ const getMessageCount = (): Number => {
   return counter
 }
 
+let previousCount = -1;
 const emitCount = () => {
+  const count = getMessageCount();
+  if (previousCount === count) {
+    return
+  }
+
+  previousCount = count;
   ipcRenderer.send('unreadCount', getMessageCount())
 }
 
