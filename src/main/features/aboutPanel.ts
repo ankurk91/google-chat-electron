@@ -29,11 +29,8 @@ export default (window: BrowserWindow) => {
 }
 
 const getDetails = () => {
-  const isSnap = require('electron-is-snap').isSnap
-
   return [
     'App Version: ' + app.getVersion(),
-    'Installed via : ' + (isSnap ? 'snap' : 'deb'),
     'Electron version: ' + process.versions.electron,
     'Platform: ' + [os.type(), os.release(), os.arch()].join(', '),
     'OS: ' + os.version(),
