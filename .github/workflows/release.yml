@@ -27,7 +27,7 @@ jobs:
         run: |
           rm -rf ./.github
           rm -rf ./tests
-          yarn run build
+          yarn run build:linux
 
       - name: Create debian package
         run: |
@@ -40,7 +40,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: './dist/installers/*.*'
           tag: ${{ github.ref }}
-          overwrite: true
           file_glob: true
 
       - name: Prepare for building snap package

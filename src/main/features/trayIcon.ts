@@ -31,6 +31,7 @@ export default (window: BrowserWindow) => {
   ]));
 
   trayIcon.setToolTip('Google Chat');
+  trayIcon.setTitle('Google Chat');
 
   // Click event may not work on most distros
   trayIcon.on('click', handleIconClick);

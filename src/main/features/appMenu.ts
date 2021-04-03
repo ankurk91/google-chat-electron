@@ -38,7 +38,7 @@ export default (window: BrowserWindow) => {
       submenu: [
         {
           label: 'Close To Tray',
-          accelerator: 'Ctrl+W',
+          accelerator: 'CommandOrControl+W',
           click: () => {
             window.hide()
           }
@@ -58,7 +58,7 @@ export default (window: BrowserWindow) => {
         },
         {
           label: 'Quit',
-          accelerator: 'Ctrl+Q',
+          accelerator: 'CommandOrControl+Q',
           click: () => {
             app.exit();
           }
@@ -79,7 +79,7 @@ export default (window: BrowserWindow) => {
         },
         {
           label: 'Search',
-          accelerator: 'Ctrl+F',
+          accelerator: 'CommandOrControl+F',
           click: () => {
             window.webContents.send('searchShortcut');
           }
