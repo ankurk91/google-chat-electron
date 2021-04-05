@@ -23,11 +23,11 @@ jobs:
       - name: Install dependencies with yarn
         run: yarn install --non-interactive --frozen-lockfile
 
-      - name: Build for linux
+      - name: Pack for linux
         run: |
           rm -rf ./.github
           rm -rf ./tests
-          yarn run build:linux
+          yarn run pack:linux
 
       - name: Create debian package
         run: |
