@@ -2,7 +2,7 @@ import path from 'path';
 import {BrowserWindow, app, Tray, Menu, nativeImage} from 'electron';
 
 export default (window: BrowserWindow) => {
-  const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/offline/256.png')));
+  const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/offline/16.png')));
 
   const handleIconClick = () => {
     if (window.isVisible() && window.isFocused()) {
@@ -31,10 +31,6 @@ export default (window: BrowserWindow) => {
   ]));
 
   trayIcon.setToolTip('Google Chat');
-  trayIcon.setTitle('Google Chat');
-
-  // Click event may not work on most distros
-  trayIcon.on('click', handleIconClick);
 
   return trayIcon;
 }
