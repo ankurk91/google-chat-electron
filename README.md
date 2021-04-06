@@ -2,7 +2,8 @@
 
 [![latest-tag](https://badgen.net/github/release/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/tags)
 [![downloads](https://img.shields.io/github/downloads/ankurk91/google-chat-electron/total?cacheSeconds=3600)](https://github.com/ankurk91/google-chat-electron/releases)
-[![release](https://github.com/ankurk91/google-chat-electron/actions/workflows/release.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release.yml)
+[![release-linux](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml)
+[![release-mac](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml)
 [![tests](https://github.com/ankurk91/google-chat-electron/actions/workflows/tests.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/tests.yml)
 [![snapcraft](https://snapcraft.io/google-chat-electron/badge.svg)](https://snapcraft.io/google-chat-electron)
 [![dependabot](https://badgen.net/dependabot/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/pulls)
@@ -16,7 +17,7 @@ An unofficial desktop app for [Google Chat](https://chat.google.com/) built with
     - will [stop running](https://support.google.com/chat/answer/10194711) after March 2021
 * Google is forcing users to use PWA which has fewer features
 
-### Installation
+### Installation (Linux)
 
 * Install via [snap](https://snapcraft.io/google-chat-electron) (recommended)
 
@@ -26,7 +27,7 @@ sudo snap connect google-chat-electron:removable-media :removable-media
 ```
 
 * Alternatively you can download the latest debian installer from
-  the [releases](https://github.com/ankurk91/google-chat-electron/releases/latest) section.
+  [releases](https://github.com/ankurk91/google-chat-electron/releases/latest) section
 * Install the debian package with this command: (correct the path)
 
 ```bash
@@ -35,19 +36,40 @@ sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 
 * :warning: Debian package does not have automatic background updates
 
-### Uninstall
+### Uninstall (Linux)
 
 * Quit from app if running
-* Remove the app with this command
+* Remove the app with this command if installed via snap
 
 ```bash
 sudo snap remove google-chat-electron
+```
 
-# or if installed via debian package
+or if installed via debian package
+
+```bash
 sudo apt-get remove --purge google-chat-electron
 ```
 
 * The uninstallation script should remove all relevant files and folders.
+
+### Installation (Mac)
+
+* Download the zip file from [releases](https://github.com/ankurk91/google-chat-electron/releases/latest) section
+* Extract the zip file
+* Move the app to your `~/Applications` folder
+* Fix the permission issue with this command
+
+```bash
+sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
+```
+
+* Above command should fix the Mac-OS Gatekeeper [issue](https://apple.stackexchange.com/questions/262355/)
+
+### Uninstall (Mac)
+
+* Quit from app if running
+* Move the app to trash
 
 ### Supported Platforms
 
@@ -57,6 +79,7 @@ The app should work on most linux distros, but due to lack of time; we test on m
 | :---                  | :---:            |                ---: |
 | Ubuntu GNOME          | 20.x             |  :heavy_check_mark: |
 | Linux Mint Cinnamon   | 20.x             |  :heavy_check_mark: |
+| MacOS                 | 10.15            |  :white_check_mark: |
 
 ### Acknowledgements
 

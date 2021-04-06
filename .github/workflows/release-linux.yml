@@ -1,4 +1,4 @@
-name: release
+name: release-linux
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - '*'
 
 jobs:
-  release:
-    name: release
+  release-linux:
+    name: release-linux
     runs-on: ubuntu-20.04
     timeout-minutes: 30
 
