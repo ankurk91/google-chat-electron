@@ -224,7 +224,7 @@ export default (window: BrowserWindow) => {
             {
               label: 'Show Logs in File Manager',
               click: () => {
-                shell.showItemInFolder(path.join(app.getPath('userData'), 'logs'))
+                shell.showItemInFolder(app.getPath('logs'))
               }
             },
             {
