@@ -224,7 +224,11 @@ export default (window: BrowserWindow) => {
             {
               label: 'Show Logs in File Manager',
               click: () => {
-                shell.showItemInFolder(app.getPath('logs'))
+                if (process.platform === 'darwin') {
+                  shell.showItemInFolder(app.getPath('logs'))
+                } else {
+                  shell.showItemInFolder(path.join(app.getPath('userData'), 'logs'))
+                }
               }
             },
             {
