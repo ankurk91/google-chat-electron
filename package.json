@@ -1,6 +1,6 @@
 {
   "name": "google-chat-electron",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Unofficial desktop app for Google Chat.",
   "main": "lib/main/index.js",
   "private": true,
