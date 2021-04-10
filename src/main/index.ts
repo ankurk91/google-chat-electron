@@ -1,4 +1,4 @@
-import {app} from 'electron';
+import {app, BrowserWindow} from 'electron';
 
 // Need to fix the paths before loading any other library
 // https://github.com/electron/electron/issues/23854
@@ -27,7 +27,7 @@ import {enforceMacOSAppLocation} from "electron-util";
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow = null;
+let mainWindow: BrowserWindow | null = null;
 let trayIcon = null;
 
 // Features
@@ -60,4 +60,10 @@ if (enforceSingleInstance()) {
 
 app.on('window-all-closed', () => {
   app.exit();
-})
+});
+
+app.on('activate', () => {
+  if (mainWindow) {
+    mainWindow.show();
+  }
+});
