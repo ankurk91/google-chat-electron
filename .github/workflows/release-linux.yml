@@ -60,4 +60,3 @@ jobs:
           store_login: ${{ secrets.SNAPCRAFT_TOKEN }}
           snap: ${{ steps.snapcraft.outputs.snap }}
           release: stable
-

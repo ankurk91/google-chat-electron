@@ -30,9 +30,7 @@ jobs:
           yarn run pack:mac
 
       - name: Create zip package
-        run: |
-          rm -f ./dist/google-chat-electron-darwin-x64/LICENSES.chromium.html
-          yarn run build:mac-zip
+        run: yarn run build:mac-zip
 
       - name: Upload binaries to GitHub release
         uses: svenstaro/upload-release-action@v2
@@ -41,5 +39,4 @@ jobs:
           file: './dist/installers/*.*'
           tag: ${{ github.ref }}
           file_glob: true
-
 
