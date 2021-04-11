@@ -1,5 +1,6 @@
 import path from 'path';
 import {app} from 'electron';
+import environment from "../../environment";
 
 declare var process: {
   env: {
@@ -9,9 +10,8 @@ declare var process: {
 
 // https://github.com/electron/electron/issues/23854
 export default () => {
-  const isSnap = require('electron-is-snap').isSnap;
 
-  if (isSnap) {
+  if (environment.isSnap) {
     app.setPath(
       'userData',
       path.join(process.env.SNAP_USER_COMMON, '.config', app.getName()));

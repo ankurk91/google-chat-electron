@@ -1,6 +1,7 @@
 import AutoLaunch from 'auto-launch';
 import {app, BrowserWindow} from 'electron';
 import store from '../config';
+import environment from "../../environment";
 
 let autoLaunchInstance: AutoLaunch;
 
@@ -18,7 +19,7 @@ const autoLaunch = (): AutoLaunch => {
 }
 
 export default (window: BrowserWindow) => {
-  if (!app.isPackaged) return;
+  if (environment.isDev) return;
 
   autoLaunchInstance = autoLaunch();
 

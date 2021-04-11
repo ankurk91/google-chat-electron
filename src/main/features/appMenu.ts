@@ -11,7 +11,6 @@ import environment from "../../environment";
 
 export default (window: BrowserWindow) => {
   const pkg = require(path.join(app.getAppPath(), 'package.json'));
-  const isSnap = require('electron-is-snap').isSnap;
 
   const relaunchApp = () => {
     app.relaunch({
@@ -92,7 +91,7 @@ export default (window: BrowserWindow) => {
         },
         {
           role: 'toggleDevTools',
-          visible: !app.isPackaged || app.commandLine.hasSwitch('debug')
+          visible: environment.isDev
         },
         {
           type: 'separator'
@@ -143,7 +142,7 @@ export default (window: BrowserWindow) => {
         {
           label: 'Auto check for Updates',
           type: 'checkbox',
-          enabled: !isSnap,
+          enabled: !environment.isSnap,
           checked: store.get('app.autoCheckForUpdates'),
           click: (menuItem) => {
             store.set('app.autoCheckForUpdates', menuItem.checked)
@@ -187,7 +186,7 @@ export default (window: BrowserWindow) => {
         },
         {
           label: 'Check For Updates',
-          enabled: !isSnap,
+          enabled: !environment.isSnap,
           click: () => {
             checkForUpdates({
               silent: false
@@ -262,7 +261,7 @@ export default (window: BrowserWindow) => {
           type: 'separator'
         },
         {
-          label: `Version ${app.getVersion()}${!app.isPackaged ? '-(dev)' : ''}`,
+          label: `Version ${app.getVersion()}${ environment.isDev ? '-(dev)' : ''}`,
           enabled: false
         },
       ]

@@ -1,8 +1,8 @@
 import {BrowserWindow, dialog, shell} from 'electron';
 import log from "electron-log";
 
-let guardAgainstExternalLinks: Boolean = true;
-const RE_GUARD_IN_MINUTES: number = 5;
+let guardAgainstExternalLinks = true;
+const RE_GUARD_IN_MINUTES = 5;
 let interval: NodeJS.Timeout;
 
 export default (window: BrowserWindow) => {

@@ -2,7 +2,7 @@
 import {ipcRenderer} from 'electron';
 
 // This feature requires contextIsolation to be disabled on BrowserWindow
-// When contextIsolation is enabled, we can not override any global API
+// When contextIsolation is enabled, we can not override any global (window.X) API
 
 // Notify main process, so that main process can take actions
 // for example: bring the main window in focus

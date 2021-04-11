@@ -1,11 +1,11 @@
 ((window: Window) => {
-  const btn: HTMLButtonElement = <HTMLButtonElement>window.document.getElementById('retry-btn')
-  const maxAutoAttemptCount = 100;
+  const btn = window.document.getElementById('retry-btn') as HTMLButtonElement
+  const MAX_AUTO_ATTEMPT_COUNT = 100;
   let attemptCount = 0
   let interval: NodeJS.Timeout;
 
   const checkIsOnline = () => {
-    if (attemptCount > maxAutoAttemptCount) {
+    if (attemptCount > MAX_AUTO_ATTEMPT_COUNT) {
       clearInterval(interval);
     }
 
