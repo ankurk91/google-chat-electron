@@ -36,7 +36,7 @@
     "@types/mocha": "^8.2.2",
     "@types/throttle-debounce": "^2.1.0",
     "chai": "^4.3.4",
-    "electron": "^12.0.2",
+    "electron": "^12.0.5",
     "electron-installer-debian": "^3.1.0",
     "electron-packager": "^15.2.0",
     "mocha": "^8.3.2",
