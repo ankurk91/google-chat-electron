@@ -1,5 +1,5 @@
 import {ipcRenderer} from 'electron';
-import environment from "../environment";
+import urls from "../urls";
 
 // Listen to global event from offline.html
 window.addEventListener('app:checkIfOnline', () => {
@@ -9,7 +9,7 @@ window.addEventListener('app:checkIfOnline', () => {
 // Listen to event from main process
 ipcRenderer.on('onlineStatus', (event, online: boolean) => {
   if (online) {
-    window.location.replace(environment.appUrl)
+    window.location.replace(urls.appUrl)
   } else {
     window.location.reload();
   }

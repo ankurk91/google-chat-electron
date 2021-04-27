@@ -1,9 +1,10 @@
 import {app} from "electron";
+import urls from './urls';
 
-export default Object.freeze({
+// Note: dont try to load this file in renderer process
+
+export default Object.freeze(Object.assign({
   isTesting: (process.env.NODE_ENV === 'testing') && !app.isPackaged,
   isDev: !app.isPackaged,
   isSnap: require('electron-is-snap').isSnap,
-  appUrl: 'https://mail.google.com/chat/u/0',
-  logoutUrl: 'https://www.google.com/accounts/Logout?continue=https://mail.google.com/chat/u/0'
-})
+}, urls));
