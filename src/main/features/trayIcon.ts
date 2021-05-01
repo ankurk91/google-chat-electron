@@ -1,12 +1,17 @@
 import path from 'path';
 import {BrowserWindow, app, Tray, Menu, nativeImage} from 'electron';
+import {is} from "electron-util";
 
 export default (window: BrowserWindow) => {
   const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/offline/16.png')));
 
   const handleIconClick = () => {
     if (window.isVisible() && window.isFocused()) {
-      window.minimize()
+      if (is.macos) {
+        app.hide()
+      } else {
+        window.hide()
+      }
     } else {
       window.show()
     }

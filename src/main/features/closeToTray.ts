@@ -1,5 +1,8 @@
-import {BrowserWindow} from 'electron';
+import {BrowserWindow, app} from 'electron';
 import environment from "../../environment";
+import {is} from "electron-util";
+
+let willQuit = false;
 
 export default (window: BrowserWindow) => {
 
@@ -8,12 +11,19 @@ export default (window: BrowserWindow) => {
     return;
   }
 
+  app.on('before-quit', () => {
+    willQuit = true
+  })
+
   window.on('close', (event) => {
-    event.preventDefault();
-    if (window.isVisible() && window.isFocused()) {
-      window.minimize();
-    } else {
-      window.hide()
+    if (!willQuit) {
+      event.preventDefault();
+
+      if (is.macos) {
+        app.hide();
+      } else {
+        window.hide();
+      }
     }
-  });
+  })
 }
