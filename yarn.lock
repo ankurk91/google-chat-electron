@@ -69,10 +69,10 @@
     "@types/node" "*"
     "@types/responselike" "*"
 
-"@types/chai@^4.2.16":
-  version "4.2.16"
-  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.2.16.tgz#f09cc36e18d28274f942e7201147cce34d97e8c8"
-  integrity sha512-vI5iOAsez9+roLS3M3+Xx7w+WRuDtSmF8bQkrbcIJ2sC1PcDgVoA0WGpa+bIrJ+y8zqY2oi//fUctkxtIcXJCw==
+"@types/chai@^4.2.17":
+  version "4.2.17"
+  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.2.17.tgz#85f9f0610f514b22a94125d441f73eef65bde5cc"
+  integrity sha512-LaiwWNnYuL8xJlQcE91QB2JoswWZckq9A4b+nMPq8dt8AP96727Nb3X4e74u+E3tm4NLTILNI9MYFsyVc30wSA==
 
 "@types/fs-extra@^9.0.1":
   version "9.0.10"
@@ -879,10 +879,10 @@ electron-chromedriver@^12.0.0:
     "@electron/get" "^1.12.4"
     extract-zip "^2.0.0"
 
-electron-context-menu@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/electron-context-menu/-/electron-context-menu-2.5.1.tgz#8f4c5e65f648fb3574ecd05de2a1296bd2194bc5"
-  integrity sha512-06IahxlIKsiuGaLtPa6mhzWFTfg6nC7btbt85mQVXpvlDuiZwgwI34hYQSNTUqwDoCHpfhE5Qx2GdAsJtpSbeg==
+electron-context-menu@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/electron-context-menu/-/electron-context-menu-2.5.2.tgz#7f2383f011d0d53f282300e0d80b44e2f64c16a7"
+  integrity sha512-1cEQR6fA9ktFsRBc+eXPwvrOgAPytUD7rUV4iBAA5zTrLAPKokJ23xeMjcK2fjrDPrlFRBxcLz0KP+GUhMrSCQ==
   dependencies:
     cli-truncate "^2.1.0"
     electron-dl "^3.1.0"
@@ -938,10 +938,10 @@ electron-is-snap@^1.0.1:
   resolved "https://registry.yarnpkg.com/electron-is-snap/-/electron-is-snap-1.0.1.tgz#9c66d0b05bfec9a4b7444d3d98d1d615c886b5f1"
   integrity sha512-WLATDjVMcgWak7bVkHOt4FYCmYSJHwfzdluqYyBsIDMbSOO0AXulAC8kSUM9FoC/6aiWmytSn9JBbRvwuM4x/Q==
 
-electron-log@^4.3.4:
-  version "4.3.4"
-  resolved "https://registry.yarnpkg.com/electron-log/-/electron-log-4.3.4.tgz#97e991dcd653e759e14eb2ae5d6ba4440f50afd8"
-  integrity sha512-Cd6xZ9if2J4NG+PNoi3cARAYoanbM4ddpod0faaL5LIhmwuSdxP9XH95C9SgTpHMqklbg8u3CFh1yqiaqo2Bng==
+electron-log@^4.3.5:
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/electron-log/-/electron-log-4.3.5.tgz#2aad5f93842b9b5214a1b4a10e47b5ac5c9ec104"
+  integrity sha512-J5Ew3axdk7W4jzzxKLSAi1sqbcAoo9CzHuBVsG0tT47j256xKulNrWFf3lZmHJ1KDXOQUcuwOngQF0jjmpEdpw==
 
 electron-notarize@^1.0.0:
   version "1.0.0"
@@ -1013,10 +1013,10 @@ electron-update-notifier@^1.3.1:
     github-url-to-object "^4.0.4"
     node-fetch "^2.6.0"
 
-electron-util@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/electron-util/-/electron-util-0.15.0.tgz#6965c2b72e8c5be2f2c55d060ed35e6f1cf8f469"
-  integrity sha512-9PNH5Kfg/vwcuGu1MKUiUesisbIdcBM9v8t3kyUCoQ5VTSbLZ5L7v/I2Sh0/VQagLpPF9S7xber8SxHxghapcQ==
+electron-util@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/electron-util/-/electron-util-0.15.1.tgz#caf77b50fbaaa03fba2dc3ffab70c774165c47e7"
+  integrity sha512-Kuz1e+WH/QRUuVcbhY3BiE9UYRFMi4y76YId0AyQU1mBjWb6HcRBCq4gKhILXuLXSD3IWGvYhhPpeJSusWr0zw==
   dependencies:
     electron-is-dev "^1.1.0"
     new-github-issue-url "^0.2.1"
