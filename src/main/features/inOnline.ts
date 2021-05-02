@@ -22,17 +22,22 @@ const checkForInternet = async (window: BrowserWindow) => {
   if (!canChat) {
     const offlinePagePath = path.join(app.getAppPath(), 'src/offline/index.html');
     await window.loadURL(`file://${offlinePagePath}`);
-    showOfflineNotification();
+    showOfflineNotification(window);
   }
 }
 
-const showOfflineNotification = () => {
+const showOfflineNotification = (window: BrowserWindow) => {
   const notification = new Notification({
     title: 'Google Chat',
     body: `You are offline.\nCheck your internet connection.`,
     silent: true,
     timeoutType: 'default',
     icon: nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png'))
+  });
+
+  notification.on('click', () => {
+    window.show();
+    notification.close();
   });
 
   notification.show();
