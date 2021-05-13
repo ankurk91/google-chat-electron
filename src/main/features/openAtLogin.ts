@@ -12,7 +12,10 @@ const autoLaunch = (): AutoLaunch => {
 
   autoLaunchInstance = new AutoLaunch({
     name: app.getName(),
-    isHidden: true
+    isHidden: true,
+    mac: {
+      useLaunchAgent: true
+    }
   });
 
   return autoLaunchInstance;
