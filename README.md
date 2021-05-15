@@ -8,11 +8,13 @@
 [![snapcraft](https://snapcraft.io/google-chat-electron/badge.svg)](https://snapcraft.io/google-chat-electron)
 [![dependabot](https://badgen.net/dependabot/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/pulls)
 
-An unofficial desktop app for [Google Chat](https://mail.google.com/chat/u/0/) built with [Electron](https://www.electronjs.org/)
+An unofficial desktop app for [Google Chat](https://mail.google.com/chat/u/0/) built
+with [Electron](https://www.electronjs.org/)
 
 ### Motivation
 
-* Google has [shutdown](https://support.google.com/chat/answer/10194711) the official Google Chat Desktop App in March 2021
+* Google has [shutdown](https://support.google.com/chat/answer/10194711) the official Google Chat Desktop App in March
+  2021
 * Google is forcing users to use PWA which has fewer features
 * I am a Firefox user and don't want to install Chrome; just to use a PWA. :wink:
 
@@ -37,7 +39,8 @@ sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 
 ### Uninstall (Linux)
 
-* Quit from app if running
+* Logout from app
+* Quit from app 
 * Remove the app with this command if installed via snap
 
 ```bash
@@ -54,7 +57,7 @@ sudo apt-get remove --purge google-chat-electron
 
 ### Installation (Mac)
 
-* Download the zip file from [releases](https://github.com/ankurk91/google-chat-electron/releases/latest) section
+* Download the zip (darwin) file from [releases](https://github.com/ankurk91/google-chat-electron/releases/latest)
 * Extract the zip file
 * Move the app to your `~/Applications` folder
 * Fix the permission issue with this command
@@ -67,7 +70,8 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 
 ### Uninstall (Mac)
 
-* Quit from app if running
+* Logout from app
+* Quit from app 
 * Move the app to trash
 
 ### Supported Platforms
@@ -88,8 +92,8 @@ The app should work on most linux distros, but due to lack of time; we test on m
 
 ## Disclaimer
 
-This desktop app is just a wrapper which starts a chromium instance locally and runs the actual web-app in it. 
-All rights to the [Google Chat](https://chat.google.com/) product is reserved by
+This desktop app is just a wrapper which starts a chromium instance locally and runs the actual web-app in it. All
+rights to the [Google Chat](https://chat.google.com/) product is reserved by
 [Google Inc.](https://en.wikipedia.org/wiki/Google)
 This desktop client has no way to access none of your data.
 

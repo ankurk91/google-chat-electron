@@ -1,9 +1,13 @@
 {
   "name": "google-chat-electron",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Unofficial desktop app for Google Chat.",
-  "main": "lib/main/index.js",
   "private": true,
+  "repository": "https://github.com/ankurk91/google-chat-electron",
+  "homepage": "https://github.com/ankurk91/google-chat-electron",
+  "author": "ankurk91",
+  "license": "MIT",
+  "main": "lib/main/index.js",
   "scripts": {
     "pretest": "yarn run ts",
     "test": "mocha -t 30000 --require ts-node/register --extensions ts './tests/**/*.test.ts'",
@@ -26,10 +30,6 @@
     "build:snap": "sg lxd -c 'snapcraft --use-lxd'",
     "build:snap-repack": "bash ./snap/local/repack.sh"
   },
-  "repository": "https://github.com/ankurk91/google-chat-electron",
-  "homepage": "https://github.com/ankurk91/google-chat-electron",
-  "author": "ankurk91",
-  "license": "MIT",
   "devDependencies": {
     "@types/auto-launch": "^5.0.1",
     "@types/chai": "^4.2.17",
