@@ -24,7 +24,10 @@ with [Electron](https://www.electronjs.org/)
 
 ```bash
 sudo snap install google-chat-electron
+
+# grant permissions
 sudo snap connect google-chat-electron:removable-media :removable-media
+sudo snap connect google-chat-electron:home :home
 ```
 
 * Alternatively you can download the latest debian installer from
