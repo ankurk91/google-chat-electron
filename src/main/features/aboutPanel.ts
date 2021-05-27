@@ -32,6 +32,7 @@ const getDetails = () => {
   return [
     'App Version: ' + app.getVersion(),
     'Electron version: ' + process.versions.electron,
+    'Chrome version: ' + process.versions.chrome,
     'Platform: ' + [os.type(), os.release(), os.arch()].join(', '),
     'OS: ' + os.version(),
     'Locale: ' + app.getLocale()
