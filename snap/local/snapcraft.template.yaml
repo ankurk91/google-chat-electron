@@ -67,7 +67,6 @@ apps:
       - home
       - removable-media
       - browser-support
-      - cups-control
       - network
       - network-bind
       - network-observe
