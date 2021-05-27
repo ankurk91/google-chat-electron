@@ -1,5 +1,5 @@
 import {BrowserWindow} from 'electron';
-import {Extensions} from 'electron-chrome-extensions';
+import {ElectronChromeExtensions} from 'electron-chrome-extensions';
 import installExtension from 'electron-devtools-installer';
 import environment from "../../environment";
 import store from '../config'
@@ -11,7 +11,7 @@ export default (browserWindow: BrowserWindow) => {
     return;
   }
 
-  const extensions = new Extensions();
+  const extensions = new ElectronChromeExtensions();
   extensions.addTab(browserWindow.webContents, browserWindow);
 
   installExtension(environment.darkReaderExtensionReference, {
