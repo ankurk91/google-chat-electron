@@ -17,7 +17,7 @@ export default (window: BrowserWindow) => {
   const handleRedirect = (details: HandlerDetails): any => {
     const url = details.url
 
-    if (!isValidHttpUrl(url)) {
+    if (!isValidHttpURL(url)) {
       return ACTION_DENIED;
     }
 
@@ -25,7 +25,7 @@ export default (window: BrowserWindow) => {
       return ACTION_ALLOWED;
     }
 
-    const whiteListDomains = [
+    const whiteListedHosts = [
       extractHostname(window.webContents.getURL()),
       'accounts.google.com',
       'accounts.youtube.com',
@@ -35,12 +35,12 @@ export default (window: BrowserWindow) => {
 
     const isDownloadUrl = url.includes('https://chat.google.com/u/0/api/get_attachment_url');
 
-    const isExternalUrl = extractHostname(url) === 'mail.google.com' &&
+    const isGMailUrl = extractHostname(url) === 'mail.google.com' &&
       !url.startsWith('https://mail.google.com/chat')
 
-    const isNotWhitelistedDomain = !whiteListDomains.includes(extractHostname(url));
+    const isNotWhitelistedHost = !whiteListedHosts.includes(extractHostname(url));
 
-    if (isExternalUrl || isDownloadUrl || isNotWhitelistedDomain) {
+    if (isGMailUrl || isDownloadUrl || isNotWhitelistedHost) {
 
       setImmediate(() => {
         shell.openExternal(url);
@@ -60,7 +60,7 @@ function extractHostname(url: string) {
 }
 
 // https://stackoverflow.com/questions/5717093
-function isValidHttpUrl(input: string) {
+function isValidHttpURL(input: string) {
   let url;
 
   try {
