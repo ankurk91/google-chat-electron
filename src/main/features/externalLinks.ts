@@ -1,19 +1,28 @@
-import {BrowserWindow, dialog, shell} from 'electron';
+import {BrowserWindow, dialog, HandlerDetails, shell} from 'electron';
 import log from "electron-log";
 
 let guardAgainstExternalLinks = true;
 const RE_GUARD_IN_MINUTES = 5;
 let interval: NodeJS.Timeout;
 
+const ACTION_DENIED = {
+  action: 'deny'
+}
+
+const ACTION_ALLOWED = {
+  action: 'allow'
+}
+
 export default (window: BrowserWindow) => {
-  const handleRedirect = (event: Event, url: string) => {
+  const handleRedirect = (details: HandlerDetails): any => {
+    const url = details.url
+
     if (!isValidHttpUrl(url)) {
-      event.preventDefault();
-      return false;
+      return ACTION_DENIED;
     }
 
     if (!guardAgainstExternalLinks) {
-      return true;
+      return ACTION_ALLOWED;
     }
 
     const whiteListDomains = [
@@ -32,18 +41,18 @@ export default (window: BrowserWindow) => {
     const isNotWhitelistedDomain = !whiteListDomains.includes(extractHostname(url));
 
     if (isExternalUrl || isDownloadUrl || isNotWhitelistedDomain) {
-      event.preventDefault();
 
       setImmediate(() => {
         shell.openExternal(url);
-      })
+      });
+
+      return ACTION_DENIED;
     }
+
+    return ACTION_ALLOWED;
   };
 
-  window.webContents.on('will-navigate', handleRedirect);
-  // @deprecated
-  // https://github.com/electron/electron/pull/24517
-  window.webContents.on('new-window', handleRedirect);
+  window.webContents.setWindowOpenHandler(handleRedirect);
 }
 
 function extractHostname(url: string) {
