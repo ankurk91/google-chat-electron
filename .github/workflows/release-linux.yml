@@ -49,7 +49,7 @@ jobs:
         uses: snapcore/action-build@v1
         id: snapcraft
 
-      - name: Prepare for snap publishing
+      - name: Prepare for publishing on snap store
         run: |
           sudo snap install review-tools
           yarn run build:snap-repack
