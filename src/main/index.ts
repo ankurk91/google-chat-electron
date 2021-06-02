@@ -59,6 +59,8 @@ if (enforceSingleInstance()) {
     })
 }
 
+app.setAppUserModelId('com.electron.google-chat');
+
 app.on('window-all-closed', () => {
   app.exit();
 });
