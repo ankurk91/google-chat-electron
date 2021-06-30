@@ -22,7 +22,6 @@ export default (url: string): BrowserWindow => {
     center: true,
     title: 'Google Chat',
     backgroundColor: '#E8EAED',
-    fullscreenable: false, // prevent F11
   });
 
   window.once('ready-to-show', () => {

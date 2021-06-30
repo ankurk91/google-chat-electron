@@ -97,6 +97,9 @@ export default (window: BrowserWindow) => {
           type: 'separator'
         },
         {
+          role: 'togglefullscreen'
+        },
+        {
           role: 'resetZoom'
         },
         {
