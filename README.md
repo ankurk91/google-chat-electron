@@ -15,7 +15,7 @@ with [Electron](https://www.electronjs.org/)
 
 * Google has [shutdown](https://support.google.com/chat/answer/10194711) the official Google Chat Desktop App in March
   2021
-* Google is forcing users to use PWA which has fewer features
+* Google is forcing users to use PWA which has less features
 * I am a Firefox user and don't want to install Chrome; just to use a PWA. :wink:
 
 ### Installation (Linux)
