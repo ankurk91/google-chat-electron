@@ -174,14 +174,6 @@ export default (window: BrowserWindow) => {
             store.set('app.startHidden', menuItem.checked)
           }
         },
-        {
-          label: 'Enable Dark Mode (need restart)',
-          type: 'checkbox',
-          checked: store.get('app.darkReader'),
-          click: async (menuItem) => {
-            store.set('app.darkReader', menuItem.checked)
-          }
-        },
       ]
     },
     {

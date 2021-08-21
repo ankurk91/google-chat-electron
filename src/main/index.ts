@@ -24,7 +24,6 @@ import setupOfflineHandlers, {checkForInternet} from './features/inOnline';
 import logFirstLaunch from './features/firstLaunch';
 import handleNotification from './features/handleNotification';
 import {enforceMacOSAppLocation} from "electron-util";
-import darkReader from './features/darkReader';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -55,7 +54,6 @@ if (enforceSingleInstance()) {
       externalLinks(mainWindow);
       handleNotification(mainWindow);
       enforceMacOSAppLocation();
-      darkReader(mainWindow);
     })
 }
 

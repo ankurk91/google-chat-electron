@@ -47,9 +47,7 @@
   },
   "dependencies": {
     "auto-launch": "^5.0.5",
-    "electron-chrome-extensions": "^3.8.0",
     "electron-context-menu": "^3.1.1",
-    "electron-devtools-installer": "^3.2.0",
     "electron-is-snap": "^1.0.2",
     "electron-log": "^4.3.5",
     "electron-store": "^8.0.0",
