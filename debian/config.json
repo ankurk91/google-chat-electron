@@ -13,7 +13,8 @@
     },
     "categories": [
       "Social",
-      "Communication"
+      "Communication",
+      "Network"
     ],
     "scripts": {
       "postrm": "debian/scripts/post-remove.sh"
