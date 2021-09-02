@@ -6,10 +6,9 @@ import environment from "../environment";
 export default (url: string): BrowserWindow => {
   const window = new BrowserWindow({
     webPreferences: {
+      nativeWindowOpen: false,
       autoplayPolicy: 'user-gesture-required',
       contextIsolation: false,
-      worldSafeExecuteJavaScript: false,
-      enableRemoteModule: environment.isTesting,
       nodeIntegration: environment.isTesting,
       sandbox: false,
       disableBlinkFeatures: 'Auxclick', // Security
