@@ -1,11 +1,10 @@
-# Google Chat Desktop App
+# Desktop App for Google Chat
 
 [![latest-tag](https://badgen.net/github/release/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/tags)
 [![downloads](https://img.shields.io/github/downloads/ankurk91/google-chat-electron/total?cacheSeconds=3600)](https://github.com/ankurk91/google-chat-electron/releases)
 [![release-linux](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml)
 [![release-mac](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml)
 [![snapcraft](https://snapcraft.io/google-chat-electron/badge.svg)](https://snapcraft.io/google-chat-electron)
-[![dependabot](https://badgen.net/dependabot/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/pulls)
 
 An unofficial desktop app for [Google Chat](https://mail.google.com/chat/u/0/) built
 with [Electron](https://www.electronjs.org/)
@@ -42,7 +41,7 @@ sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ### Uninstall (Linux)
 
 * Logout from app
-* Quit from app 
+* Quit from app
 * Remove the app with this command if installed via snap
 
 ```bash
@@ -73,7 +72,7 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 ### Uninstall (Mac)
 
 * Logout from app
-* Quit from app 
+* Quit from app
 * Move the app to trash
 
 ### Supported Platforms
@@ -85,6 +84,23 @@ The app should work on most linux distros, but due to lack of time; we test on m
 | Ubuntu GNOME          | 20.x             |  :heavy_check_mark: |
 | Linux Mint Cinnamon   | 20.x             |  :heavy_check_mark: |
 | MacOS                 | 10.15            |  :white_check_mark: |
+
+### Major features
+
+* System tray
+    - New unread message indicator
+    - Offline indicator (no internet or not logged-in)
+    - Close the app to tray when you close the app window
+* Desktop notifications
+    - Clicking on notification bring the app to focus and open the specific person chat/room
+* Unread message counter in dock
+* Auto start the app when you log-in to your machine (configurable)
+* Auto check for updates on startup and notify user if any (configurable)
+* Auto check for internet on startup and keep retiring to connect every 60 seconds if offline
+* Open external links in your OS default web browser
+* Preserve window position and size
+* Prevent multiple chat app instances from running
+* CTRL+F shortcut to search
 
 ### Acknowledgements
 
