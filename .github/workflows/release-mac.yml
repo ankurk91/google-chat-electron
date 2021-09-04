@@ -26,7 +26,6 @@ jobs:
       - name: Pack for mac os
         run: |
           rm -rf ./.github
-          rm -rf ./tests
           yarn run pack:mac
 
       - name: Create zip package

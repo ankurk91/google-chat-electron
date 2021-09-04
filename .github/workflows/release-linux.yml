@@ -26,7 +26,6 @@ jobs:
       - name: Pack for linux
         run: |
           rm -rf ./.github
-          rm -rf ./tests
           yarn run pack:linux
 
       - name: Create debian package

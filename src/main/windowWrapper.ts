@@ -9,7 +9,7 @@ export default (url: string): BrowserWindow => {
       nativeWindowOpen: false,
       autoplayPolicy: 'user-gesture-required',
       contextIsolation: false,
-      nodeIntegration: environment.isTesting,
+      nodeIntegration: false,
       sandbox: false,
       disableBlinkFeatures: 'Auxclick', // Security
       preload: path.join(app.getAppPath(), 'lib/preload/index.js'),
