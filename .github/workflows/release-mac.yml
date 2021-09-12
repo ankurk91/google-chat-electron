@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies with yarn
         run: yarn install --non-interactive --frozen-lockfile
 
-      - name: Pack for mac os
+      - name: Packing
         run: |
           rm -rf ./.github
           yarn run pack:mac

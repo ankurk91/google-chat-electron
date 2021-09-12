@@ -15,6 +15,8 @@
     "clean:lib": "rimraf ./lib",
     "prets": "yarn run clean:lib",
     "ts": "tsc",
+    "prepack:windows": "yarn run clean:dist && yarn run ts",
+    "pack:windows": "electron-packager . --platform=win32 --arch=x64 --asar --overwrite --out=./dist/ --icon=./resources/icons/normal/windows.ico",
     "prepack:mac": "yarn run clean:dist && yarn run ts",
     "pack:mac": "electron-packager . --platform=darwin --arch=x64 --asar --overwrite --out=./dist/ --icon=./resources/icons/normal/mac.icns",
     "build:mac-zip": "bash ./mac/installer-zip.sh",
@@ -32,7 +34,6 @@
     "@types/auto-launch": "^5.0.2",
     "@types/throttle-debounce": "^2.1.0",
     "electron": "^14.0.0",
-    "electron-installer-debian": "^3.1.0",
     "electron-packager": "^15.3.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.4.2"
@@ -48,6 +49,9 @@
     "electron-util": "^0.17.2",
     "is-online": "^9.0.1",
     "throttle-debounce": "^3.0.1"
+  },
+  "optionalDependencies": {
+    "electron-installer-debian": "^3.1.0"
   },
   "engines": {
     "node": ">=14.15.0",
