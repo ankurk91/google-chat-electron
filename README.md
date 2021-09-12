@@ -1,4 +1,4 @@
-# Desktop App for Google Chat
+# Desktop app for Google Chat
 
 [![latest-tag](https://badgen.net/github/release/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/tags)
 [![downloads](https://img.shields.io/github/downloads/ankurk91/google-chat-electron/total?cacheSeconds=3600)](https://github.com/ankurk91/google-chat-electron/releases)
@@ -40,8 +40,7 @@ sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 
 ### Uninstall (Linux)
 
-* Logout from app
-* Quit from app
+* Logout and Quit from app
 * Remove the app with this command if installed via snap
 
 ```bash
@@ -71,8 +70,7 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 
 ### Uninstall (Mac)
 
-* Logout from app
-* Quit from app
+* Logout and Quit from app
 * Move the app to trash
 
 ### Supported Platforms
@@ -88,7 +86,7 @@ The app should work on most linux distros, but due to lack of time; we test on m
 ### Major features
 
 * System tray
-    - New unread message indicator
+    - Unread message indicator
     - Offline indicator (no internet or not logged-in)
     - Close the app to tray when you close the app window
 * Desktop notifications

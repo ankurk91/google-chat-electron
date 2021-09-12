@@ -1,10 +1,12 @@
-title: Google Chat
+title: Desktop app for Google chat
 name: google-chat-electron
 version: '{{SNAP_VERSION}}'
 base: core18
 summary: Unofficial desktop app for Google Chat.
 description: |
   Unofficial desktop app for Google Chat built with Electron.
+
+  https://github.com/ankurk91/google-chat-electron
 grade: stable
 confinement: strict
 icon: ./resources/icons/normal/scalable.svg
@@ -71,6 +73,7 @@ apps:
       - network-bind
       - network-observe
       - unity7
+      - u2f-devices
 
     environment:
       # Correct the TMPDIR path for Chromium Framework/Electron to
