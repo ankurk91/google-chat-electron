@@ -47,6 +47,9 @@ export default (window: BrowserWindow) => {
           click: relaunchApp
         },
         {
+          role: 'minimize'
+        },
+        {
           label: 'Sign Out',
           click: () => {
             window.loadURL(environment.logoutUrl)
