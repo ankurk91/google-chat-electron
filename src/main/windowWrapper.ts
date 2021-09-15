@@ -1,7 +1,6 @@
 import path from 'path';
 import {app, BrowserWindow, nativeImage} from 'electron';
 import store from './config';
-import environment from "../environment";
 
 export default (url: string): BrowserWindow => {
   const window = new BrowserWindow({

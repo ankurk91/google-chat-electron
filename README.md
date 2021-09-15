@@ -4,6 +4,7 @@
 [![downloads](https://img.shields.io/github/downloads/ankurk91/google-chat-electron/total?cacheSeconds=3600)](https://github.com/ankurk91/google-chat-electron/releases)
 [![release-linux](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml)
 [![release-mac](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml)
+[![release-windows](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml)
 [![snapcraft](https://snapcraft.io/google-chat-electron/badge.svg)](https://snapcraft.io/google-chat-electron)
 
 An unofficial desktop app for [Google Chat](https://mail.google.com/chat/u/0/) built
@@ -82,6 +83,7 @@ The app should work on most linux distros, but due to lack of time; we test on m
 | Ubuntu GNOME          | 20.x             |  :heavy_check_mark: |
 | Linux Mint Cinnamon   | 20.x             |  :heavy_check_mark: |
 | MacOS                 | 10.15            |  :white_check_mark: |
+| Windows               | 10               |  :white_check_mark: |
 
 ### Major features
 
