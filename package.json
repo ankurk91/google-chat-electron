@@ -17,6 +17,7 @@
     "ts": "tsc",
     "prepack:windows": "yarn run clean:dist && yarn run ts",
     "pack:windows": "electron-packager . --platform=win32 --arch=x64 --asar --overwrite --out=./dist/ --icon=./resources/icons/normal/windows.ico",
+    "build:windows": "node ./windows/installer-zip.js",
     "prepack:mac": "yarn run clean:dist && yarn run ts",
     "pack:mac": "electron-packager . --platform=darwin --arch=x64 --asar --overwrite --out=./dist/ --icon=./resources/icons/normal/mac.icns",
     "build:mac-zip": "bash ./mac/installer-zip.sh",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@types/auto-launch": "^5.0.2",
     "@types/throttle-debounce": "^2.1.0",
+    "cross-zip": "^4.0.0",
     "electron": "^14.0.0",
     "electron-packager": "^15.3.0",
     "rimraf": "^3.0.2",

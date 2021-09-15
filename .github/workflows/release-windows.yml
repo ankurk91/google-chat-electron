@@ -1,0 +1,39 @@
+name: release-windows
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release-windows:
+    name: release-windows
+    runs-on: windows-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies with yarn
+        run: yarn install --non-interactive --frozen-lockfile
+
+      - name: Packing
+        run: yarn run pack:windows
+
+      - name: Create zip package
+        run: yarn run build:windows
+
+      - name: Upload binaries to GitHub release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: './dist/installers/*.*'
+          tag: ${{ github.ref }}
+          file_glob: true
+
