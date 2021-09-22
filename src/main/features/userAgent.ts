@@ -1,4 +1,4 @@
-import {Filter, OnBeforeSendHeadersListenerDetails, session} from 'electron'
+import {WebRequestFilter, OnBeforeSendHeadersListenerDetails, session} from 'electron'
 
 // Use chrome version as Firefox version, rather than using a hard coded version
 const firefoxVersion = parseInt(String(process.versions.chrome)).toFixed(1);
@@ -7,7 +7,7 @@ const firefoxVersion = parseInt(String(process.versions.chrome)).toFixed(1);
 export const userAgentString = `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:${firefoxVersion}) Gecko/20100101 Firefox/${firefoxVersion}`
 
 export default () => {
-  const filter: Filter = {
+  const filter: WebRequestFilter = {
     urls: ['https://*.google.com/*']
   }
 
