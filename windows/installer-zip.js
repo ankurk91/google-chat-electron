@@ -1,3 +1,4 @@
+'use strict';
 const zipper = require('cross-zip');
 const path = require("path");
 const fs = require('fs');

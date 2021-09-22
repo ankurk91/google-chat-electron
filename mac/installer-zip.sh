@@ -15,11 +15,6 @@ OUT_FILE_NAME="${OUT_DIR}google-chat-electron-${PACKAGE_VERSION}-darwin-x64.zip"
 echo "Switch to dist directory: ${SOURCE_DIR}"
 cd "$SOURCE_DIR"
 
-echo "Remove junk files"
-rm -f "LICENSES.chromium.html"
-rm -f "LICENSE"
-rm -f "version"
-
 echo "Creating output folder: ${OUT_DIR}"
 mkdir -p "$OUT_DIR"
 

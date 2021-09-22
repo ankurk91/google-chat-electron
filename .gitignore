@@ -2,7 +2,6 @@
 
 # various IDEs
 .idea/
-.project
 *.sublime-*
 .vscode/
 
@@ -12,7 +11,6 @@ npm-debug.log*
 error_log
 .sass-cache
 .cache
-.php_cs.cache
 
 # OS generated files
 [Tt]humbs.db
@@ -50,7 +48,7 @@ package-lock.json
 
 # This project
 /dist/
-/*.deb
-/*.snap
 /squashfs-root/
 /lib/
+/*.deb
+/*.snap

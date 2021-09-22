@@ -1,14 +1,14 @@
 # Desktop app for Google Chat
 
-[![latest-tag](https://badgen.net/github/release/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/tags)
-[![downloads](https://img.shields.io/github/downloads/ankurk91/google-chat-electron/total?cacheSeconds=3600)](https://github.com/ankurk91/google-chat-electron/releases)
+[![latest-tag](https://badgen.net/github/release/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/releases)
+[![downloads](https://img.shields.io/github/downloads/ankurk91/google-chat-electron/total?cacheSeconds=3600)](https://somsubhra.github.io/github-release-stats/?username=ankurk91&repository=google-chat-electron&page=1&per_page=30)
 [![release-linux](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml)
 [![release-mac](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml)
 [![release-windows](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml)
 [![snapcraft](https://snapcraft.io/google-chat-electron/badge.svg)](https://snapcraft.io/google-chat-electron)
 
 An unofficial desktop app for [Google Chat](https://mail.google.com/chat/u/0/) built
-with [Electron](https://www.electronjs.org/)
+with [Electron](https://www.electronjs.org/apps/google-chat-electron)
 
 ### Motivation
 
@@ -25,8 +25,8 @@ with [Electron](https://www.electronjs.org/)
 sudo snap install google-chat-electron
 
 # grant permissions
-sudo snap connect google-chat-electron:removable-media :removable-media
 sudo snap connect google-chat-electron:home :home
+sudo snap connect google-chat-electron:removable-media :removable-media
 ```
 
 * Alternatively you can download the latest debian installer from
@@ -76,7 +76,7 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 
 ### Supported Platforms
 
-The app should work on most linux distros, but due to lack of time; we test on most popular only.
+The app should work on all platforms, but due to lack of time; we test on most popular only.
 
 | OS                    | Version          | Tested              |
 | :---                  | :---:            |                ---: |
