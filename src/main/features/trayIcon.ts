@@ -1,5 +1,5 @@
 import path from 'path';
-import {BrowserWindow, app, Tray, Menu, nativeImage} from 'electron';
+import {app, BrowserWindow, Menu, nativeImage, Tray} from 'electron';
 import {is} from "electron-util";
 
 export default (window: BrowserWindow) => {
@@ -7,7 +7,7 @@ export default (window: BrowserWindow) => {
   const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), `resources/icons/offline/${size}.png`)));
 
   const handleIconClick = () => {
-    if (window.isVisible() && window.isFocused()) {
+    if (window.isVisible() || window.isFocused()) {
       if (is.macos) {
         app.hide()
       } else {
@@ -37,6 +37,10 @@ export default (window: BrowserWindow) => {
   ]));
 
   trayIcon.setToolTip('Google Chat');
+
+  if (is.windows) {
+    trayIcon.on('click', handleIconClick);
+  }
 
   return trayIcon;
 }
