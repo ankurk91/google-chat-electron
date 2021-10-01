@@ -16,7 +16,7 @@
     "prets": "yarn run clean:lib",
     "ts": "tsc",
     "prepack:windows": "yarn run clean:dist && yarn run ts",
-    "pack:windows": "electron-packager . --platform=win32 --arch=x64 --asar --overwrite --out=./dist/ --icon=./resources/icons/normal/windows.ico",
+    "pack:windows": "electron-packager . --platform=win32 --arch=x64 --asar --overwrite --out=./dist/windows --icon=./resources/icons/normal/windows.ico",
     "build:windows": "node ./windows/installer-zip.js",
     "prepack:mac": "yarn run clean:dist && yarn run ts",
     "pack:mac": "electron-packager . --platform=darwin --arch=x64 --asar --overwrite --out=./dist/ --icon=./resources/icons/normal/mac.icns",

@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require('fs');
 
 const version = require(path.join(__dirname, '../package.json')).version;
-const inPath = path.join(__dirname, '../dist/google-chat-electron-win32-x64');
+const inPath = path.join(__dirname, '../dist/windows');
 const fileName = `google-chat-electron-win-x64-${version}.zip`
 const outDir = path.join(__dirname, '../dist/installers');
 const outPath = path.join(outDir, fileName)
@@ -18,6 +18,7 @@ if (!fs.existsSync(outDir)) {
   fs.mkdirSync(outDir);
 }
 
+console.log("Using source path -", inPath);
 console.log("Creating zip file - ", fileName);
 
 zipper.zip(inPath, outPath, (error) => {
