@@ -58,6 +58,10 @@ sudo apt-get remove --purge google-chat-electron
 
 ### Installation (Mac)
 
+* Homebrew users can run `brew install --cask google-chat-electron`
+
+or
+
 * Download the zip (darwin) file from [releases](https://github.com/ankurk91/google-chat-electron/releases/latest)
 * Extract the zip file
 * Move the app to your `~/Applications` folder
