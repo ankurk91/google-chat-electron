@@ -25,5 +25,5 @@ zipper.zip(inPath, outPath, (error) => {
   if (error) {
     throw new Error(error);
   }
-  console.log("Zip file created at -" + outPath);
+  console.log("Zip file created at -", outPath);
 });
