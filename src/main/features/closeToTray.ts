@@ -1,5 +1,4 @@
 import {BrowserWindow, app} from 'electron';
-import environment from "../../environment";
 import {is} from "electron-util";
 
 let willQuit = false;

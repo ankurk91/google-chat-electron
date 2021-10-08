@@ -7,7 +7,9 @@ export default (window: BrowserWindow) => {
   const trayIcon = new Tray(nativeImage.createFromPath(path.join(app.getAppPath(), `resources/icons/offline/${size}.png`)));
 
   const handleIconClick = () => {
-    if (window.isVisible() || window.isFocused()) {
+    const shouldHide = is.windows ? (window.isVisible() || window.isFocused()) : (window.isVisible() && window.isFocused());
+
+    if (shouldHide) {
       if (is.macos) {
         app.hide()
       } else {
