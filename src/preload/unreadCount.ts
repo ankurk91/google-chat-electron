@@ -2,7 +2,7 @@ import {ipcRenderer} from 'electron';
 
 const targetSelectors = [
   'div[data-tooltip="Chat"][role="group"]',
-  'div[data-tooltip="Rooms"][role="group"]'
+  'div[data-tooltip="Spaces"][role="group"]'
 ];
 
 const getMessageCount = (): number => {
