@@ -243,7 +243,7 @@ export default (window: BrowserWindow) => {
                   type: 'warning',
                   title: 'Confirm',
                   message: 'Reset app data?',
-                  detail: `You will be logged out from application.\nAll settings will be reset to default.\nPress 'Yes' to proceed.`,
+                  detail: `You will be logged out from application.\nAll settings will reset to default.\nPress 'Yes' to proceed.`,
                   buttons: ['Yes', 'No'],
                   cancelId: 1,
                   defaultId: 1,

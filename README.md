@@ -81,7 +81,7 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 
 ### Supported Platforms
 
-The app should work on all platforms, but due to lack of time; we test on most popular only.
+The app should work on all platforms (x64), but due to lack of time; we test on most popular only.
 
 | OS                    | Version          | Tested              |
 | :---                  | :---:            |                ---: |
@@ -101,7 +101,7 @@ The app should work on all platforms, but due to lack of time; we test on most p
 * Unread message counter in dock
 * Auto start the app when you log-in to your machine (configurable)
 * Auto check for updates on startup and notify user if any (configurable)
-* Auto check for internet on startup and keep retiring to connect every 60 seconds if offline
+* Auto check for internet on startup and keep retrying to connect every 60 seconds if offline
 * Open external links in your OS default web browser
 * Preserve window position and size
 * Prevent multiple chat app instances from running
