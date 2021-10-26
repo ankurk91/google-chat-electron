@@ -20,16 +20,21 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Install dependencies with yarn
-        run: yarn install --non-interactive --frozen-lockfile
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.18.0
 
-      - name: Packing
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Packing for mac
         run: |
           rm -rf ./.github
-          yarn run pack:mac
+          pnpm run pack:mac
 
       - name: Create zip package
-        run: yarn run build:mac-zip
+        run: pnpm run build:mac-zip
 
       - name: Upload binaries to GitHub release
         uses: svenstaro/upload-release-action@v2

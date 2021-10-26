@@ -16,9 +16,9 @@ sudo /snap/bin/lxd init --auto
 * :bulb: snap package takes deb package as source; so we need to build deb package too.
 
 ```bash
-yarn run build
-yarn run build:deb
-yarn run build:snap
+pnpm run build
+pnpm run build:deb
+pnpm run build:snap
 ```
 
 * Login to snapcraft (onetime)
@@ -30,7 +30,7 @@ snapcraft login
 * Publish to store
 
 ```bash
-yarn run build:snap-repack
+pnpm run build:snap-repack
 snapcraft upload --release=stable ./*.snap
 ```
 

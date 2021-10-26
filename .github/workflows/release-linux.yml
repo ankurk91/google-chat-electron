@@ -20,18 +20,23 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Install dependencies with yarn
-        run: yarn install --non-interactive --frozen-lockfile
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.18.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Pack for linux
         run: |
           rm -rf ./.github
-          yarn run pack:linux
+          pnpm run pack:linux
 
       - name: Create debian package
         run: |
-          yarn run build:deb
-          yarn run build:deb-checksum
+          pnpm run build:deb
+          pnpm run build:deb-checksum
 
       - name: Upload binaries to GitHub release
         uses: svenstaro/upload-release-action@v2
@@ -42,7 +47,7 @@ jobs:
           file_glob: true
 
       - name: Prepare for building snap package
-        run: yarn run build:snap-template
+        run: pnpm run build:snap-template
 
       - name: Create Snap package
         uses: snapcore/action-build@v1
@@ -51,7 +56,7 @@ jobs:
       - name: Prepare for publishing on snap store
         run: |
           sudo snap install review-tools
-          yarn run build:snap-repack
+          pnpm run build:snap-repack
 
       - name: Publish to snap store
         uses: snapcore/action-publish@v1

@@ -9,25 +9,25 @@
   "license": "MIT",
   "main": "lib/main/index.js",
   "scripts": {
-    "prestart": "yarn run ts",
+    "prestart": "pnpm run ts",
     "start": "electron .",
     "clean:dist": "rimraf ./dist && rimraf ./*.snap",
     "clean:lib": "rimraf ./lib",
-    "prets": "yarn run clean:lib",
+    "prets": "pnpm run clean:lib",
     "ts": "tsc",
-    "prepack:windows": "yarn run clean:dist && yarn run ts",
+    "prepack:windows": "pnpm run clean:dist && pnpm run ts",
     "pack:windows": "electron-packager . --platform=win32 --arch=x64 --asar --overwrite --out=./dist/ --icon=./resources/icons/normal/windows.ico",
     "build:windows": "node ./windows/installer.js",
-    "prepack:mac": "yarn run clean:dist && yarn run ts",
+    "prepack:mac": "pnpm run clean:dist && pnpm run ts",
     "pack:mac": "electron-packager . --platform=darwin --arch=x64 --asar --overwrite --out=./dist/ --icon=./resources/icons/normal/mac.icns",
     "build:mac-zip": "bash ./mac/installer-zip.sh",
-    "prepack:linux": "yarn run clean:dist && yarn run ts",
+    "prepack:linux": "pnpm run clean:dist && pnpm run ts",
     "pack:linux": "electron-packager . --platform=linux --arch=x64 --asar --overwrite --out=./dist/",
     "build:deb": "electron-installer-debian --config=./debian/config.json --arch=amd64",
     "build:deb-checksum": "cd ./dist/installers && sha512sum *.deb > google-chat-electron-deb-SHA512.txt",
     "build:snap-clean": "sg lxd -c 'snapcraft clean electron-deb --use-lxd'",
     "build:snap-template": "bash ./snap/local/template.sh",
-    "prebuild:snap": "yarn run build:snap-template",
+    "prebuild:snap": "pnpm run build:snap-template",
     "build:snap": "sg lxd -c 'snapcraft --use-lxd'",
     "build:snap-repack": "bash ./snap/local/repack.sh"
   },
@@ -54,8 +54,10 @@
   "optionalDependencies": {
     "electron-installer-debian": "^3.1.0"
   },
+  "engineStrict": true,
+  "packageManager": "pnpm@6.17.0",
   "engines": {
-    "node": ">=14.15.0",
-    "yarn": "^1.22"
+    "node": ">=16.9",
+    "pnpm": "^6.17.0"
   }
 }

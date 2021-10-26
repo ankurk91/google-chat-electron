@@ -20,11 +20,16 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Install dependencies with yarn
-        run: yarn install --non-interactive --frozen-lockfile
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.18.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Pack for Windows
-        run: yarn run pack:windows
+        run: pnpm run pack:windows
 
       - name: Download inno-setup installer
         working-directory: ./windows
@@ -35,7 +40,7 @@ jobs:
         run: ./innosetup.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NOCANCEL
 
       - name: Create installer
-        run: yarn run build:windows
+        run: pnpm run build:windows
 
       - name: Upload binaries to GitHub release
         uses: svenstaro/upload-release-action@v2
