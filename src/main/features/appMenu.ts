@@ -195,7 +195,7 @@ export default (window: BrowserWindow) => {
           enabled: !environment.isSnap,
           click: () => {
             checkForUpdates({
-              silent: false
+              silent: false,
             });
           }
         },
