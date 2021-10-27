@@ -29,7 +29,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Pack for Windows
-        run: pnpm run pack:windows
+        run: npm run pack:windows
 
       - name: Download inno-setup installer
         working-directory: ./windows
@@ -40,7 +40,7 @@ jobs:
         run: ./innosetup.exe /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /NOCANCEL
 
       - name: Create installer
-        run: pnpm run build:windows
+        run: npm run build:windows
 
       - name: Upload binaries to GitHub release
         uses: svenstaro/upload-release-action@v2

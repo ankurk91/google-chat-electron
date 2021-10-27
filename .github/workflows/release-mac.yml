@@ -31,10 +31,10 @@ jobs:
       - name: Packing for mac
         run: |
           rm -rf ./.github
-          pnpm run pack:mac
+          npm run pack:mac
 
       - name: Create zip package
-        run: pnpm run build:mac-zip
+        run: npm run build:mac-zip
 
       - name: Upload binaries to GitHub release
         uses: svenstaro/upload-release-action@v2
