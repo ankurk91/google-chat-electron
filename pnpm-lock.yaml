@@ -4,7 +4,7 @@ specifiers:
   '@types/auto-launch': ^5.0.2
   '@types/throttle-debounce': ^2.1.0
   auto-launch: ^5.0.5
-  electron: ^16.0.1
+  electron: ^16.0.3
   electron-context-menu: ^3.1.1
   electron-installer-debian: ^3.1.0
   electron-is-snap: ^1.0.2
@@ -26,7 +26,7 @@ dependencies:
   electron-log: 4.4.1
   electron-store: 8.0.1
   electron-unhandled: 3.0.2
-  electron-update-notifier: 1.5.3_electron@16.0.1
+  electron-update-notifier: 1.5.3_electron@16.0.3
   electron-util: 0.17.2
   is-online: 9.0.1
   throttle-debounce: 3.0.1
@@ -37,7 +37,7 @@ optionalDependencies:
 devDependencies:
   '@types/auto-launch': 5.0.2
   '@types/throttle-debounce': 2.1.0
-  electron: 16.0.1
+  electron: 16.0.3
   electron-packager: 15.4.0
   rimraf: 3.0.2
   typescript: 4.4.4
@@ -66,7 +66,7 @@ packages:
     resolution: {integrity: sha512-U5vkXDZ9DwXtkPqlB45tfYnnYBN8PePp1z/XDCupnSpdrxT8/ThCv9WCwPLf9oqiSGZTkH6dx2jDUPuoXpjkcA==}
     engines: {node: '>=8.6'}
     dependencies:
-      debug: 4.3.2
+      debug: 4.3.3
       env-paths: 2.2.1
       fs-extra: 8.1.0
       got: 9.6.0
@@ -505,6 +505,18 @@ packages:
     dependencies:
       ms: 2.1.2
 
+  /debug/4.3.3:
+    resolution: {integrity: sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+    dev: true
+
   /decamelize/1.2.0:
     resolution: {integrity: sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=}
     engines: {node: '>=0.10.0'}
@@ -708,7 +720,7 @@ packages:
       lodash.debounce: 4.0.8
     dev: false
 
-  /electron-update-notifier/1.5.3_electron@16.0.1:
+  /electron-update-notifier/1.5.3_electron@16.0.3:
     resolution: {integrity: sha512-nIru/heVVrlv8WI578KfaB/8oXlpLdkiAgzv6fb5x8O2kkWDymDGo4QJrWJPtPzB/TABnJhUURocN37r6XJdXQ==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
@@ -716,7 +728,7 @@ packages:
     dependencies:
       axios: 0.24.0
       compare-versions: 3.6.0
-      electron: 16.0.1
+      electron: 16.0.3
       github-url-to-object: 4.0.6
     transitivePeerDependencies:
       - debug
@@ -729,8 +741,8 @@ packages:
       new-github-issue-url: 0.2.1
     dev: false
 
-  /electron/16.0.1:
-    resolution: {integrity: sha512-6TSDBcoKGgmKL/+W+LyaXidRVeRl1V4I81ZOWcqsVksdTMfM4AlxTgfaoYdK/nUhqBrUtuPDcqOyJE6Bc4qMpw==}
+  /electron/16.0.3:
+    resolution: {integrity: sha512-MzCYuEqrvyEtPSUWQwr88xWBrsbhmyOKp4wqP9WfAJTEDeUfBcrQYswHuYe17Gi00gRirQb9htoC/anYfaw20w==}
     engines: {node: '>= 8.6'}
     hasBin: true
     requiresBuild: true
