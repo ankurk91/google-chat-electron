@@ -88,7 +88,7 @@ The app should work on all platforms (x64), but due to lack of time; we test on 
 | Ubuntu GNOME          | 20.x             |  :heavy_check_mark: |
 | Linux Mint Cinnamon   | 20.x             |  :heavy_check_mark: |
 | MacOS                 | 10.15            |  :white_check_mark: |
-| Windows               | 10               |  :white_check_mark: |
+| Windows               | 10,11            |  :white_check_mark: |
 
 ### Major features
 

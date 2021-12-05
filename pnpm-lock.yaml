@@ -4,7 +4,7 @@ specifiers:
   '@types/auto-launch': ^5.0.2
   '@types/throttle-debounce': ^2.1.0
   auto-launch: ^5.0.5
-  electron: ^16.0.3
+  electron: ^16.0.4
   electron-context-menu: ^3.1.1
   electron-installer-debian: ^3.1.0
   electron-is-snap: ^1.0.2
@@ -26,7 +26,7 @@ dependencies:
   electron-log: 4.4.1
   electron-store: 8.0.1
   electron-unhandled: 3.0.2
-  electron-update-notifier: 1.5.3_electron@16.0.3
+  electron-update-notifier: 1.5.3_electron@16.0.4
   electron-util: 0.17.2
   is-online: 9.0.1
   throttle-debounce: 3.0.1
@@ -37,7 +37,7 @@ optionalDependencies:
 devDependencies:
   '@types/auto-launch': 5.0.2
   '@types/throttle-debounce': 2.1.0
-  electron: 16.0.3
+  electron: 16.0.4
   electron-packager: 15.4.0
   rimraf: 3.0.2
   typescript: 4.4.4
@@ -155,9 +155,14 @@ packages:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
     optional: true
 
-  /@types/node/14.17.34:
-    resolution: {integrity: sha512-USUftMYpmuMzeWobskoPfzDi+vkpe0dvcOBRNOscFrGxVp4jomnRxWuVohgqBow2xyIPC0S3gjxV/5079jhmDg==}
+  /@types/node/14.18.0:
+    resolution: {integrity: sha512-0GeIl2kmVMXEnx8tg1SlG6Gg8vkqirrW752KqolYo1PHevhhZN3bhJ67qHj+bQaINhX0Ra3TlWwRvMCd9iEfNQ==}
     dev: true
+
+  /@types/node/16.11.11:
+    resolution: {integrity: sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==}
+    dev: true
+    optional: true
 
   /@types/node/16.11.6:
     resolution: {integrity: sha512-ua7PgUoeQFjmWPcoo9khiPum3Pd60k4/2ZGXt18sm2Slk0W0xZTqt5Y0Ny1NyBiN1EVQ/+FaF9NcY4Qe6rwk5w==}
@@ -181,7 +186,7 @@ packages:
     resolution: {integrity: sha512-8uALY5LTvSuHgloDVUvWP3pIauILm+8/0pDMokuDYIoNsOkSwd5AiHBTSEJjKTDcZr5z8UpgOWZkxBF4iJftoA==}
     requiresBuild: true
     dependencies:
-      '@types/node': 16.11.9
+      '@types/node': 16.11.11
     dev: true
     optional: true
 
@@ -720,7 +725,7 @@ packages:
       lodash.debounce: 4.0.8
     dev: false
 
-  /electron-update-notifier/1.5.3_electron@16.0.3:
+  /electron-update-notifier/1.5.3_electron@16.0.4:
     resolution: {integrity: sha512-nIru/heVVrlv8WI578KfaB/8oXlpLdkiAgzv6fb5x8O2kkWDymDGo4QJrWJPtPzB/TABnJhUURocN37r6XJdXQ==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
@@ -728,7 +733,7 @@ packages:
     dependencies:
       axios: 0.24.0
       compare-versions: 3.6.0
-      electron: 16.0.3
+      electron: 16.0.4
       github-url-to-object: 4.0.6
     transitivePeerDependencies:
       - debug
@@ -741,14 +746,14 @@ packages:
       new-github-issue-url: 0.2.1
     dev: false
 
-  /electron/16.0.3:
-    resolution: {integrity: sha512-MzCYuEqrvyEtPSUWQwr88xWBrsbhmyOKp4wqP9WfAJTEDeUfBcrQYswHuYe17Gi00gRirQb9htoC/anYfaw20w==}
+  /electron/16.0.4:
+    resolution: {integrity: sha512-IptwmowvMP1SFOmZLh6rrURwfnOxbDBXBRBcaOdfBM5I+B9mgtdNwzNC3ymFFNzEkZUwdOyg9fu3iyjAAQIQgw==}
     engines: {node: '>= 8.6'}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@electron/get': 1.13.1
-      '@types/node': 14.17.34
+      '@types/node': 14.18.0
       extract-zip: 1.7.0
     transitivePeerDependencies:
       - supports-color
