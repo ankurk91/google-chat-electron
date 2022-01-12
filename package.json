@@ -6,7 +6,7 @@
   "repository": "https://github.com/ankurk91/google-chat-electron",
   "homepage": "https://github.com/ankurk91/google-chat-electron",
   "author": "ankurk91",
-  "license": "MIT",
+  "license": "GNU GPLv3",
   "main": "lib/main/index.js",
   "scripts": {
     "prestart": "npm run ts",

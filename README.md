@@ -124,4 +124,4 @@ This desktop client has no way to access none of your data.
 
 ## License
 
-[MIT](LICENSE.txt) License
+[GNU GPLv3](LICENSE.txt) License
