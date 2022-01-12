@@ -25,7 +25,7 @@ with [Electron](https://www.electronjs.org/apps/google-chat-electron)
 ```bash
 sudo snap install google-chat-electron
 
-# grant permissions
+# grant permissions - optional
 sudo snap connect google-chat-electron:home :home
 sudo snap connect google-chat-electron:removable-media :removable-media
 ```
@@ -81,14 +81,14 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 
 ### Supported Platforms
 
-The app should work on all platforms (x64), but due to lack of time; we test on most popular only.
+The app should work on all x64 platforms, but due to lack of time; we test on most popular only.
 
-| OS                    | Version          | Tested              |
-| :---                  | :---:            |                ---: |
-| Ubuntu GNOME          | 20.x             |  :heavy_check_mark: |
-| Linux Mint Cinnamon   | 20.x             |  :heavy_check_mark: |
-| MacOS                 | 10.15            |  :white_check_mark: |
-| Windows               | 10,11            |  :white_check_mark: |
+| OS                    | Version | Tested              |
+| :---                  |:-------:|                ---: |
+| Ubuntu GNOME          |  20.x   |  :heavy_check_mark: |
+| Linux Mint Cinnamon   |  20.x   |  :heavy_check_mark: |
+| MacOS                 |  10.15  |  :white_check_mark: |
+| Windows               | 10, 11  |  :white_check_mark: |
 
 ### Major features
 
