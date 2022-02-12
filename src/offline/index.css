@@ -8,6 +8,7 @@ body {
   vertical-align: baseline;
   font-size: 16px;
   line-height: 1.4rem;
+  background-color: #f8f8f8;
 }
 
 .app {
@@ -54,4 +55,10 @@ body {
 
 .btn:disabled:hover {
   background: #868484;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    filter: invert(1) hue-rotate(180deg);
+  }
 }
