@@ -45,7 +45,7 @@
     "electron-is-snap": "^1.0.2",
     "electron-log": "^4.4.5",
     "electron-store": "^8.0.1",
-    "electron-unhandled": "^3.0.2",
+    "electron-unhandled": "^4.0.0",
     "electron-update-notifier": "^1.5.3",
     "electron-util": "^0.17.2",
     "is-online": "^9.0.1",
