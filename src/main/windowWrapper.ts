@@ -5,7 +5,6 @@ import store from './config';
 export default (url: string): BrowserWindow => {
   const window = new BrowserWindow({
     webPreferences: {
-      nativeWindowOpen: false,
       autoplayPolicy: 'user-gesture-required',
       contextIsolation: false,
       nodeIntegration: false,
