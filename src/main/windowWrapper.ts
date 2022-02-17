@@ -1,6 +1,7 @@
 import path from 'path';
 import {app, BrowserWindow, nativeImage} from 'electron';
 import store from './config';
+import {userAgentString} from './features/userAgent';
 
 export default (url: string): BrowserWindow => {
   const window = new BrowserWindow({
@@ -27,7 +28,9 @@ export default (url: string): BrowserWindow => {
     }
   });
 
-  window.loadURL(url);
+  window.loadURL(url, {
+    userAgent: userAgentString,
+  });
 
   return window;
 };
