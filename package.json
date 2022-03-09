@@ -34,7 +34,7 @@
   "devDependencies": {
     "@types/auto-launch": "^5.0.2",
     "@types/throttle-debounce": "^2.1.0",
-    "electron": "^17.1.0",
+    "electron": "^17.1.1",
     "electron-packager": "^15.4.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.6.2"
@@ -45,7 +45,7 @@
     "electron-is-snap": "^1.0.2",
     "electron-log": "^4.4.6",
     "electron-store": "^8.0.1",
-    "electron-unhandled": "^4.0.0",
+    "electron-unhandled": "^4.0.1",
     "electron-update-notifier": "^1.5.3",
     "electron-util": "^0.17.2",
     "is-online": "^9.0.1",
