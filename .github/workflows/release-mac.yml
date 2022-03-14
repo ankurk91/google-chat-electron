@@ -32,9 +32,12 @@ jobs:
         run: |
           rm -rf ./.github
           npm run pack:mac
+          npm run pack:mac-arm
 
       - name: Create zip package
-        run: npm run build:mac-zip
+        run: |
+          npm run build:mac-zip
+          npm run build:mac-arm-zip
 
       - name: Upload binaries to GitHub release
         uses: svenstaro/upload-release-action@v2
