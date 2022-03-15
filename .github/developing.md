@@ -1,6 +1,6 @@
-### Development
+## Development
 
-#### Building the snap package
+### Building the snap package for Linux
 
 * Install [snapcraft](https://snapcraft.io/snapcraft) tools (onetime)
 * :bulb: We will be using [lxd](https://snapcraft.io/docs/build-on-lxd) instead of `multipass`

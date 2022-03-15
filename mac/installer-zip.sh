@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "Starting..."
+echo "Starting x64..."
 
 echo "Finding package version..."
 PACKAGE_VERSION=$(cat ./package.json | grep '"version"' | sed s/'  \"version\": \"'//g | sed s/'\",'//g)

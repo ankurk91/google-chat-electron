@@ -86,7 +86,7 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 
 ### Supported Platforms
 
-The app should work on all x64 platforms, but due to lack of time; we test on most popular only.
+The app should work on all x64 and Apple ARM platforms, but due to lack of time; we test on most popular only.
 
 | OS/Platform         |  Version  |
 |:--------------------|:---------:|
@@ -116,7 +116,7 @@ The app should work on all x64 platforms, but due to lack of time; we test on mo
 
 * [@robyf](https://github.com/robyf/google-chat-linux) for the initial work
 * [@squalou](https://github.com/squalou/google-chat-linux) for enhancements
-* All other [contributors](https://github.com/ankurk91/google-chat-electron/graphs/contributors)
+* All past [contributors](https://github.com/ankurk91/google-chat-electron/graphs/contributors)
 
 ## Disclaimer
 
