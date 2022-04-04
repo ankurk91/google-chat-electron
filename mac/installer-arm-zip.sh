@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "Starting arm64..."
+echo "Starting mac arm64..."
 
 echo "Finding package version..."
 PACKAGE_VERSION=$(cat ./package.json | grep '"version"' | sed s/'  \"version\": \"'//g | sed s/'\",'//g)

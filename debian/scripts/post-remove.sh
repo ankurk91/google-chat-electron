@@ -27,8 +27,8 @@ echo "Detected your home directory as - $USER_HOME_DIR"
 echo "Removing autostart config file"
 rm -f "$USER_HOME_DIR/.config/autostart/$APP_FOLDER_NAME.desktop"
 
-$APP_CACHE_PATH="$USER_HOME_DIR/.config/$APP_FOLDER_NAME/"
+APP_CACHE_PATH="$USER_HOME_DIR/.config/$APP_FOLDER_NAME/"
 echo "Removing app cache folder - $APP_CACHE_PATH"
-rm -rf $APP_CACHE_PATH
+rm -rf "$APP_CACHE_PATH"
 
 echo "Finished post removal script!"
