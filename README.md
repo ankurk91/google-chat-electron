@@ -79,10 +79,17 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 * Logout and Quit from app
 * Move the app to trash
 
-### Installation Windows 
+### Installation Windows
 
-* :warning: This app is **NOT** available on [Windows App Store](https://www.microsoft.com/en-in/p/desktop-client-for-google-chat/9mzxbpl66066)
-* The only way to install this app to [download](https://github.com/ankurk91/google-chat-electron/releases/latest) the installer
+* :warning: This app is **NOT** available
+  on [Windows App Store](https://www.microsoft.com/en-in/p/desktop-client-for-google-chat/9mzxbpl66066)
+* You can install this app by [downloading](https://github.com/ankurk91/google-chat-electron/releases/latest) the
+  installer
+* If you prefer [winget-cli](https://github.com/microsoft/winget-cli) on Windows 10+
+
+```
+winget install --id=ankurk91.GoogleChatElectron  -e
+```
 
 ### Supported Platforms
 
