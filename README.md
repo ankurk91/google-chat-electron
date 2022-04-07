@@ -85,9 +85,9 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
   on [Windows App Store](https://www.microsoft.com/en-in/p/desktop-client-for-google-chat/9mzxbpl66066)
 * You can install this app by [downloading](https://github.com/ankurk91/google-chat-electron/releases/latest) the
   installer
-* If you prefer [winget-cli](https://github.com/microsoft/winget-cli) on Windows 10+
+* If you prefer [winget-cli](https://github.com/microsoft/winget-cli) on Windows 10+, you can run:
 
-```
+```bash
 winget install --id=ankurk91.GoogleChatElectron  -e
 ```
 

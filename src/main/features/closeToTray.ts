@@ -5,7 +5,7 @@ let willQuit = false;
 
 export default (window: BrowserWindow) => {
 
-  // Allow mac users to exit from app via Dock context menu "Quit" item
+  // Allow Mac users to exit from app via Dock context menu "Quit" item
   app.on('before-quit', () => {
     willQuit = true
   })
