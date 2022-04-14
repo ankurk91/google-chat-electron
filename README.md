@@ -59,7 +59,7 @@ sudo apt-get remove --purge google-chat-electron
 
 ### Installation (Mac)
 
-* Homebrew users can run `brew install --cask google-chat-electron`
+* Homebrew users can run `brew install --cask --no-quarantine google-chat-electron`
 
 or
 
