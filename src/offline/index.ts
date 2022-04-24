@@ -13,7 +13,7 @@
     btn.innerText = 'Checking...';
 
     // This script does not have access to Electron APIs (IPC)
-    // So lets notify the preload script via an global event
+    // So let's notify the preload script via a global event
     window.dispatchEvent(new Event('app:checkIfOnline'));
     attemptCount++
   }

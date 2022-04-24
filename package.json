@@ -57,9 +57,9 @@
     "electron-installer-debian": "^3.1.0"
   },
   "engineStrict": true,
-  "packageManager": "pnpm@6.17.0",
+  "packageManager": "pnpm@6.32.0",
   "engines": {
     "node": ">=16.9",
-    "pnpm": "^6.17.0"
+    "pnpm": "^6.32.0"
   }
 }

@@ -111,7 +111,7 @@ The app should work on all x64 and Apple ARM platforms, but due to lack of time;
 * Desktop notifications
     - Clicking on notification bring the app to focus and open the specific person chat/room
 * Unread message counter in dock
-* Auto start the app when you log-in to your machine (configurable)
+* Auto start the app when you log in to your machine (configurable)
 * Auto check for updates on startup and notify user if any (configurable)
 * Auto check for internet on startup and keep retrying to connect every 60 seconds if offline
 * Open external links in your OS default web browser
