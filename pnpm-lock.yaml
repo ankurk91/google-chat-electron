@@ -12,7 +12,7 @@ specifiers:
   electron-packager: ^15.5.1
   electron-store: ^8.0.1
   electron-unhandled: ^4.0.1
-  electron-update-notifier: ^1.5.3
+  electron-update-notifier: ^1.6.0
   electron-util: ^0.17.2
   is-online: ^9.0.1
   rimraf: ^3.0.2
@@ -26,7 +26,7 @@ dependencies:
   electron-log: 4.4.6
   electron-store: 8.0.1
   electron-unhandled: 4.0.1
-  electron-update-notifier: 1.5.3_electron@18.2.0
+  electron-update-notifier: 1.6.0_electron@18.2.0
   electron-util: 0.17.2
   is-online: 9.0.1
   throttle-debounce: 4.0.1
@@ -240,6 +240,10 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
+  /asynckit/0.4.0:
+    resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=}
+    dev: false
+
   /at-least-node/1.0.0:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
     engines: {node: '>= 4.0.0'}
@@ -264,10 +268,11 @@ packages:
       winreg: 1.2.4
     dev: false
 
-  /axios/0.24.0:
-    resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
+  /axios/0.27.2:
+    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
     dependencies:
       follow-redirects: 1.14.9
+      form-data: 4.0.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -404,6 +409,13 @@ packages:
     engines: {node: '>=0.1.90'}
     dev: true
 
+  /combined-stream/1.0.8:
+    resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      delayed-stream: 1.0.0
+    dev: false
+
   /commander/2.9.0:
     resolution: {integrity: sha1-nJkJQXbhIkDLItbFFGCYQA/g99Q=}
     engines: {node: '>= 0.6.x'}
@@ -420,8 +432,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /compare-versions/3.6.0:
-    resolution: {integrity: sha512-W6Af2Iw1z4CB7q4uU4hv646dW9GQuBM+YpC0UvUCWSD8w90SJjp+ujJuXaEMtAXBtSqGfMPuFOVn4/+FlaqfBA==}
+  /compare-versions/4.1.3:
+    resolution: {integrity: sha512-WQfnbDcrYnGr55UwbxKiQKASnTtNnaAWVi8jZyy8NTpVAXWACSne8lMD1iaIo9AiU6mnuLvSVshCzewVuWxHUg==}
     dev: false
 
   /compress-brotli/1.3.6:
@@ -555,6 +567,11 @@ packages:
       object-keys: 1.1.1
     dev: true
     optional: true
+
+  /delayed-stream/1.0.0:
+    resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=}
+    engines: {node: '>=0.4.0'}
+    dev: false
 
   /detect-node/2.1.0:
     resolution: {integrity: sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==}
@@ -736,14 +753,14 @@ packages:
       serialize-error: 8.1.0
     dev: false
 
-  /electron-update-notifier/1.5.3_electron@18.2.0:
-    resolution: {integrity: sha512-nIru/heVVrlv8WI578KfaB/8oXlpLdkiAgzv6fb5x8O2kkWDymDGo4QJrWJPtPzB/TABnJhUURocN37r6XJdXQ==}
+  /electron-update-notifier/1.6.0_electron@18.2.0:
+    resolution: {integrity: sha512-l0Ouaz77isprSL7pQOTyw7ny8iLZTdHAoOLzhaYvbv5G4Nd4IweQ25pyh84oBr2VS8iLWNGCFVhSBv4SH3OLUg==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
       electron: '*'
     dependencies:
-      axios: 0.24.0
-      compare-versions: 3.6.0
+      axios: 0.27.2
+      compare-versions: 4.1.3
       electron: 18.2.0
       github-url-to-object: 4.0.6
     transitivePeerDependencies:
@@ -925,6 +942,15 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dev: false
+
+  /form-data/4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
     dev: false
 
   /fs-extra/4.0.3:
@@ -1373,6 +1399,13 @@ packages:
   /mime-db/1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /mime-types/2.1.35:
+    resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
+    engines: {node: '>= 0.6'}
+    dependencies:
+      mime-db: 1.52.0
     dev: false
 
   /mimic-fn/2.1.0:

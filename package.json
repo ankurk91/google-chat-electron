@@ -48,7 +48,7 @@
     "electron-log": "^4.4.6",
     "electron-store": "^8.0.1",
     "electron-unhandled": "^4.0.1",
-    "electron-update-notifier": "^1.5.3",
+    "electron-update-notifier": "^1.6.0",
     "electron-util": "^0.17.2",
     "is-online": "^9.0.1",
     "throttle-debounce": "^4.0.1"
