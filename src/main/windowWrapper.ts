@@ -19,6 +19,7 @@ export default (url: string): BrowserWindow => {
     center: true,
     title: 'Google Chat',
     backgroundColor: '#E8EAED',
+    autoHideMenuBar: store.get('app.hideMenuBar'),
   });
 
   window.once('ready-to-show', () => {

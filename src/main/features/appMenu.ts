@@ -177,6 +177,16 @@ export default (window: BrowserWindow) => {
             store.set('app.startHidden', menuItem.checked)
           }
         },
+        {
+          label: 'Hide Menu Bar',
+          type: 'checkbox',
+          checked: store.get('app.hideMenuBar'),
+          click: async (menuItem) => {
+            window.setMenuBarVisibility(!menuItem.checked)
+            window.setAutoHideMenuBar(menuItem.checked)
+            store.set('app.hideMenuBar', menuItem.checked)
+          }
+        },
       ]
     },
     {
