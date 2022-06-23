@@ -1,6 +1,6 @@
 {
   "name": "google-chat-electron",
-  "version": "2.16.2",
+  "version": "2.16.3",
   "description": "Unofficial desktop app for Google Chat.",
   "private": true,
   "repository": "https://github.com/ankurk91/google-chat-electron",
