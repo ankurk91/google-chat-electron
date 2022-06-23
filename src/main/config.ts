@@ -12,6 +12,7 @@ type StoreType = {
     autoCheckForUpdates: boolean,
     launchAtLogin: boolean,
     startHidden: boolean,
+    hideMenuBar: boolean,
   }
 }
 
@@ -63,6 +64,10 @@ const schema: Store.Schema<StoreType> = {
         default: true
       },
       startHidden: {
+        type: 'boolean',
+        default: false
+      },
+      hideMenuBar: {
         type: 'boolean',
         default: false
       },
