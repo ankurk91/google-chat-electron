@@ -8,7 +8,7 @@
 [![release-windows](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml)
 [![snapcraft](https://snapcraft.io/google-chat-electron/badge.svg)](https://snapcraft.io/google-chat-electron)
 
-An unofficial desktop app for [Google Chat](https://mail.google.com/chat/u/0/) built
+An unofficial desktop app for [Google Chat](http://chat.google.com) built
 with [Electron](https://www.electronjs.org/apps/google-chat-electron)
 
 ### Motivation
@@ -95,12 +95,12 @@ winget install --id=ankurk91.GoogleChatElectron  -e
 
 The app should work on all x64 and Apple ARM platforms, but due to lack of time; we test on most popular only.
 
-| OS/Platform         |  Version  |
-|:--------------------|:---------:|
-| Ubuntu GNOME        |   20.x    |
-| Linux Mint Cinnamon |   20.x    |
-| MacOS               | 10.15, 11 |
-| Windows             | 7, 10, 11 |
+| OS/Platform         |    Version    |
+|:--------------------|:-------------:|
+| Ubuntu GNOME        |     20.x      |
+| Linux Mint Cinnamon |     20.x      |
+| MacOS               | 10.15, 11, 12 |
+| Windows             |   7, 10, 11   |
 
 ### Major features
 
