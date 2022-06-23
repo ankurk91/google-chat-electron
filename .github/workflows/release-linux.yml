@@ -9,7 +9,7 @@ jobs:
   release-linux:
     name: release-linux
     runs-on: ubuntu-20.04
-    timeout-minutes: 30
+    timeout-minutes: 15
 
     steps:
       - name: Checkout code
@@ -44,22 +44,3 @@ jobs:
           tag: ${{ github.ref }}
           file_glob: true
 
-      - name: Prepare for building snap package
-        run: npm run build:snap-template
-
-      - name: Create Snap package
-        uses: snapcore/action-build@v1
-        id: snapcraft
-
-      - name: Prepare for publishing on snap store
-        run: |
-          sudo snap install review-tools
-          npm run build:snap-repack
-
-      - name: Publish to snap store
-        uses: snapcore/action-publish@v1
-        env:
-          SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
-        with:
-          snap: ${{ steps.snapcraft.outputs.snap }}
-          release: stable

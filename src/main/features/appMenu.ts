@@ -148,7 +148,7 @@ export default (window: BrowserWindow) => {
         {
           label: 'Auto check for Updates',
           type: 'checkbox',
-          enabled: !environment.isSnap,
+          enabled: true,
           checked: store.get('app.autoCheckForUpdates'),
           click: (menuItem) => {
             store.set('app.autoCheckForUpdates', menuItem.checked)
@@ -202,7 +202,7 @@ export default (window: BrowserWindow) => {
         },
         {
           label: 'Check For Updates',
-          enabled: !environment.isSnap,
+          enabled: true,
           click: () => {
             checkForUpdates({
               silent: false,

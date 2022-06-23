@@ -1,8 +1,6 @@
 import Store from 'electron-store';
 import {Rectangle} from 'electron';
 
-const isSnap = require('electron-is-snap').isSnap;
-
 type StoreType = {
   window: {
     bounds: Rectangle,
@@ -57,7 +55,7 @@ const schema: Store.Schema<StoreType> = {
     properties: {
       autoCheckForUpdates: {
         type: 'boolean',
-        default: !isSnap
+        default: true
       },
       autoLaunchAtLogin: {
         type: 'boolean',

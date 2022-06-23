@@ -5,5 +5,4 @@ import urls from './urls';
 
 export default Object.freeze(Object.assign({
   isDev: !app.isPackaged,
-  isSnap: require('electron-is-snap').isSnap,
 }, urls));

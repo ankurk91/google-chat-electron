@@ -6,10 +6,11 @@
 [![release-linux](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml)
 [![release-mac](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml)
 [![release-windows](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml)
-[![snapcraft](https://snapcraft.io/google-chat-electron/badge.svg)](https://snapcraft.io/google-chat-electron)
 
 An unofficial desktop app for [Google Chat](http://chat.google.com) built
 with [Electron](https://www.electronjs.org/apps/google-chat-electron)
+
+:mega: Since version 2.17, we have removed support for snap package on Linux
 
 ### Motivation
 
@@ -18,19 +19,9 @@ with [Electron](https://www.electronjs.org/apps/google-chat-electron)
 * Google is forcing users to use PWA which has less features
 * You are a Firefox user and don't want to install Chrome; just to use a PWA. :wink:
 
-### Installation (Linux)
+### Installation (Debian Linux)
 
-* Install via [snap](https://snapcraft.io/google-chat-electron) (recommended)
-
-```bash
-sudo snap install google-chat-electron
-
-# grant permissions 
-sudo snap connect google-chat-electron:home :home
-sudo snap connect google-chat-electron:removable-media :removable-media
-```
-
-* Alternatively you can download the latest debian installer from
+* You can download the latest debian installer from
   [releases](https://github.com/ankurk91/google-chat-electron/releases/latest) section
 * Install the debian package with this command: (correct the file path yourself)
 
@@ -38,18 +29,10 @@ sudo snap connect google-chat-electron:removable-media :removable-media
 sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ```
 
-* :warning: Debian package does not have automatic background updates
-
 ### Uninstall (Linux)
 
 * Logout and Quit from app
-* Remove the app with this command if installed via snap
-
-```bash
-sudo snap remove google-chat-electron
-```
-
-or if installed via debian package
+* Remove the app with this command 
 
 ```bash
 sudo apt-get remove --purge google-chat-electron
@@ -93,7 +76,7 @@ winget install --id=ankurk91.GoogleChatElectron  -e
 
 ### Supported Platforms
 
-The app should work on all x64 and Apple ARM platforms, but due to lack of time; we test on most popular only.
+The app should work on all x64 and Apple arm64 platforms, but due to lack of time; we test on most popular only.
 
 | OS/Platform         |    Version    |
 |:--------------------|:-------------:|
@@ -131,8 +114,6 @@ This desktop app is just a wrapper which starts a chromium instance locally and 
 rights to the [Google Chat](https://chat.google.com/) product is reserved by
 [Google Inc.](https://en.wikipedia.org/wiki/Google)
 This desktop client has no way to access none of your data.
-
-[![Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/google-chat-electron)
 
 ## License
 

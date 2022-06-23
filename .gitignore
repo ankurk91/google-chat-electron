@@ -48,7 +48,5 @@ package-lock.json
 
 # This project
 /dist/
-/squashfs-root/
 /lib/
 /*.deb
-/*.snap

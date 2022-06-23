@@ -1,11 +1,5 @@
 import {app, BrowserWindow} from 'electron';
 
-// Need to fix the paths before loading any other library
-// https://github.com/electron/electron/issues/23854
-import fixPathsForSnap from './features/fixPathsForSnap';
-
-fixPathsForSnap();
-
 import reportExceptions from './features/reportExceptions';
 import windowWrapper from './windowWrapper';
 import {enforceSingleInstance, restoreFirstInstance} from './features/singleInstance';

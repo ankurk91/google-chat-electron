@@ -7,11 +7,6 @@ let interval: NodeJS.Timeout;
 export default () => {
   clearInterval(interval);
 
-  // Snap apps has automatic background updates already
-  if (environment.isSnap) {
-    return
-  }
-
   const shouldCheckForUpdates = () => {
     return store.get('app.autoCheckForUpdates');
   }

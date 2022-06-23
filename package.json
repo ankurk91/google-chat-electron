@@ -11,7 +11,7 @@
   "scripts": {
     "prestart": "npm run ts",
     "start": "electron .",
-    "clean:dist": "rimraf ./dist && rimraf ./*.snap",
+    "clean:dist": "rimraf ./dist",
     "clean:lib": "rimraf ./lib",
     "prets": "npm run clean:lib",
     "ts": "tsc",
@@ -26,12 +26,7 @@
     "prepack:linux": "npm run clean:dist && npm run ts",
     "pack:linux": "electron-packager . --platform=linux --arch=x64 --asar --overwrite --out=./dist/",
     "build:deb": "electron-installer-debian --config=./debian/config.json --arch=amd64",
-    "build:deb-checksum": "cd ./dist/installers && sha512sum *.deb > google-chat-electron-deb-SHA512.txt",
-    "build:snap-clean": "sg lxd -c 'snapcraft clean electron-deb --use-lxd'",
-    "build:snap-template": "bash ./snap/local/template.sh",
-    "prebuild:snap": "npm run build:snap-template",
-    "build:snap": "sg lxd -c 'snapcraft --use-lxd'",
-    "build:snap-repack": "bash ./snap/local/repack.sh"
+    "build:deb-checksum": "cd ./dist/installers && sha512sum *.deb > google-chat-electron-deb-SHA512.txt"
   },
   "devDependencies": {
     "@types/auto-launch": "^5.0.2",
@@ -44,7 +39,6 @@
   "dependencies": {
     "auto-launch": "^5.0.5",
     "electron-context-menu": "^3.3.0",
-    "electron-is-snap": "^1.0.2",
     "electron-log": "^4.4.7",
     "electron-store": "^8.0.2",
     "electron-unhandled": "^4.0.1",
