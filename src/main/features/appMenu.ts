@@ -180,6 +180,7 @@ export default (window: BrowserWindow) => {
         {
           label: 'Hide Menu Bar',
           type: 'checkbox',
+          enabled: process.platform !== 'darwin',
           checked: store.get('app.hideMenuBar'),
           click: async (menuItem) => {
             window.setMenuBarVisibility(!menuItem.checked)
