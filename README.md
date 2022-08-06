@@ -17,7 +17,7 @@ with [Electron](https://www.electronjs.org/apps/google-chat-electron)
 * Google has [shutdown](https://support.google.com/chat/answer/10194711) the official Google Chat Desktop App in March
   2021
 * Google is forcing users to use PWA which has less features
-* You are a Firefox user and don't want to install Chrome; just to use a PWA. :wink:
+* You don't want to install Chrome; just to use a PWA. :wink:
 
 ### Installation (Debian Linux)
 
@@ -80,8 +80,8 @@ The app should work on all x64 and Apple arm64 platforms, but due to lack of tim
 
 | OS/Platform         |    Version    |
 |:--------------------|:-------------:|
-| Ubuntu GNOME        |     20.x      |
-| Linux Mint Cinnamon |     20.x      |
+| Ubuntu GNOME        |    20, 22     |
+| Linux Mint Cinnamon |    20, 21     |
 | MacOS               | 10.15, 11, 12 |
 | Windows             |   7, 10, 11   |
 
