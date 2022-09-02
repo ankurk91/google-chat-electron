@@ -20,7 +20,7 @@ with [Electron](https://www.electronjs.org/apps/google-chat-electron)
 * Google is forcing users to use PWA which has less features
 * You don't want to install Chrome; just to use a PWA. :wink:
 
-### Installation (Debian Linux)
+### Installation (Debian based Linux)
 
 * You can download the latest debian installer from
   [releases](https://github.com/ankurk91/google-chat-electron/releases/latest) section
@@ -30,7 +30,7 @@ with [Electron](https://www.electronjs.org/apps/google-chat-electron)
 sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ```
 
-### Uninstall (Linux)
+### Uninstall (Debian based Linux)
 
 * Logout and Quit from app
 * Remove the app with this command 
@@ -78,6 +78,23 @@ choco install unofficial-google-chat-electron
 ```bash
 winget install --id=ankurk91.GoogleChatElectron  -e
 ```
+
+### Installation (Redhat based Linux)
+
+We don't provide installers for Redhat linux, but you can create installer by your own.
+
+```bash
+sudo dnf install rpm-build
+git clone https://github.com/ankurk91/google-chat-electron.git
+cd google-chat-electron
+
+pnpm install
+npm run pack:linux
+npx electron-installer-redhat@^3 --src dist/google-chat-electron-linux-x64 --dest dist/installers/ --arch x86_64
+```
+
+This will create an RPM package in `./dist/installers` folder.
+You can install it with `dnf` or `rpm-ostree` depending on your distro.
 
 ### Supported Platforms
 
