@@ -8,8 +8,7 @@
 [![release-mac](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml)
 [![release-windows](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml)
 
-An unofficial desktop app for [Google Chat](http://chat.google.com) built
-with [Electron](https://www.electronjs.org/apps/google-chat-electron)
+An unofficial desktop app for [Google Chat](http://chat.google.com) built with [Electron](https://www.electronjs.org)
 
 :mega: Since version 2.17, we have removed support for snap package on Linux
 
@@ -33,7 +32,7 @@ sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ### Uninstall (Debian based Linux)
 
 * Logout and Quit from app
-* Remove the app with this command 
+* Remove the app with this command
 
 ```bash
 sudo apt-get remove --purge google-chat-electron
@@ -43,7 +42,11 @@ sudo apt-get remove --purge google-chat-electron
 
 ### Installation (Mac)
 
-* Homebrew users can run `brew install --cask --no-quarantine google-chat-electron`
+* Homebrew users can run
+
+```bash
+brew install --cask --no-quarantine google-chat-electron
+```
 
 or
 
@@ -70,9 +73,11 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 * You can install this app by [downloading](https://github.com/ankurk91/google-chat-electron/releases/latest) the
   installer
 * If you prefer [chocolatey](https://chocolatey.org/) on Windows, you can run:
+
 ```powershell
 choco install unofficial-google-chat-electron
 ```
+
 * If you prefer [winget-cli](https://github.com/microsoft/winget-cli) on Windows 10+, you can run:
 
 ```bash

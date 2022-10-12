@@ -2,7 +2,6 @@
 
 # various IDEs
 .idea/
-*.sublime-*
 .vscode/
 
 # logs and cache
@@ -43,7 +42,7 @@ node_modules/
 *.crt
 *.key
 
-# Force yarn usage
+# Dont use npm
 package-lock.json
 
 # This project
