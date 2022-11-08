@@ -11,7 +11,7 @@ specifiers:
   electron-packager: ^16.0.0
   electron-store: ^8.1.0
   electron-unhandled: ^4.0.1
-  electron-update-notifier: ^1.6.0
+  electron-update-notifier: ^1.7.0
   electron-util: ^0.17.2
   is-online: ^9.0
   rimraf: ^3.0.2
@@ -24,7 +24,7 @@ dependencies:
   electron-log: 4.4.8
   electron-store: 8.1.0
   electron-unhandled: 4.0.1
-  electron-update-notifier: 1.6.0_electron@21.0.1
+  electron-update-notifier: 1.7.0_electron@21.0.1
   electron-util: 0.17.2
   is-online: 9.0.1
   throttle-debounce: 5.0.0
@@ -271,11 +271,12 @@ packages:
       winreg: 1.2.4
     dev: false
 
-  /axios/0.27.2:
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+  /axios/1.1.3:
+    resolution: {integrity: sha512-00tXVRwKx/FZr/IDVFt4C+f9FYairX517WoGCL6dpOntqLkZofjhu43F/Xl44UOpqa+9sLFDrG/XAnFsUYgkDA==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
+      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -427,8 +428,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /compare-versions/4.1.4:
-    resolution: {integrity: sha512-FemMreK9xNyL8gQevsdRMrvO4lFCkQP7qbuktn1q8ndcNk1+0mz7lgE7b/sNvbhVgY4w6tMN1FDp6aADjqw2rw==}
+  /compare-versions/5.0.1:
+    resolution: {integrity: sha512-v8Au3l0b+Nwkp4G142JcgJFh1/TUhdxut7wzD1Nq1dyp5oa3tXaqb03EXOAB6jS4gMlalkjAUPZBMiAfKUixHQ==}
     dev: false
 
   /concat-map/0.0.1:
@@ -729,14 +730,14 @@ packages:
       serialize-error: 8.1.0
     dev: false
 
-  /electron-update-notifier/1.6.0_electron@21.0.1:
-    resolution: {integrity: sha512-l0Ouaz77isprSL7pQOTyw7ny8iLZTdHAoOLzhaYvbv5G4Nd4IweQ25pyh84oBr2VS8iLWNGCFVhSBv4SH3OLUg==}
+  /electron-update-notifier/1.7.0_electron@21.0.1:
+    resolution: {integrity: sha512-mtFw3sQtapbjMTJCSN1tWA2QeuhH2yMAQsGNw95GbHAq7VvxD5n8pB7ECWkq2Lbtpf+HfMGjWmuJGP87KWxZrg==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
       electron: '*'
     dependencies:
-      axios: 0.27.2
-      compare-versions: 4.1.4
+      axios: 1.1.3
+      compare-versions: 5.0.1
       electron: 21.0.1
       github-url-to-object: 4.0.6
     transitivePeerDependencies:
@@ -1623,6 +1624,10 @@ packages:
   /proto-list/1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
     optional: true
+
+  /proxy-from-env/1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+    dev: false
 
   /public-ip/4.0.4:
     resolution: {integrity: sha512-EJ0VMV2vF6Cu7BIPo3IMW1Maq6ME+fbR0NcPmqDfpfNGIRPue1X8QrGjrg/rfjDkOsIkKHIf2S5FlEa48hFMTA==}
