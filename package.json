@@ -53,7 +53,7 @@
   "engineStrict": true,
   "packageManager": "pnpm@7.0.0",
   "engines": {
-    "node": ">=16.9",
+    "node": ">=18.12",
     "pnpm": "^7.0.0"
   }
 }

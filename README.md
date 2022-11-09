@@ -108,7 +108,7 @@ The app should work on all x64 and Apple arm64 platforms, but due to lack of tim
 | OS/Platform         |    Version    |
 |:--------------------|:-------------:|
 | Ubuntu GNOME        |    20, 22     |
-| Linux Mint Cinnamon |    20, 21     |
+| Linux Mint Cinnamon |      21       |
 | MacOS               | 10.15, 11, 12 |
 | Windows             |   7, 10, 11   |
 
