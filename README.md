@@ -84,12 +84,13 @@ choco install unofficial-google-chat-electron
 winget install --id=ankurk91.GoogleChatElectron  -e
 ```
 
-### Installation (Redhat based Linux)
+### Installation (Fedora/RHEL/CentOS)
 
-We don't provide installers for Redhat linux, but you can create installer by your own.
+We don't provide installers for Fedora/RHEL/CentOS, but you can build a local RPM package by your own.
 
 ```bash
-sudo dnf install rpm-build
+sudo dnf install rpm-build npm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 git clone https://github.com/ankurk91/google-chat-electron.git
 cd google-chat-electron
 
@@ -98,7 +99,7 @@ npm run pack:linux
 npx electron-installer-redhat@^3 --src dist/google-chat-electron-linux-x64 --dest dist/installers/ --arch x86_64
 ```
 
-This will create an RPM package in `./dist/installers` folder.
+This will create an RPM package in `./dist/installers` folder (you can specify any location you wish).
 You can install it with `dnf` or `rpm-ostree` depending on your distro.
 
 ### Supported Platforms
