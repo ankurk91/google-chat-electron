@@ -26,6 +26,7 @@ export default (url: string): BrowserWindow => {
     if (!store.get('app.startHidden')) {
       window.show();
     }
+    window.webContents.session.setSpellCheckerEnabled( !store.get('app.disableSpellChecker') );
   });
 
   window.loadURL(url);

@@ -11,6 +11,7 @@ type StoreType = {
     launchAtLogin: boolean,
     startHidden: boolean,
     hideMenuBar: boolean,
+    disableSpellChecker: boolean,
   }
 }
 
@@ -66,6 +67,10 @@ const schema: Store.Schema<StoreType> = {
         default: false
       },
       hideMenuBar: {
+        type: 'boolean',
+        default: false
+      },
+      disableSpellChecker: {
         type: 'boolean',
         default: false
       },

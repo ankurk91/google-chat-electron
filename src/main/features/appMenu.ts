@@ -188,6 +188,15 @@ export default (window: BrowserWindow) => {
             store.set('app.hideMenuBar', menuItem.checked)
           }
         },
+        {
+          label: 'Disable Spell Checker',
+          type: 'checkbox',
+          checked: store.get('app.disableSpellChecker'),
+          click: async (menuItem) => {
+            window.webContents.session.setSpellCheckerEnabled( !menuItem.checked );
+            store.set('app.disableSpellChecker', menuItem.checked)
+          }
+        },
       ]
     },
     {
