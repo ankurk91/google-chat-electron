@@ -1,6 +1,7 @@
 import {ipcMain, app, nativeImage, BrowserWindow, Tray} from 'electron';
 import path from 'path';
 import {is} from "electron-util";
+import store from '../config';
 
 type IconTypes = 'offline' | 'normal' | 'badge';
 
@@ -30,5 +31,11 @@ export default (window: BrowserWindow, trayIcon: Tray) => {
 
   ipcMain.on('unreadCount', (event, count: number) => {
     app.setBadgeCount(Number(count))
+
+    if (store.get('app.showOnMessage')) {
+      if (count > 0) {
+        window.show();
+      }
+    }
   });
 }

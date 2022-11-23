@@ -178,6 +178,14 @@ export default (window: BrowserWindow) => {
           }
         },
         {
+          label: 'Show window on message',
+          type: 'checkbox',
+          checked: store.get('app.showOnMessage'),
+          click: async (menuItem) => {
+            store.set('app.showOnMessage', menuItem.checked)
+          }
+        },
+        {
           label: 'Hide Menu Bar',
           type: 'checkbox',
           enabled: process.platform !== 'darwin',
@@ -197,6 +205,7 @@ export default (window: BrowserWindow) => {
             store.set('app.disableSpellChecker', menuItem.checked)
           }
         },
+          
       ]
     },
     {
