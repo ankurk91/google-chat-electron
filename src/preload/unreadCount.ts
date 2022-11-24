@@ -8,14 +8,20 @@ const targetSelectors = [
 const getMessageCount = (): number => {
   let counter = 0;
 
-  document.body.querySelectorAll(targetSelectors.join(','))
-    .forEach((target) => {
-      const span = target.querySelector('span[role="heading"]')?.nextElementSibling
-      if (span) {
-        counter = counter + Number(span.textContent)
-      }
-    })
+  let elems = document.querySelectorAll('.XS > span > .XU');
+  if (elems && elems.length > 0) {
+    elems.forEach((item) => {
+      counter += Number(item.textContent);
+    });
+    return (counter);
+  }
 
+  document.body.querySelectorAll(targetSelectors.join(',')).forEach((target) => {
+    const span = target.querySelector('span[role="heading"]')?.nextElementSibling
+    if (span) {
+      counter = counter + Number(span.textContent)
+    }
+  })
   return counter
 }
 

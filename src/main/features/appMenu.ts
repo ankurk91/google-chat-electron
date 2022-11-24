@@ -266,6 +266,12 @@ export default (window: BrowserWindow) => {
               }
             },
             {
+              label: 'Open DevTools',
+              click: () => {
+                window.webContents.openDevTools()
+              }
+            },
+            {
               label: 'Reset and Relaunch App',
               click: () => {
                 dialog.showMessageBox(window, {
