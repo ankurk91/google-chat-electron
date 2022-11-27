@@ -10,6 +10,14 @@
 
 An unofficial desktop app for [Google Chat](http://chat.google.com) built with [Electron](https://www.electronjs.org)
 
+## Announcement
+
+This app is no longer maintained. Reasons:
+
+* My employer has moved to Slack
+* It takes lots of time to build and test on all the platforms.
+* Google is blocking 3rd party apps to log-in, see [#52](https://github.com/ankurk91/google-chat-electron/issues/52)
+
 :mega: Since version 2.17, we have removed support for snap package on Linux
 
 ### Motivation
