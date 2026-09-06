@@ -10,13 +10,20 @@
 
 An unofficial desktop app for [Google Chat](http://chat.google.com) built with [Electron](https://www.electronjs.org)
 
-## Announcement
+> :rocket: **Use [google-chat-tauri](https://github.com/ankurk91/google-chat-tauri) instead.** Same app, rebuilt
+> with [Tauri](https://v2.tauri.app) for Linux, macOS and Windows. It uses the web engine your system already has
+> rather than shipping Chromium, so the Linux installer is 3 MB instead of 66 MB. Sign-in works there, including
+> Google Workspace accounts.
+
+## Announcement (November 2022)
 
 This app is no longer maintained. Reasons:
 
 * My employer has moved to Slack
 * It takes lots of time to build and test on all the platforms.
 * Google is blocking 3rd party apps to log-in, see [#52](https://github.com/ankurk91/google-chat-electron/issues/52)
+
+Superseded by [google-chat-tauri](https://github.com/ankurk91/google-chat-tauri), which is where new work happens.
 
 :mega: Since version 2.17, we have removed support for snap package on Linux
 
